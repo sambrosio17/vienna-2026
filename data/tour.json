@@ -1,0 +1,63 @@
+[
+  {
+    "view": "programma",
+    "sel": ".clock",
+    "title": "Data e ora di Vienna",
+    "text": "Sempre in vista: oggi, l’ora esatta e quanto manca alla partenza. Durante il viaggio ti dice in che giorno sei."
+  },
+  {
+    "view": "programma",
+    "sel": "#tabs",
+    "title": "I quattro giorni",
+    "text": "Tocca un giorno per vederne il programma. Durante il viaggio si apre da solo su oggi, con l’etichetta “Oggi”."
+  },
+  {
+    "view": "programma",
+    "sel": "#nowline",
+    "title": "La linea di adesso",
+    "text": "Segna l’ora attuale nel programma. Le tappe passate si attenuano, quella in corso è evidenziata."
+  },
+  {
+    "view": "programma",
+    "sel": "#day .row .actions",
+    "title": "Mappa e spunta",
+    "text": "Il segnaposto apre il luogo in Google Maps. La spunta segna la tappa come fatta e fa avanzare la barra del giorno."
+  },
+  {
+    "view": "programma",
+    "day": 1,
+    "sel": "#day .tkbtn",
+    "title": "Biglietto della tappa",
+    "text": "Dove serve un biglietto trovi questo pulsante: lo apre a schermo intero, pronto da mostrare all’ingresso."
+  },
+  {
+    "view": "programma",
+    "sel": ".dock [data-go=\"biglietti\"]",
+    "title": "Tutti i biglietti",
+    "text": "Tutti i biglietti del viaggio, divisi per giorno. Funzionano anche senza internet."
+  },
+  {
+    "view": "programma",
+    "sel": ".dock [data-go=\"adesso\"]",
+    "title": "Adesso",
+    "text": "Ti riporta al giorno di oggi e al punto del programma in cui siete."
+  },
+  {
+    "view": "programma",
+    "sel": ".dock [data-go=\"mappa\"]",
+    "title": "Mappa e gruppo",
+    "text": "Le tappe di ogni giorno sulla mappa, la tua posizione e dove sono gli altri viaggiatori."
+  },
+  {
+    "view": "programma",
+    "sel": ".dock [data-go=\"utili\"]",
+    "title": "Cose utili",
+    "text": "Numeri di emergenza, prenotazioni, trasporti, consigli per i mercatini e il tuo profilo."
+  },
+  {
+    "view": "programma",
+    "sel": "#me-btn",
+    "title": "Il tuo profilo",
+    "text": "Da qui cambi nome, foto e condivisione della posizione, e riapri questa guida quando vuoi."
+  }
+]

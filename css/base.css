@@ -1,0 +1,72 @@
+/* Reset, design tokens (light + dark) and page layout. */
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+.offline{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--now);color:var(--now-ink);padding:2px 8px;border-radius:999px;justify-self:start;margin-top:3px}
+
+/* Layout (mobile first): sticky top bar with live clock + day switcher; one-column timeline with a time rail and a "now" line; floating "Adesso" button. Wider screens only get more air. */
+:root{
+  --bg:#f3f5f7;
+  --surface:#ffffff;
+  --ink:#16222e;
+  --muted:#5b6b7a;
+  --line:#d8dfe6;
+  --accent:#b8891c;      /* Schönbrunn ochre */
+  --accent-soft:#f6ecd3;
+  --market:#a3322b;      /* Punsch red */
+  --food:#7a4a1f;
+  --ok:#2f7d4f;
+  --now:#d1352b;
+  --now-soft:#fbe4e1;
+  --now-ink:#ffffff;
+  --f-display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --rail:46px;
+  --glass:rgba(255,255,255,.55);
+  --glass-edge:rgba(255,255,255,.75);
+  --glass-hi:rgba(255,255,255,.95);
+  --glass-lo:rgba(22,34,46,.08);
+  --glass-sheen:rgba(255,255,255,.7);
+  --glass-shadow:rgba(22,34,46,.16);
+  --glass-active:rgba(255,255,255,.8);
+  --tile-filter:none;
+  --fx-rain:rgba(48,84,128,.5);
+  --fx-snow:rgba(110,140,178,.85);
+  --fx-mist:rgba(150,165,182,.5);
+  --fx-sun:rgba(255,190,70,.28);
+  --fx-star:rgba(110,122,145,.8);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f161d; --surface:#17212b; --ink:#e8edf2; --muted:#93a3b2; --line:#2a3946;
+    --accent:#e2b44a; --accent-soft:#3a3018; --market:#f07a70; --food:#d9a571; --ok:#5cc28a;
+    --now:#ff6a5c; --now-soft:#3f1f1c; --now-ink:#1a0d0b;
+    --glass:rgba(32,44,56,.5); --glass-edge:rgba(255,255,255,.14); --glass-hi:rgba(255,255,255,.22); --glass-lo:rgba(0,0,0,.35);
+    --glass-sheen:rgba(255,255,255,.1); --glass-shadow:rgba(0,0,0,.5); --glass-active:rgba(255,255,255,.12);
+    --tile-filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.88) saturate(.7);
+    --fx-rain:rgba(170,200,235,.45); --fx-snow:rgba(255,255,255,.9); --fx-mist:rgba(200,215,232,.2); --fx-sun:rgba(255,200,90,.14); --fx-star:rgba(255,255,255,.95);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f161d; --surface:#17212b; --ink:#e8edf2; --muted:#93a3b2; --line:#2a3946;
+  --accent:#e2b44a; --accent-soft:#3a3018; --market:#f07a70; --food:#d9a571; --ok:#5cc28a;
+  --now:#ff6a5c; --now-soft:#3f1f1c; --now-ink:#1a0d0b;
+  --glass:rgba(32,44,56,.5); --glass-edge:rgba(255,255,255,.14); --glass-hi:rgba(255,255,255,.22); --glass-lo:rgba(0,0,0,.35);
+  --glass-sheen:rgba(255,255,255,.1); --glass-shadow:rgba(0,0,0,.5); --glass-active:rgba(255,255,255,.12);
+  --tile-filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.88) saturate(.7);
+  --fx-rain:rgba(170,200,235,.45); --fx-snow:rgba(255,255,255,.9); --fx-mist:rgba(200,215,232,.2); --fx-sun:rgba(255,200,90,.14); --fx-star:rgba(255,255,255,.95);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:200px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;
+  padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px));padding-block:0 calc(110px + env(safe-area-inset-bottom,0px));
+  -webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:680px;margin:0 auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}

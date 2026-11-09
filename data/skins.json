@@ -1,0 +1,30 @@
+[
+  {
+    "id": "imperiale",
+    "name": "Notte imperiale",
+    "bg": "linear-gradient(135deg,#f3f5f7 50%,#0f161d 50%)",
+    "fg": "#16222e",
+    "acc": "#b8891c",
+    "font": "\"Bodoni Moda\",Georgia,serif",
+    "bar": "#f3f5f7",
+    "barDark": "#0f161d"
+  },
+  {
+    "id": "tabellone",
+    "name": "Tabellone",
+    "bg": "#0d0f12",
+    "fg": "#f2f2ee",
+    "acc": "#ffb000",
+    "font": "\"Barlow Condensed\",sans-serif",
+    "bar": "#0d0f12"
+  },
+  {
+    "id": "punsch",
+    "name": "Punsch",
+    "bg": "#fbf3ea",
+    "fg": "#2a1416",
+    "acc": "#8e1b2b",
+    "font": "\"Bricolage Grotesque\",sans-serif",
+    "bar": "#fbf3ea"
+  }
+]

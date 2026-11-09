@@ -2,14 +2,40 @@
 
 Programma del viaggio a Vienna (24–27 novembre 2026) come app per il telefono, utilizzabile anche offline.
 
-## File
+## Struttura
 
-| File | A cosa serve |
+Nessun build: HTML, CSS e moduli JavaScript nativi (ES modules), serviti così come sono da GitHub Pages.
+
+| Percorso | A cosa serve |
 |---|---|
-| `index.html` | L'app: programma, orologio, sezione Utili, menu in basso |
-| `manifest.webmanifest` | Nome, icone e colori per l'installazione |
-| `sw.js` | Service worker: salva l'app e i font sul telefono per l'uso offline |
-| `icons/` | Icone dell'app (192, 512, maskable, Apple) |
+| `index.html` | Solo la struttura della pagina: contenitori delle sezioni, menu in basso, finestre (configurazione, guida, biglietto) |
+| `data/` | **Tutti i contenuti**, in JSON (vedi sotto) |
+| `css/` | Stili divisi per area, caricati in quest'ordine: `base`, `header`, `programme`, `dock`, `views`, `tickets`, `map`, `onboarding`, `weather`, `games`, `responsive`, `skins` |
+| `js/main.js` | Punto di partenza: carica i dati e avvia i componenti |
+| `js/core/` | Parti condivise: dati (`data.js`), stato (`state.js`), eventi tra componenti (`bus.js`), ora di Vienna (`time.js`), salvataggio sul telefono (`store.js`), link a Google Maps, icone, impostazioni (`config.js`) |
+| `js/components/` | Un file per funzione: `programme`, `nextStop`, `sun`, `weather`, `fx`, `tickets`, `map`, `position`, `travelers`, `events`, `profile`, `onboarding`, `tour`, `skins`, `reminders`, `bookings`, `utili`, `settings`, `header`, `install`, `router` |
+| `js/components/games/` | Un file per gioco (`quiz`, `memory`, `word`) più il menu (`index.js`) |
+| `sw.js` | Service worker per l'uso offline |
+| `scripts/` | `precache.mjs` (aggiorna l'elenco dei file offline), `update-events.mjs` (usato dalla GitHub Action) |
+| `tickets-enc/`, `events.json`, `icons/`, `manifest.webmanifest` | Biglietti cifrati, eventi di Vienna, icone, installazione |
+
+### I dati (`data/`)
+
+| File | Contenuto |
+|---|---|
+| `trip.json` | Titolo, date, città, alloggio, viaggiatori con il loro colore, meteo tipico |
+| `days.json` | Il programma: giorni, tappe (`place` rimanda a `places.json`, `ticket` a `tickets.json`) e spostamenti (`leg`) |
+| `places.json` | Coordinate di ogni luogo |
+| `tickets.json` | Biglietti (pagine e PDF) e biglietti mancanti |
+| `reminders.json` | Ingressi a orario: minuti di preavviso (`before`) e anticipo consigliato (`early`) |
+| `bookings.json` | Checklist delle prenotazioni |
+| `utili.json` | Sezioni di "Cose utili": elenchi, consigli, frasi; le voci `slot` sono riempite dall'app (profilo, prenotazioni, tema, impostazioni) |
+| `skins.json`, `tour.json` | Temi e passi della guida |
+| `games/*.json` | Domande del quiz, parole del memory, parole segrete |
+
+Per cambiare un orario, aggiungere una tappa o un numero utile basta modificare il JSON. Per aggiungere una funzione si crea un componente in `js/components/` con una funzione `init()` e lo si aggiunge in `js/main.js`; i componenti si parlano con gli eventi di `bus.js` (`day`, `programme`, `minute`, `pos`, `wx`, `profile`, `skin`, `map:show`).
+
+**Dopo ogni modifica** esegui `node scripts/precache.mjs`: aggiorna l'elenco dei file salvati per l'uso offline e la versione del service worker, così i telefoni scaricano la nuova versione.
 
 ## Biglietti cifrati
 
@@ -17,7 +43,7 @@ La cartella `tickets-enc/` contiene i biglietti **cifrati** (AES-GCM 256, chiave
 
 - Nella sezione Biglietti l'app chiede la password una volta sola, decifra i file e li salva sul telefono: da lì in poi si aprono anche offline.
 - "Toglili", in fondo alla sezione Biglietti, cancella i biglietti decifrati da quel telefono.
-- Per aggiungere o cambiare biglietti: rimetti gli originali nella cartella locale `biglietti-originali/` (fuori dal repository) e cifrali di nuovo con lo script `encrypt-tickets.mjs` (`TICKET_PASS=... node encrypt-tickets.mjs <originali> tickets-enc`), poi cambia `VERSION` in `sw.js`.
+- Per aggiungere o cambiare biglietti: rimetti gli originali nella cartella locale `biglietti-originali/` (fuori dal repository) e cifrali di nuovo con lo script `encrypt-tickets.mjs` (`TICKET_PASS=... node encrypt-tickets.mjs <originali> tickets-enc`), poi esegui `node scripts/precache.mjs`.
 - Dopo il viaggio conviene cancellare il repository.
 
 ## Primo avvio e guida
@@ -75,7 +101,7 @@ Dopo la prima apertura con connessione l'app funziona anche offline. Le mappe di
 
 ## Aggiornarla
 
-Dopo aver modificato i file, cambia `VERSION` in `sw.js` (es. `vienna26-v2`) e ricarica la cartella sull'hosting. I telefoni prendono la nuova versione alla prima apertura con rete.
+Dopo aver modificato i file esegui `node scripts/precache.mjs`, poi `git push`: GitHub Pages pubblica da solo e i telefoni prendono la nuova versione alla prima apertura con rete.
 
 Le tappe spuntate e le prenotazioni segnate sono salvate solo sul telefono.
 

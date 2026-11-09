@@ -1,0 +1,166 @@
+{
+  "Nestroygasse 7, 1020 Wien": {
+    "lat": 48.2149,
+    "lng": 16.3838
+  },
+  "Flughafen Wien": {
+    "lat": 48.1103,
+    "lng": 16.5697
+  },
+  "Justizpalast Wien": {
+    "lat": 48.2054,
+    "lng": 16.3576
+  },
+  "Parlament Wien": {
+    "lat": 48.2083,
+    "lng": 16.3586
+  },
+  "Heldenplatz Wien": {
+    "lat": 48.2062,
+    "lng": 16.3638
+  },
+  "Palais Kinsky Wien": {
+    "lat": 48.2117,
+    "lng": 16.3655
+  },
+  "Graben Wien": {
+    "lat": 48.2087,
+    "lng": 16.3697
+  },
+  "Stephansdom Wien": {
+    "lat": 48.2085,
+    "lng": 16.3731
+  },
+  "Weihnachtsmarkt Stephansplatz Wien": {
+    "lat": 48.2081,
+    "lng": 16.3722
+  },
+  "Schwedenplatz Wien": {
+    "lat": 48.2117,
+    "lng": 16.3779
+  },
+  "Weihnachtsmarkt Am Hof Wien": {
+    "lat": 48.2107,
+    "lng": 16.3678
+  },
+  "Altwiener Christkindlmarkt Freyung": {
+    "lat": 48.2112,
+    "lng": 16.3647
+  },
+  "Wiener Christkindlmarkt Rathausplatz": {
+    "lat": 48.2104,
+    "lng": 16.359
+  },
+  "Schloss Schönbrunn": {
+    "lat": 48.1849,
+    "lng": 16.3122
+  },
+  "Schlosspark Schönbrunn": {
+    "lat": 48.1812,
+    "lng": 16.311
+  },
+  "Weihnachtsmarkt Schloss Schönbrunn": {
+    "lat": 48.186,
+    "lng": 16.3122
+  },
+  "Prunksaal Österreichische Nationalbibliothek": {
+    "lat": 48.2063,
+    "lng": 16.3667
+  },
+  "Wiener Staatsoper": {
+    "lat": 48.203,
+    "lng": 16.369
+  },
+  "Kaiserliche Schatzkammer Wien": {
+    "lat": 48.2066,
+    "lng": 16.3654
+  },
+  "Mozart-Denkmal Burggarten": {
+    "lat": 48.2044,
+    "lng": 16.3665
+  },
+  "Café Sacher Wien": {
+    "lat": 48.2039,
+    "lng": 16.3699
+  },
+  "Teddy Café Wien Kärntner Straße": {
+    "lat": 48.205,
+    "lng": 16.3707
+  },
+  "Stock-im-Eisen-Platz Wien": {
+    "lat": 48.2083,
+    "lng": 16.3716
+  },
+  "Votivkirche Wien": {
+    "lat": 48.2155,
+    "lng": 16.359
+  },
+  "Campus der Universität Wien Weihnachtsmarkt": {
+    "lat": 48.2157,
+    "lng": 16.353
+  },
+  "Figlmüller Wollzeile Wien": {
+    "lat": 48.2088,
+    "lng": 16.3754
+  },
+  "Oberes Belvedere Wien": {
+    "lat": 48.1914,
+    "lng": 16.3809
+  },
+  "Belvedere Garten Wien": {
+    "lat": 48.1937,
+    "lng": 16.379
+  },
+  "Weihnachtsmarkt Belvedere Prinz-Eugen-Straße 27": {
+    "lat": 48.1919,
+    "lng": 16.3801
+  },
+  "Hochstrahlbrunnen Wien": {
+    "lat": 48.1985,
+    "lng": 16.3755
+  },
+  "Michaelerplatz Wien": {
+    "lat": 48.2083,
+    "lng": 16.3666
+  },
+  "Sisi Museum Hofburg Wien": {
+    "lat": 48.2078,
+    "lng": 16.3657
+  },
+  "Demel Kohlmarkt Wien": {
+    "lat": 48.2086,
+    "lng": 16.3673
+  },
+  "Karlskirche Wien": {
+    "lat": 48.1983,
+    "lng": 16.3716
+  },
+  "Art Advent Karlsplatz Wien": {
+    "lat": 48.1994,
+    "lng": 16.3704
+  },
+  "Weihnachtsdorf Maria-Theresien-Platz": {
+    "lat": 48.2047,
+    "lng": 16.361
+  },
+  "Wintermarkt MuseumsQuartier Wien": {
+    "lat": 48.2034,
+    "lng": 16.3584
+  },
+  "Wintermarkt am Riesenradplatz Prater": {
+    "lat": 48.2166,
+    "lng": 16.3962
+  },
+  "LEGO Store Donauzentrum Wien": {
+    "lat": 48.2427,
+    "lng": 16.4335
+  },
+  "Kunsthistorisches Museum Wien": {
+    "lat": 48.2038,
+    "lng": 16.3617
+  },
+  "Albertina Wien": {
+    "lat": 48.2045,
+    "lng": 16.3683
+  }
+}

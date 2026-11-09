@@ -1,0 +1,55 @@
+/* Map view */
+.maptabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px}
+.mapwrap{position:relative;margin-top:10px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+#map{height:max(320px,58vh);height:max(320px,58dvh);width:100%;background:var(--line)}
+#map .leaflet-tile-pane{filter:var(--tile-filter)}
+.mapbtns{position:absolute;right:10px;top:10px;z-index:500;display:grid;gap:6px}
+.mapbtn{appearance:none;border:1px solid var(--glass-edge);background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);
+  box-shadow:inset 0 1px 0 var(--glass-hi),0 4px 12px var(--glass-shadow);color:var(--ink);border-radius:12px;min-height:40px;padding:0 12px;font-size:12.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;justify-content:center}
+.mapbtn svg{width:16px;height:16px}
+.mapmsg{position:absolute;left:10px;right:10px;bottom:10px;z-index:500;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:13px;color:var(--ink);box-shadow:0 4px 14px var(--glass-shadow)}
+.mapfallback{display:grid;place-items:center;text-align:center;padding:24px;height:100%;color:var(--muted);font-size:14px}
+.maplegend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12.5px;color:var(--muted);align-items:center}
+.maplegend i{display:inline-block;vertical-align:-2px;margin-right:5px}
+/* markers */
+.pin{display:grid;place-items:center;width:26px;height:26px;border-radius:50% 50% 50% 4px;transform:rotate(-45deg);background:var(--muted);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.pin b{transform:rotate(45deg);color:#fff;font:700 11.5px/1 var(--f-body)}
+.pin.k-visita{background:#b8891c}.pin.k-mercatino{background:#a3322b}.pin.k-cibo{background:#7a4a1f}.pin.k-base{background:#16222e}
+.pin.k-passeggio,.pin.k-passaggio{background:#5b6b7a}
+.pin.cur{outline:3px solid var(--now);outline-offset:1px}
+.medot{width:18px;height:18px;border-radius:50%;background:#1f6fe0;border:3px solid #fff;box-shadow:0 0 0 6px rgba(31,111,224,.25),0 2px 6px rgba(0,0,0,.35)}
+.pp{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--c,#444);color:#fff;font:800 14px/1 var(--f-body);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.pp.stale{filter:grayscale(.8);opacity:.75}
+.leaflet-popup-content{font-family:var(--f-body);font-size:13.5px;margin:10px 12px}
+.leaflet-popup-content b{display:block;font-size:14.5px}
+.leaflet-popup-content a{color:#1f5fbf;font-weight:600}
+/* travelers */
+.share{display:grid;gap:10px;padding:12px;border-top:0}
+.share-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.share select{font:inherit;font-size:14.5px;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:40px;flex:1;min-width:140px}
+.switch{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;cursor:pointer}
+.switch input{appearance:none;width:48px;height:28px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;transition:background .2s;flex:none;margin:0}
+.switch input::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .2s}
+.switch input:checked{background:var(--ok)}
+.switch input:checked::after{transform:translateX(20px)}
+.netstate{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.netstate.on{color:var(--ok);border-color:var(--ok)}
+.person{display:grid;grid-template-columns:auto 1fr auto;gap:2px 12px;align-items:center;padding:10px 12px;border-top:1px solid var(--line)}
+.person:first-child{border-top:0}
+.person .pp{width:36px;height:36px;grid-row:1/3;border-width:2px}
+.person .lab{font-weight:700;font-size:14.5px}
+.person .sub{color:var(--muted);font-size:12.5px;grid-column:2}
+.person .acts{grid-row:1/3;grid-column:3;display:flex;gap:6px}
+.poilist{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.poilist button{appearance:none;width:100%;display:grid;grid-template-columns:30px 48px 1fr;gap:8px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer;font-size:14px}
+.poilist .n{font:700 12px/1 var(--f-mono);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--muted)}
+.poilist .tm{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.poilist .k-visita .n{background:#b8891c}.poilist .k-mercatino .n{background:#a3322b}.poilist .k-cibo .n{background:#7a4a1f}.poilist .k-base .n{background:#16222e}
+
+/* Avatars */
+.pp.mini{width:40px;height:40px;font-size:16px;border-width:2px}
+.pp.big{width:72px;height:72px;font-size:28px;border-width:3px}
+.pp.huge{width:150px;height:150px;font-size:58px;border-width:4px;box-shadow:0 10px 30px var(--glass-shadow)}
+.medot.ph{width:34px;height:34px;background-size:cover;background-position:center;border:3px solid #1f6fe0}
+.mebtn{appearance:none;border:0;background:transparent;padding:0;cursor:pointer;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;color:var(--ink);align-self:center}
+.mebtn svg{width:28px;height:28px;border:1.5px solid var(--line);border-radius:50%;padding:5px;box-sizing:content-box}

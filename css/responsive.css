@@ -1,0 +1,24 @@
+/* Info */
+section.info{display:grid;gap:12px}
+section.info h2{font-family:var(--f-display);font-size:28px;margin:0;padding-top:18px}
+.legend{display:grid;gap:8px;font-size:13.5px}
+.legend div{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.note{font-size:13px;color:var(--muted);max-width:65ch;margin:0}
+.reset{appearance:none;background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px;cursor:pointer;padding:0}
+.confirm{font-size:13px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.confirm button{font-size:13px;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
+
+/* Larger screens */
+@media (min-width:640px){
+  :root{--rail:58px}
+  body{font-size:16px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+  h1{font-size:48px}
+  .clock .time{font-size:30px}
+  .daytab .dn{font-size:22px}
+  .dayhead h2{font-size:32px}
+  .card{padding:12px 14px}
+  .legend{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){nav.dock{background:var(--surface)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

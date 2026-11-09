@@ -1,0 +1,46 @@
+/* Weather */
+#fx{position:fixed;inset:0;z-index:9;pointer-events:none}
+.wrap{position:relative;z-index:1}
+/* The weather tints the page background (behind the cards, so text stays readable) */
+#wxtint{position:fixed;inset:0;z-index:0;pointer-events:none;transition:background .8s}
+[data-wx="rain"] #wxtint{background:linear-gradient(180deg,rgba(60,95,140,.30),rgba(60,95,140,.10) 70%)}
+[data-wx="storm"] #wxtint{background:linear-gradient(180deg,rgba(35,35,70,.45),rgba(35,35,70,.15) 75%)}
+[data-wx="snow"] #wxtint{background:linear-gradient(180deg,rgba(200,225,250,.55),rgba(220,235,250,.15) 60%,rgba(220,235,250,.45))}
+[data-wx="fog"] #wxtint{background:linear-gradient(180deg,rgba(185,192,200,.45),rgba(185,192,200,.25))}
+[data-wx="clouds"] #wxtint{background:linear-gradient(180deg,rgba(130,142,160,.28),rgba(130,142,160,.05) 65%)}
+[data-wx="sun"] #wxtint{background:radial-gradient(circle at 92% 0%,rgba(255,190,70,.45),rgba(255,190,70,.08) 55%,transparent 75%)}
+[data-wx="stars"] #wxtint{background:linear-gradient(180deg,rgba(15,25,70,.45),rgba(15,25,70,.08) 65%)}
+/* small touches on the interface itself */
+[data-wx="snow"] nav.dock{box-shadow:inset 0 3px 0 rgba(255,255,255,.95),inset 0 1px 0 var(--glass-hi),0 12px 32px var(--glass-shadow)}
+[data-wx="snow"] .clock{box-shadow:inset 0 3px 0 rgba(255,255,255,.9)}
+[data-wx="rain"] .clock,[data-wx="storm"] .clock{box-shadow:0 6px 18px rgba(40,70,110,.35)}
+[data-wx="sun"] .clock{box-shadow:0 6px 22px rgba(255,170,40,.35)}
+[data-wx="fog"] .wrap{filter:saturate(.85)}
+.item select{font:inherit;font-size:14px;padding:7px 8px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:38px;max-width:150px}
+.wx-ic{display:inline-block;width:1.25em;height:1.25em;vertical-align:-.28em;flex:none}
+.wxnow{appearance:none;border:0;background:transparent;color:inherit;font:600 12px/1.3 var(--f-body);padding:3px 0 0;text-align:left;cursor:pointer;display:flex;align-items:center;gap:5px;justify-self:start}
+.wxnow b{font-family:var(--f-mono);font-weight:600}
+.wxnow span{opacity:.75;font-weight:500}
+.daytab .dwx{font:500 10.5px/1.2 var(--f-mono);color:var(--muted);display:flex;align-items:center;justify-content:center;gap:2px;margin-top:2px}
+.daytab[aria-selected="true"] .dwx{color:inherit;opacity:.85}
+.wxday{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:13.5px}
+.wxday .wx-ic{width:34px;height:34px;color:var(--accent)}
+.wxday b{font-family:var(--f-mono);font-size:16px;font-weight:600}
+.wxday .wxd{display:grid;gap:1px;min-width:0}
+.wxday .wxd span{color:var(--muted);font-size:12.5px}
+.wxday .wxlive{margin-left:auto;text-align:right;display:grid;gap:1px;padding-left:10px;border-left:1px solid var(--line)}
+.wxday .wxlive b{color:var(--now)}
+.sunrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:8px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted)}
+.sunrow span{display:inline-flex;align-items:center;gap:6px}
+.sunrow svg{width:20px;height:20px;color:var(--accent);flex:none}
+.sunrow b{font-family:var(--f-mono);font-size:14px;font-weight:600;color:var(--ink)}
+.sunrow .sunleft{margin-left:auto;color:var(--now);font-weight:600}
+.evbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:8px 0}
+.evbar input[type=search]{flex:1 1 180px;min-width:0;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;font-size:16px;background:var(--surface);color:var(--ink)}
+.evlist{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.evlist li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
+.evlist .evt{appearance:none;background:none;border:0;padding:0;text-align:left;font:inherit;font-weight:700;font-size:14.5px;color:var(--ink);cursor:pointer;display:flex;gap:8px;align-items:baseline}
+.evlist .evt i{font-style:normal;font:600 12px/1 var(--f-mono);color:#7b4fa3;white-space:nowrap;margin-left:auto}
+.evlist p{margin:0;font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.evlist a{font-size:13px;font-weight:600;color:var(--accent);justify-self:start}
+.evdot{width:14px;height:14px;border-radius:50%;background:#7b4fa3;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);display:block}
