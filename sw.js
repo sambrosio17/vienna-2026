@@ -1,7 +1,8 @@
 // Vienna 2026 — service worker per l'uso offline.
 // Dopo ogni modifica ai file esegui: node scripts/precache.mjs (aggiorna l'elenco qui sotto e VERSION).
-const VERSION = 'vienna26-v15';
+const VERSION = 'vienna26-v16';
 const TICKETS = "vienna26-tickets";      // biglietti decifrati sul telefono con la password
+const STATE = 'vienna26-state';         // data dell'ultimo messaggio del conto alla rovescia
 const TILES = 'vienna26-tiles';          // mappe già viste, tenute tra un aggiornamento e l'altro
 const MAX_TILES = 1500;
 const LIBS = [
@@ -27,6 +28,7 @@ const CORE = [
   './css/views.css',
   './css/weather.css',
   './data/bookings.json',
+  './data/countdown.json',
   './data/days.json',
   './data/games/memory.json',
   './data/games/quiz.json',
@@ -43,6 +45,7 @@ const CORE = [
   './icons/icon-512.png',
   './icons/maskable-512.png',
   './js/components/bookings.js',
+  './js/components/countdown.js',
   './js/components/events.js',
   './js/components/fx.js',
   './js/components/games/common.js',
@@ -128,7 +131,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k !== VERSION && k !== TILES && k !== TICKETS).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k => k !== VERSION && k !== TILES && k !== TICKETS && k !== STATE).map(k => caches.delete(k)));
     await self.clients.claim();
   })());
 });
@@ -222,5 +225,29 @@ self.addEventListener('notificationclick', event => {
     const wins = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
     for (const w of wins) { if ('focus' in w) { await w.focus(); if ('navigate' in w) await w.navigate(target); return; } }
     await self.clients.openWindow(target);
+  })());
+});
+
+// Conto alla rovescia con l'app chiusa (Periodic Background Sync, Chrome su Android con l'app installata):
+// aggiorna il numero sull'icona e manda il messaggio del giorno, una volta sola, dalle 8 ora di Vienna.
+self.addEventListener('periodicsync', event => {
+  if (event.tag !== 'vie26-countdown') return;
+  event.waitUntil((async () => {
+    const cache = await caches.open(VERSION);
+    const json = async f => { const r = await cache.match('./data/' + f) || await fetch('./data/' + f); return r.json(); };
+    const [trip, cd] = await Promise.all([json('trip.json'), json('countdown.json')]);
+    const p = new Intl.DateTimeFormat('en-CA', { timeZone: trip.timeZone, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false }).formatToParts(new Date());
+    const g = t => p.find(x => x.type === t).value, today = `${g('year')}-${g('month')}-${g('day')}`, hour = +g('hour') % 24;
+    const utc = s => { const [y, m, d] = s.split('-').map(Number); return Date.UTC(y, m - 1, d); };
+    const n = Math.round((utc(trip.start) - utc(today)) / 864e5);
+    if ('setAppBadge' in self.navigator) await (n > 0 ? self.navigator.setAppBadge(n) : self.navigator.clearAppBadge()).catch(() => {});
+    if (n < 0 || hour < 8) return;
+    const state = await caches.open(STATE), key = new URL('countdown-last', self.registration.scope).href;
+    const last = await state.match(key);
+    if (last && (await last.text()) === today) return;
+    await state.put(key, new Response(today));
+    const title = n === 0 ? cd.titleToday : n === 1 ? cd.titleOne : cd.title.replace('{n}', n);
+    await self.registration.showNotification(title, { body: n === 0 ? cd.today : cd.messages[n] || cd.default, tag: 'vie26-countdown',
+      icon: 'icons/icon-192.png', badge: 'icons/icon-192.png', data: { url: n === 0 ? '#adesso' : './' } });
   })());
 });

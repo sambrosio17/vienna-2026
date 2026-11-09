@@ -15,6 +15,7 @@ import * as travelers from './components/travelers.js';
 import * as events from './components/events.js';
 import * as nextStop from './components/nextStop.js';
 import * as reminders from './components/reminders.js';
+import * as countdown from './components/countdown.js';
 import * as weather from './components/weather.js';
 import * as fx from './components/fx.js';
 import * as games from './components/games/index.js';
@@ -32,7 +33,7 @@ async function start() {
   S.cur = router.initialDay();
   utili.render();            // creates the slots used by profile, bookings, skins and settings
   [header, skins, programme, tickets, bookings, profile, map, position, travelers, events, nextStop,
-    reminders, weather, fx, games, onboarding, tour, install, router].forEach(c => c.init());
+    reminders, countdown, weather, fx, games, onboarding, tour, install, router].forEach(c => c.init());
   router.route();
   if (S.view === 'programma' && tripIndex() >= 0) requestAnimationFrame(() => programme.scrollToNow(false));
   utili.init();

@@ -13,7 +13,8 @@ const FILES = {
   tour: 'data/tour.json',
   quiz: 'data/games/quiz.json',
   memory: 'data/games/memory.json',
-  words: 'data/games/words.json'
+  words: 'data/games/words.json',
+  countdown: 'data/countdown.json'
 };
 
 // D.trip, D.days, D.places, D.tickets, D.missing, D.bookings, D.reminders, D.utili, D.skins, D.tour, D.quiz, D.memory, D.words
