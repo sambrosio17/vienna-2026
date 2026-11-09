@@ -28,6 +28,7 @@ Nessun build: HTML, CSS e moduli JavaScript nativi (ES modules), serviti così c
 | `places.json` | Coordinate di ogni luogo |
 | `tickets.json` | Biglietti (pagine e PDF) e biglietti mancanti |
 | `reminders.json` | Ingressi a orario: minuti di preavviso (`before`) e anticipo consigliato (`early`) |
+| `countdown.json` | Conto alla rovescia: titolo e messaggio per i giorni che mancano (`messages`), `default` e `today` |
 | `bookings.json` | Checklist delle prenotazioni |
 | `utili.json` | Sezioni di "Cose utili": elenchi, consigli, frasi; le voci `slot` sono riempite dall'app (profilo, prenotazioni, tema, impostazioni) |
 | `skins.json`, `tour.json` | Temi e passi della guida |
@@ -68,6 +69,14 @@ Ognuno sceglie sul proprio telefono tra tre temi: **Notte imperiale** (l'origina
 - **Rischio ritardo**: per gli ingressi a orario vincolante (Parlamento, Schönbrunn, Belvedere, Sissi, Kunsthistorisches) e per l'aeroporto, l'app avvisa se a piedi non si arriva in tempo.
 - **Promemoria** (Utili → App): notifica 30 minuti prima di ogni ingresso a orario (40 per il Belvedere). Una web app senza server può mandarle solo mentre è aperta o appena chiusa; su iPhone servono iOS 16.4+ e l'app installata nella schermata Home.
 - **Promemoria nel calendario** (Utili → App → Aggiungi): scarica un file `.ics` con le sei scadenze e un avviso 30 minuti prima. È il modo affidabile, perché suona anche con l'app chiusa.
+
+## Conto alla rovescia
+
+Fino alla partenza l'icona dell'app installata mostra i giorni che mancano (badge), anche nella scheda del browser. In Utili → App si attiva un messaggio al giorno, dalle 8 ora di Vienna, preso da `data/countdown.json`.
+
+- **iPhone** (app installata, iOS 16.4 o successivo): il numero sull'icona e il messaggio si aggiornano quando apri l'app. Con l'app chiusa iOS non lascia fare nulla senza un server.
+- **Android con Chrome** (app installata): grazie al Periodic Background Sync il servizio offline aggiorna il numero e manda il messaggio anche ad app chiusa, circa una volta ogni 12 ore. Chrome decide quando e quanto spesso, in base a quanto usi l'app. Molte schermate Home Android mostrano solo un pallino, non il numero.
+- L'immagine dell'icona non si può cambiare dopo l'installazione: il numero è un badge sopra l'icona.
 
 ## Alba, tramonto ed eventi
 

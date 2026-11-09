@@ -1,0 +1,16 @@
+{
+  "title": "Vienna tra {n} giorni",
+  "titleOne": "Vienna è domani!",
+  "titleToday": "Si parte oggi per Vienna!",
+  "default": "Partenza martedì 24 novembre. Tocca per ripassare il programma.",
+  "today": "Buon viaggio! Biglietti, programma e mappa sono nell’app, anche offline.",
+  "messages": {
+    "14": "Due settimane: controlla che carta d’identità o passaporto siano validi.",
+    "10": "Dai un’occhiata ai giochi: il quiz su Vienna è un buon ripasso.",
+    "7": "Una settimana! Sblocca i biglietti con la password, così li hai anche offline.",
+    "5": "Guarda le previsioni e prepara i vestiti pesanti: di sera si va sotto zero.",
+    "3": "Apri la mappa con il Wi‑Fi: i quartieri che guardi restano disponibili offline.",
+    "2": "Controlla il check‑in del volo e i documenti di tutti e quattro.",
+    "1": "Domani si parte: carica telefono e powerbank, e scarica i biglietti."
+  }
+}
