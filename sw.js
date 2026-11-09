@@ -1,6 +1,6 @@
 // Vienna 2026 — service worker per l'uso offline.
 // Cambia VERSION a ogni pubblicazione di una nuova versione dei file.
-const VERSION = 'vienna26-v12';
+const VERSION = 'vienna26-v13';
 const TICKETS = "vienna26-tickets";      // biglietti decifrati sul telefono con la password
 const TILES = 'vienna26-tiles';          // mappe già viste, tenute tra un aggiornamento e l'altro
 const MAX_TILES = 1500;
@@ -137,5 +137,16 @@ self.addEventListener('fetch', event => {
       if (req.mode === 'navigate') return (await cache.match('./index.html')) || (await cache.match('./'));
       return new Response('Offline', { status: 503, statusText: 'Offline' });
     }
+  })());
+});
+
+// Promemoria: toccando la notifica si apre (o si porta in primo piano) l'app sul biglietto.
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  const target = new URL((event.notification.data && event.notification.data.url) || './', self.registration.scope).href;
+  event.waitUntil((async () => {
+    const wins = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const w of wins) { if ('focus' in w) { await w.focus(); if ('navigate' in w) await w.navigate(target); return; } }
+    await self.clients.openWindow(target);
   })());
 });

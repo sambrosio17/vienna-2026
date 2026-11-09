@@ -36,6 +36,13 @@ Ognuno sceglie sul proprio telefono tra tre temi: **Notte imperiale** (l'origina
 - **Effetti meteo**: l'app riflette il tempo attuale con pioggia, neve, temporale con lampi, nebbia, nuvole, sole o stelle di notte. Si spengono, o si provano uno per uno, da Utili → App → Effetti meteo. Con "riduci movimento" attivo sul telefono restano spenti in automatico.
 - **Giochi**: quiz su Vienna, memory del tedesco e parola segreta, tutti offline. Si aprono da Utili o dalle tappe in aeroporto.
 
+## Come ci arrivo e promemoria
+
+- **Come ci arrivo**: nel giorno in corso, sotto la barra della giornata, c'è la prossima tappa con distanza e tempo a piedi dalla tua posizione e i pulsanti per le indicazioni di Google Maps, a piedi o con i mezzi. Ogni tappa mostra anche la sua distanza a piedi; toccandola si aprono le indicazioni.
+- **Rischio ritardo**: per gli ingressi a orario vincolante (Parlamento, Schönbrunn, Belvedere, Sissi, Kunsthistorisches) e per l'aeroporto, l'app avvisa se a piedi non si arriva in tempo.
+- **Promemoria** (Utili → App): notifica 30 minuti prima di ogni ingresso a orario (40 per il Belvedere). Una web app senza server può mandarle solo mentre è aperta o appena chiusa; su iPhone servono iOS 16.4+ e l'app installata nella schermata Home.
+- **Promemoria nel calendario** (Utili → App → Aggiungi): scarica un file `.ics` con le sei scadenze e un avviso 30 minuti prima. È il modo affidabile, perché suona anche con l'app chiusa.
+
 ## Alba, tramonto ed eventi
 
 - **Alba e tramonto**: calcolati sul telefono per ogni giorno (funzionano offline). Nel giorno in corso l'app dice anche quanto manca al buio.

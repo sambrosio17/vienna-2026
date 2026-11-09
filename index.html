@@ -177,6 +177,19 @@ ol.tl::before{content:"";position:absolute;left:calc(var(--rail) + 9px);top:8px;
 .card p{margin:2px 0 0;color:var(--muted);font-size:13.5px;grid-column:1/-1}
 .tags{display:flex;flex-wrap:wrap;gap:5px;grid-column:1/-1;margin-top:4px}
 .tag{font-size:11.5px;font-weight:600;padding:2px 7px;border-radius:6px;background:var(--bg);border:1px solid var(--line)}
+a.tag.walk{text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:4px}
+a.tag.walk svg{width:13px;height:13px}
+.gocard{margin-top:10px;padding:12px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--now);border-radius:12px;display:grid;gap:8px}
+.gocard .gohd{display:grid;gap:2px}
+.gocard .gohd span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--now)}
+.gocard .gohd b{font-size:16px}
+.gocard .gomt{font-size:13.5px;color:var(--muted)}
+.gocard .gomt b{font-family:var(--f-mono);color:var(--ink);font-weight:600}
+.gocard .godir{display:flex;flex-wrap:wrap;gap:8px}
+.gocard .godir a,.gocard .godir button{flex:1 1 120px;min-height:42px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-weight:700;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;cursor:pointer}
+.gocard .godir a.pri{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.gocard .godir svg{width:17px;height:17px}
+.gocard .warn{margin:0}
 .tag.free{color:var(--ok)}
 .tag.book{color:var(--market);border-color:var(--market)}
 .tag.opt{font-style:italic}
@@ -824,6 +837,10 @@ html:root[data-skin="punsch"]{
             <option value="auto">Come il meteo</option><option value="rain">Pioggia</option><option value="snow">Neve</option><option value="storm">Temporale</option>
             <option value="fog">Nebbia</option><option value="clouds">Nuvole</option><option value="sun">Sole</option><option value="stars">Stelle</option><option value="off">Spenti</option>
           </select></span></div>
+        <div class="item"><label class="lab" for="rem-on">Promemoria ingressi</label><span class="sub" id="rem-sub">Notifica 30 minuti prima degli orari vincolanti.</span>
+          <span class="acts"><label class="switch"><input type="checkbox" id="rem-on" role="switch"></label></span></div>
+        <div class="item"><span class="lab">Promemoria nel calendario</span><span class="sub">Funzionano anche con l’app chiusa: Parlamento, Schönbrunn, Belvedere, Sissi, Kunsthistorisches e aeroporto, con avviso 30 minuti prima.</span>
+          <span class="acts"><button class="smallbtn" type="button" id="rem-ics">Aggiungi</button></span></div>
         <a class="item" href="#info"><span class="lab">Linee, legenda e installazione</span><span class="sub">Colori delle linee, installare l’app, azzerare le tappe spuntate</span><span class="go">›</span></a>
       </div>
     </div>
@@ -1151,6 +1168,7 @@ function tickClock(){
     lastMin=n.min;
     document.getElementById('ctrip').textContent='Ora di Vienna · '+tripLabel();
     renderTabs(); renderDay();
+    if(typeof checkReminders!=='undefined'){checkReminders();renderRemind()}
   }
 }
 
@@ -1191,6 +1209,7 @@ function renderDay(){
       <div class="track"><span class="fill" style="width:${pct}%"></span></div>
       <div class="lbl"><span>${fmtMin(first)}</span><b>${live?'Adesso':'Ora attuale'} ${fmtMin(nowM)}</b><span>${fmtMin(lastStop)}</span></div>
     </div>
+    ${live?goHtml(d,nowM):''}
   </div><ol class="tl">`;
 
   const nowLine=`<li class="nowline${live?'':' preview'}" id="nowline" aria-label="Ora attuale ${fmtMin(nowM)}">
@@ -1207,7 +1226,7 @@ function renderDay(){
     }
     const isDone=done.has(it.id), isNow=it.id===curId;
     const hide=filter!=='all'&&it.kind!==filter;
-    const tags=(it.tags||[]).map(t=>`<span class="tag ${TAG[t][0]}">${TAG[t][1]}</span>`).join('')+(it.dist?`<span class="tag">${esc(it.dist)}</span>`:'');
+    const tags=(it.tags||[]).map(t=>`<span class="tag ${TAG[t][0]}">${TAG[t][1]}</span>`).join('')+(it.dist?`<span class="tag">${esc(it.dist)}</span>`:'')+walkTag(it);
     h+=`<li id="s-${it.id}" class="row k-${it.kind}${isDone?' done':''}${isNow?' now':''}${past?' past':''}${hide?' hidden':''}">
       <div class="time">${esc(it.t)}${it.end?`<span class="e">${esc(it.end)}</span>`:''}</div><div class="dot"><i></i></div>
       <div class="card">
@@ -1229,6 +1248,111 @@ function renderDay(){
   const main=document.getElementById('day');
   main.innerHTML=h; main.setAttribute('aria-labelledby','tab-'+cur); main.setAttribute('role','tabpanel');
 }
+
+// ---------- How do I get there: walking time from my position + directions ----------
+var WALK_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="M9 21l2-6 3 3v3M7 12l3-4 4 2 2 3M10 8l-1 5"/></svg>';
+var BUS_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l1.5-4M16 21l-1.5-4"/><circle cx="8.5" cy="14" r=".5"/><circle cx="15.5" cy="14" r=".5"/></svg>';
+function posNow(){try{return myPos&&Date.now()-myPos.t<10*60000?myPos:null}catch(e){return null}}
+function nearVienna(p){return p&&distM(p,{lat:48.2082,lng:16.3738})<30000}
+function walkInfo(it){
+  const p=posNow(), c=COORDS[it.q]; if(!nearVienna(p)||!c)return null;
+  const m=distM(p,{lat:c[0],lng:c[1]});
+  return {m,min:Math.max(1,Math.round(m*1.3/75))}; // streets are ~30% longer than a straight line, ~4.5 km/h
+}
+var dirUrl=(it,mode)=>{const c=COORDS[it.q];return 'https://www.google.com/maps/dir/?api=1&destination='+(c?c[0]+','+c[1]:encodeURIComponent(it.q))+'&travelmode='+mode};
+function walkTag(it){
+  if(typeof COORDS==='undefined')return '';
+  const w=walkInfo(it); if(!w)return '';
+  return `<a class="tag walk" href="${dirUrl(it,'walking')}" target="_blank" rel="noopener" aria-label="Indicazioni a piedi per ${esc(it.name)}">${WALK_SVG}${fmtDist(w.m)} · ${w.min} min</a>`;
+}
+var dur=m=>m>=60?Math.floor(m/60)+' h '+String(m%60).padStart(2,'0'):m+' min';
+function goHtml(d,nowM){
+  if(typeof REMIND==='undefined')return '';
+  const next=d.items.find(it=>!it.leg&&it.m>nowM&&COORDS[it.q]); if(!next)return '';
+  const r=REMIND.find(x=>x[0]===d.date&&x[1]===next.t), early=r?r[3]||0:0;
+  const left=next.m-nowM, need=left-early, p=posNow(), w=walkInfo(next);
+  let meta, warn='';
+  if(w){
+    meta=`A piedi <b>${fmtDist(w.m)}</b> · circa <b>${w.min} min</b>`;
+    if(r&&w.min>need)warn=`A piedi servono circa ${w.min} minuti e all’ingresso ne mancano ${Math.max(0,need)}: l’orario è vincolante, prendete i mezzi o un taxi.`;
+    else if(r&&w.min+10>need)warn=`Conviene partire adesso: a piedi servono circa ${w.min} minuti.`;
+  } else if(p) meta=`Sei a ${fmtDist(distM(p,{lat:48.2082,lng:16.3738}))} da Vienna.`;
+  else meta=`<button type="button" class="smallbtn" data-locate>Usa la mia posizione</button> per vedere quanto manca a piedi.`;
+  if(!warn&&r&&!w&&need<=45)warn=`Ingresso a orario vincolante: mancano ${dur(Math.max(0,need))}.`;
+  return `<section class="gocard" aria-label="Come arrivare alla prossima tappa">
+    <div class="gohd"><span>Prossima tappa · tra ${dur(left)}</span><b>${esc(next.name)}</b></div>
+    <div class="gomt">Alle ${esc(next.t)}${early?` · arrivare ${early} min prima`:''}. ${meta}</div>
+    ${warn?`<div class="warn">${esc(warn)}</div>`:''}
+    <div class="godir"><a class="pri" href="${dirUrl(next,'walking')}" target="_blank" rel="noopener">${WALK_SVG}A piedi</a><a href="${dirUrl(next,'transit')}" target="_blank" rel="noopener">${BUS_SVG}Con i mezzi</a></div>
+  </section>`;
+}
+document.addEventListener('click',e=>{if(e.target.closest('[data-locate]')){toast('Cerco la tua posizione…');startWatch()}});
+var lastPosRender=null;
+function posChanged(){
+  const p=posNow(); if(!p)return;
+  if(lastPosRender&&distM(lastPosRender,p)<40&&Date.now()-lastPosRender.t<60000)return;
+  lastPosRender={...p,t:Date.now()}; renderDay();
+}
+try{navigator.permissions&&navigator.permissions.query({name:'geolocation'}).then(s=>{if(s.state==='granted')startWatch()}).catch(()=>{})}catch(e){}
+
+// ---------- Entry reminders: notifications while the app is open + calendar file with alarms ----------
+// [date, start time of the stop, minutes before, minutes to arrive early]
+var REMIND=[['2026-11-24','15:15',30],['2026-11-25','08:30',30],['2026-11-26','09:15',40,10],['2026-11-26','14:15',30],['2026-11-27','11:00',30],['2026-11-27','16:00',30]];
+function remList(){return REMIND.map(([date,t,lead,early])=>{const d=DAYS.find(x=>x.date===date),it=d&&d.items.find(x=>!x.leg&&x.t===t);return it&&{date,it,lead,early:early||0,key:date+' '+t}}).filter(Boolean)}
+var remOn=store.get('vie26-remind',false);
+var remFired=new Set(store.get('vie26-remfired',[]));
+function remText(r){
+  const what=r.it.kind==='base'&&/Aeroporto/.test(r.it.name)?'Volo alle 17:40: essere in aeroporto alle 16:00':`Ingresso alle ${r.it.t}${r.early?`, arrivare ${r.early} minuti prima`:''}`;
+  return {title:`Tra ${r.lead} min: ${r.it.name}`,body:what+(r.it.tk?'. Tocca per il biglietto.':'.')};
+}
+async function remNotify(r){
+  const {title,body}=remText(r), url=r.it.tk?'#biglietto-'+r.it.tk:'#adesso';
+  toast(title);
+  if(!('Notification' in window)||Notification.permission!=='granted')return;
+  const opts={body,tag:'vie26-'+r.key,icon:'icons/icon-192.png',badge:'icons/icon-192.png',data:{url},requireInteraction:true};
+  try{const reg=await navigator.serviceWorker.ready;await reg.showNotification(title,opts)}catch(e){try{new Notification(title,opts)}catch(e2){}}
+}
+function checkReminders(){
+  if(!remOn)return;
+  const n=viennaNow();
+  remList().forEach(r=>{
+    if(n.date===r.date&&n.min>=r.it.m-r.lead&&n.min<r.it.m&&!remFired.has(r.key)){
+      remFired.add(r.key); store.set('vie26-remfired',[...remFired]); remNotify(r);
+    }
+  });
+}
+function renderRemind(){
+  const sw=document.getElementById('rem-on'); if(!sw)return;
+  sw.checked=remOn&&(!('Notification' in window)||Notification.permission==='granted');
+  const n=viennaNow(), nx=remList().find(r=>r.date>n.date||(r.date===n.date&&r.it.m>n.min));
+  document.getElementById('rem-sub').textContent=(nx?`Prossimo: ${nx.it.name}, ${new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'short'}).format(new Date(nx.date+'T12:00:00'))} alle ${fmtMin(nx.it.m-nx.lead)}. `:'')+'Arrivano solo con l’app aperta o appena chiusa: per avvisi sicuri aggiungili al calendario.';
+}
+document.getElementById('rem-on').addEventListener('change',async e=>{
+  if(!e.target.checked){remOn=false;store.set('vie26-remind',false);renderRemind();return}
+  if(!('Notification' in window)){
+    e.target.checked=false;
+    toast(/iPhone|iPad/.test(navigator.userAgent)?'Su iPhone le notifiche funzionano solo con l’app installata nella schermata Home':'Questo browser non supporta le notifiche: usa il calendario');return}
+  const p=await Notification.requestPermission();
+  if(p!=='granted'){e.target.checked=false;toast('Notifiche non consentite: si attivano dalle impostazioni del telefono');return}
+  remOn=true; store.set('vie26-remind',true); renderRemind();
+  try{const reg=await navigator.serviceWorker.ready;reg.showNotification('Promemoria attivi',{body:'Ti avviso 30 minuti prima degli ingressi a orario.',icon:'icons/icon-192.png',tag:'vie26-test'})}catch(err){toast('Promemoria attivi')}
+});
+function remIcs(){
+  const z=(date,min)=>{const u=new Date(`${date}T${fmtMin(min)}:00+01:00`);return u.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'')};
+  const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+  const escI=s=>String(s).replace(/[\\;,]/g,m=>'\\'+m).replace(/\n/g,'\\n');
+  const ev=remList().map(r=>{const {title,body}=remText(r),end=r.it.end?toMin(r.it.end):r.it.m+60;
+    return ['BEGIN:VEVENT',`UID:vienna26-${r.key.replace(/\W/g,'')}@sambrosio17.github.io`,`DTSTAMP:${stamp}`,`DTSTART:${z(r.date,r.it.m)}`,`DTEND:${z(r.date,end)}`,
+      `SUMMARY:${escI(r.it.name)}`,`DESCRIPTION:${escI(body.replace(' Tocca per il biglietto.',' Biglietto nell’app Vienna 2026.'))}`,`LOCATION:${escI(r.it.q)}`,
+      'BEGIN:VALARM','ACTION:DISPLAY',`DESCRIPTION:${escI(title)}`,`TRIGGER:-PT${r.lead}M`,'END:VALARM','END:VEVENT'].join('\r\n')});
+  return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vienna 2026//IT','CALSCALE:GREGORIAN','METHOD:PUBLISH',...ev,'END:VCALENDAR'].join('\r\n')+'\r\n';
+}
+document.getElementById('rem-ics').addEventListener('click',()=>{
+  const url=URL.createObjectURL(new Blob([remIcs()],{type:'text/calendar'}));
+  const a=document.createElement('a');a.href=url;a.download='vienna-2026-promemoria.ics';document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000); toast('Apri il file per aggiungere i promemoria al calendario');
+});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkReminders()});
 
 // Bookings checklist
 const BOOK=[
@@ -1537,7 +1661,7 @@ function startWatch(){
 }
 function onPos(p){
   myPos={lat:p.coords.latitude,lng:p.coords.longitude,acc:Math.round(p.coords.accuracy),t:Date.now()};
-  refreshMe(); renderPeople(); maybePublish();
+  refreshMe(); renderPeople(); maybePublish(); posChanged();
 }
 function meIcon(){
   return myPhoto?L.divIcon({className:'',html:`<span class="medot ph" style="background-image:url(${myPhoto})"></span>`,iconSize:[34,34],iconAnchor:[17,17]})
