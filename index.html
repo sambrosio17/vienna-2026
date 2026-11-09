@@ -1,0 +1,2163 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Programma del viaggio a Vienna, 24–27 novembre 2026.">
+<meta name="theme-color" content="#f3f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f161d" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Vienna 26">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+.offline{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--now);color:var(--now-ink);padding:2px 8px;border-radius:999px;justify-self:start;margin-top:3px}
+</style>
+<title>Vienna 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+<style>
+/* Layout (mobile first): sticky top bar with live clock + day switcher; one-column timeline with a time rail and a "now" line; floating "Adesso" button. Wider screens only get more air. */
+:root{
+  --bg:#f3f5f7;
+  --surface:#ffffff;
+  --ink:#16222e;
+  --muted:#5b6b7a;
+  --line:#d8dfe6;
+  --accent:#b8891c;      /* Schönbrunn ochre */
+  --accent-soft:#f6ecd3;
+  --market:#a3322b;      /* Punsch red */
+  --food:#7a4a1f;
+  --ok:#2f7d4f;
+  --now:#d1352b;
+  --now-soft:#fbe4e1;
+  --now-ink:#ffffff;
+  --f-display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --rail:46px;
+  --glass:rgba(255,255,255,.55);
+  --glass-edge:rgba(255,255,255,.75);
+  --glass-hi:rgba(255,255,255,.95);
+  --glass-lo:rgba(22,34,46,.08);
+  --glass-sheen:rgba(255,255,255,.7);
+  --glass-shadow:rgba(22,34,46,.16);
+  --glass-active:rgba(255,255,255,.8);
+  --tile-filter:none;
+  --fx-rain:rgba(48,84,128,.5);
+  --fx-snow:rgba(110,140,178,.85);
+  --fx-mist:rgba(150,165,182,.5);
+  --fx-sun:rgba(255,190,70,.28);
+  --fx-star:rgba(110,122,145,.8);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f161d; --surface:#17212b; --ink:#e8edf2; --muted:#93a3b2; --line:#2a3946;
+    --accent:#e2b44a; --accent-soft:#3a3018; --market:#f07a70; --food:#d9a571; --ok:#5cc28a;
+    --now:#ff6a5c; --now-soft:#3f1f1c; --now-ink:#1a0d0b;
+    --glass:rgba(32,44,56,.5); --glass-edge:rgba(255,255,255,.14); --glass-hi:rgba(255,255,255,.22); --glass-lo:rgba(0,0,0,.35);
+    --glass-sheen:rgba(255,255,255,.1); --glass-shadow:rgba(0,0,0,.5); --glass-active:rgba(255,255,255,.12);
+    --tile-filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.88) saturate(.7);
+    --fx-rain:rgba(170,200,235,.45); --fx-snow:rgba(255,255,255,.9); --fx-mist:rgba(200,215,232,.2); --fx-sun:rgba(255,200,90,.14); --fx-star:rgba(255,255,255,.95);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f161d; --surface:#17212b; --ink:#e8edf2; --muted:#93a3b2; --line:#2a3946;
+  --accent:#e2b44a; --accent-soft:#3a3018; --market:#f07a70; --food:#d9a571; --ok:#5cc28a;
+  --now:#ff6a5c; --now-soft:#3f1f1c; --now-ink:#1a0d0b;
+  --glass:rgba(32,44,56,.5); --glass-edge:rgba(255,255,255,.14); --glass-hi:rgba(255,255,255,.22); --glass-lo:rgba(0,0,0,.35);
+  --glass-sheen:rgba(255,255,255,.1); --glass-shadow:rgba(0,0,0,.5); --glass-active:rgba(255,255,255,.12);
+  --tile-filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.88) saturate(.7);
+  --fx-rain:rgba(170,200,235,.45); --fx-snow:rgba(255,255,255,.9); --fx-mist:rgba(200,215,232,.2); --fx-sun:rgba(255,200,90,.14); --fx-star:rgba(255,255,255,.95);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:200px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;
+  padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px));padding-block:0 calc(110px + env(safe-area-inset-bottom,0px));
+  -webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:680px;margin:0 auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* Title */
+header{padding-block:18px 4px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:nowrap}
+header>div{min-width:0}
+h1{font-family:var(--f-display);font-weight:700;font-size:34px;line-height:1;margin:0;letter-spacing:-.01em}
+h1 span{color:var(--accent)}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.home{display:block;margin-top:6px;font-size:13px;color:var(--muted);text-decoration:none}
+.home b{color:var(--ink);font-weight:600}
+
+/* Sticky bar */
+/* Full-bleed frosted bar: spans the whole screen and fades out at the bottom, so it never reads as a separate box */
+html,body{overflow-x:clip}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:grid;gap:10px;margin-top:8px;
+  margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%);padding-block:10px 14px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 30%,transparent) 0%,color-mix(in srgb,var(--bg) 22%,transparent) calc(100% - 14px),transparent 100%);
+  -webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);
+  -webkit-mask-image:linear-gradient(180deg,#000 calc(100% - 14px),transparent);mask-image:linear-gradient(180deg,#000 calc(100% - 14px),transparent)}
+.clock{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--ink);color:var(--bg);border-radius:12px;padding:8px 12px}
+.clock .when{display:grid;line-height:1.15;min-width:0}
+.clock .date::first-letter{text-transform:uppercase}
+.clock .date{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.clock .tz{font-size:11px;opacity:.7}
+.clock .time{font-family:var(--f-mono);font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap;color:inherit;text-align:right;padding-top:0}
+.clock .time small{font-size:15px;opacity:.6;font-weight:500}
+.trip{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--accent);color:#16222e;white-space:nowrap}
+
+.daytabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.daytab{appearance:none;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 2px 7px;cursor:pointer;display:grid;text-align:center;position:relative;min-height:48px}
+.daytab .dn{font-family:var(--f-display);font-weight:700;font-size:19px;line-height:1.1}
+.daytab .dw{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.daytab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.daytab[aria-selected="true"] .dw{color:inherit;opacity:.75}
+.daytab .prog{height:3px;border-radius:2px;background:var(--line);margin:5px 8px 0;overflow:hidden}
+.daytab .prog i{display:block;height:100%;background:var(--accent);width:0}
+.daytab .today{position:absolute;top:-6px;right:-4px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--now);color:var(--now-ink);padding:1px 6px;border-radius:999px}
+.filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-inline:-2px;padding-inline:2px}
+.filters::-webkit-scrollbar{display:none}
+.chip{appearance:none;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer;white-space:nowrap;min-height:32px}
+.chip[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);background:var(--surface)}
+
+/* Day head */
+.dayhead{padding-block:18px 4px;display:grid;gap:4px}
+.dayhead h2{font-family:var(--f-display);font-size:26px;line-height:1.1;margin:0;font-weight:700;text-wrap:balance}
+.dayhead p{margin:0;color:var(--muted);font-size:14px;max-width:60ch}
+.dayfoot{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+.dayfoot b{color:var(--ink);font-family:var(--f-mono);font-weight:500;margin-right:3px}
+.routebtn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:13px;padding:7px 12px;border-radius:10px;border:1px solid var(--ink);color:var(--ink)}
+.routebtn svg{width:16px;height:16px}
+
+/* Day progress strip */
+.daybar{margin-top:12px;display:grid;gap:4px}
+.daybar .track{position:relative;height:6px;border-radius:3px;background:var(--line)}
+.daybar .fill{position:absolute;inset:0 auto 0 0;border-radius:3px;background:var(--now)}
+.daybar .lbl{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.daybar .lbl b{color:var(--now);font-weight:600}
+
+/* Timeline */
+ol.tl{list-style:none;margin:12px 0 0;padding:0;position:relative}
+ol.tl::before{content:"";position:absolute;left:calc(var(--rail) + 9px);top:8px;bottom:8px;width:2px;background:var(--line)}
+.row,.leg{display:grid;grid-template-columns:var(--rail) 20px 1fr;column-gap:8px}
+.row{padding-block:5px}
+.time{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);text-align:right;padding-top:11px;font-variant-numeric:tabular-nums;line-height:1.3}
+.time .e{display:block;opacity:.7}
+.dot{display:flex;justify-content:center;padding-top:13px}
+.dot i{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--muted);position:relative;z-index:1}
+.row.k-visita .dot i{border-color:var(--accent);background:var(--accent)}
+.row.k-mercatino .dot i{border-color:var(--market);background:var(--market)}
+.row.k-cibo .dot i{border-color:var(--food);background:var(--food)}
+.row.k-base .dot i{border-color:var(--ink);background:var(--ink);border-radius:3px}
+.row.done .dot i{background:var(--ok);border-color:var(--ok)}
+
+.card{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:3px 8px;align-items:start}
+.row.k-passeggio .card,.row.k-passaggio .card{background:transparent;border-style:dashed}
+.row.past:not(.now) .card,.row.past:not(.now) .time{opacity:.5}
+.row.done .card{opacity:.55}
+.row.now .card{border-color:var(--now);box-shadow:0 0 0 3px var(--now-soft);opacity:1}
+.row.now .dot i{box-shadow:0 0 0 4px var(--now-soft)}
+.card h3{margin:0;font-size:15.5px;font-weight:700;line-height:1.3}
+.card .kind{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.row.k-visita .kind{color:var(--accent)}
+.row.k-mercatino .kind{color:var(--market)}
+.row.k-cibo .kind{color:var(--food)}
+.row.now .kind .nowtag{color:var(--now)}
+.card p{margin:2px 0 0;color:var(--muted);font-size:13.5px;grid-column:1/-1}
+.tags{display:flex;flex-wrap:wrap;gap:5px;grid-column:1/-1;margin-top:4px}
+.tag{font-size:11.5px;font-weight:600;padding:2px 7px;border-radius:6px;background:var(--bg);border:1px solid var(--line)}
+.tag.free{color:var(--ok)}
+.tag.book{color:var(--market);border-color:var(--market)}
+.tag.opt{font-style:italic}
+.actions{display:flex;gap:6px;align-items:center}
+.iconbtn{appearance:none;border:1px solid var(--line);background:transparent;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;cursor:pointer;text-decoration:none;color:var(--ink)}
+.iconbtn svg{width:18px;height:18px}
+.iconbtn.check[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.waypoints{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:2px 6px;margin-top:4px;font-size:13px}
+.waypoints span+span::before{content:"→";color:var(--muted);margin-right:6px}
+
+.leg{padding-block:1px}
+.leg .time{padding-top:7px;font-size:11.5px}
+.leg .dot{padding-top:10px}
+.leg .dot i{width:8px;height:8px;border:0;background:var(--line)}
+.leg.past .ticket,.leg.past .time{opacity:.5}
+.ticket{min-width:0;font-size:13px;color:var(--muted);padding:5px 0 7px;display:grid;gap:5px}
+.ticket .lines{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.ln{font-family:var(--f-mono);font-size:11.5px;font-weight:500;color:#fff;padding:1px 6px;border-radius:5px;line-height:1.6}
+.ln.U1{background:#e3000f}.ln.U2{background:#a762a4}.ln.U4{background:#1d9a4a}
+.ln.bus{background:#0a5cad}.ln.tram{background:#c4161c}.ln.cat{background:#00704a}.ln.walk{background:#5b6b7a}
+.dur{font-family:var(--f-mono);font-size:11.5px;color:var(--ink)}
+.hidden{display:none!important}
+
+/* Now line */
+.nowline{display:grid;grid-template-columns:var(--rail) 20px 1fr;column-gap:8px;align-items:center;padding-block:6px;position:relative;z-index:2}
+.nowline .t{font-family:var(--f-mono);font-weight:600;font-size:12.5px;color:var(--now);text-align:right;font-variant-numeric:tabular-nums}
+.nowline .d{display:flex;justify-content:center}
+.nowline .d i{width:14px;height:14px;border-radius:50%;background:var(--now);box-shadow:0 0 0 4px var(--now-soft);animation:pulse 2s ease-in-out infinite}
+.nowline .l{display:flex;align-items:center;gap:8px;min-width:0}
+.nowline .l::after{content:"";flex:1;height:2px;background:var(--now);border-radius:1px}
+.nowline .l span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--now);white-space:nowrap}
+.nowline.preview .d i{background:transparent;border:2px solid var(--now);animation:none}
+.nowline.preview .l::after{background:repeating-linear-gradient(90deg,var(--now) 0 6px,transparent 6px 11px)}
+@keyframes pulse{50%{box-shadow:0 0 0 8px var(--now-soft)}}
+
+/* Liquid glass dock */
+nav.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:8;
+  width:min(480px,calc(100% - 20px));display:grid;grid-template-columns:repeat(5,1fr);padding:6px;border-radius:28px;
+  background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(190%);backdrop-filter:blur(22px) saturate(190%);
+  border:1px solid var(--glass-edge);
+  box-shadow:inset 0 1px 0 var(--glass-hi),inset 0 -1px 2px var(--glass-lo),0 12px 32px var(--glass-shadow),0 2px 6px var(--glass-shadow)}
+nav.dock::before{content:"";position:absolute;inset:1px;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg,var(--glass-sheen) 0%,transparent 48%),radial-gradient(120% 80% at 50% 120%,var(--glass-sheen) 0%,transparent 60%);opacity:.7}
+.dock .indicator{position:absolute;top:6px;bottom:6px;left:6px;width:calc((100% - 12px)/5);border-radius:22px;
+  background:var(--glass-active);border:1px solid var(--glass-edge);
+  box-shadow:inset 0 1px 0 var(--glass-hi),0 3px 10px var(--glass-shadow);
+  transition:transform .45s cubic-bezier(.3,1.35,.45,1)}
+.dock button{position:relative;z-index:1;appearance:none;background:transparent;border:0;display:grid;justify-items:center;gap:2px;padding:7px 0 6px;font-size:10.5px;font-weight:600;color:var(--muted);cursor:pointer;min-height:54px;border-radius:22px}
+.dock button svg{width:23px;height:23px}
+.dock button[aria-current="page"]{color:var(--ink)}
+.dock button.nowbtn{color:var(--now)}
+.dock button.nowbtn .live{position:absolute;top:8px;right:calc(50% - 16px);width:7px;height:7px;border-radius:50%;background:var(--now);box-shadow:0 0 0 2px var(--glass-active)}
+.dock button:active svg{transform:scale(.9)}
+
+/* Views */
+.viewhead{padding-block:18px 6px;display:grid;gap:4px}
+.viewhead h2{font-family:var(--f-display);font-size:28px;line-height:1.1;margin:0}
+.viewhead p{margin:0;color:var(--muted);font-size:14px}
+.group{margin-top:18px;display:grid;gap:8px}
+.group h3{margin:0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:11px 12px;border-top:1px solid var(--line);min-width:0}
+.item:first-child{border-top:0}
+.item .lab{font-weight:600;font-size:14.5px;min-width:0}
+.item .sub{grid-column:1/2;color:var(--muted);font-size:13px;min-width:0}
+.item .num{font-family:var(--f-mono);font-weight:600;font-size:17px;user-select:all;-webkit-user-select:all;font-variant-numeric:tabular-nums}
+.item .acts{grid-row:1/3;grid-column:2;display:flex;gap:6px;align-items:center}
+.item.big .num{font-size:22px;color:var(--now)}
+a.item{text-decoration:none;color:inherit}
+a.item .go{grid-row:1/3;grid-column:2;color:var(--muted);font-size:18px}
+.smallbtn{appearance:none;border:1px solid var(--line);background:transparent;border-radius:9px;height:36px;padding:0 10px;font-size:12.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;text-decoration:none;color:var(--ink);white-space:nowrap}
+.smallbtn.call{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chk{display:grid;grid-template-columns:auto 1fr auto;gap:2px 10px;align-items:center;padding:10px 12px;border-top:1px solid var(--line)}
+.chk:first-child{border-top:0}
+.chk input{width:20px;height:20px;accent-color:var(--ok);grid-row:1/3}
+.chk label{font-weight:600;font-size:14.5px}
+.chk .sub{grid-column:2;color:var(--muted);font-size:13px}
+.chk a{grid-row:1/3;grid-column:3}
+.facts{display:grid;grid-template-columns:1fr;gap:8px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px;color:var(--muted)}
+.fact b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px}
+.phr{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:14px}
+.phr dt{font-weight:700}
+.phr dd{margin:0;color:var(--muted)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:9;background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px}
+
+/* Ticket links inside the programme */
+.tkbtn{grid-column:1/-1;margin-top:6px;appearance:none;border:1px dashed var(--accent);background:var(--accent-soft);border-radius:10px;padding:8px 10px;display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;cursor:pointer;text-align:left;color:var(--ink);min-height:40px}
+.tkbtn svg{width:20px;height:20px;flex:none;color:var(--accent)}
+.tkbtn span{font-weight:500;color:var(--muted)}
+.tkbtn.bad{border-color:var(--market)}
+.warn{grid-column:1/-1;margin-top:6px;background:var(--now-soft);color:var(--ink);border-radius:9px;padding:7px 10px;font-size:13px;display:flex;gap:8px;align-items:flex-start}
+.warn::before{content:"!";flex:none;width:18px;height:18px;border-radius:50%;background:var(--now);color:var(--now-ink);font-weight:800;font-size:12px;display:grid;place-items:center;margin-top:1px}
+
+/* Tickets view */
+.tk{background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;overflow:hidden}
+.tk-body{padding:12px 14px 10px;display:grid;gap:3px;min-width:0}
+.tk-time{font-family:var(--f-mono);font-weight:600;font-size:13px;color:var(--accent)}
+.tk h4{margin:0;font-size:16.5px;line-height:1.25}
+.tk-who{margin:0;font-size:13.5px;font-weight:600}
+.tk-note{margin:2px 0 0;font-size:13px;color:var(--muted)}
+.tk-ref{margin:2px 0 0;font-family:var(--f-mono);font-size:11.5px;color:var(--muted);overflow-wrap:anywhere}
+.tk-stub{position:relative;border-top:2px dashed var(--line);padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tk-stub::before,.tk-stub::after{content:"";position:absolute;top:-9px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.tk-stub::before{left:-9px}.tk-stub::after{right:-9px}
+.tk .warn{margin:4px 0 0}
+.tklock{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:10px;margin-bottom:16px}
+.tklock h3{margin:0;font-size:17px}.tklock p{margin:0;font-size:14px;color:var(--muted)}
+.tklock form{display:flex;gap:8px;flex-wrap:wrap}
+.tklock input{flex:1 1 180px;min-width:0;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;font-size:16px;background:var(--bg);color:var(--ink)}
+.tklock button{min-height:44px;padding:0 16px;border-radius:10px;border:0;background:var(--ink);color:var(--bg);font:inherit;font-weight:700;cursor:pointer}
+.tklock button:disabled{opacity:.6}
+.tklock .err{color:#c0392b;font-weight:600}
+.tkrelock{margin-top:14px;font-size:13px;color:var(--muted)}
+.tkrelock button{background:none;border:0;padding:0;color:inherit;text-decoration:underline;font:inherit;cursor:pointer}
+.tk-status{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;justify-self:start;background:var(--accent-soft);color:var(--ink)}
+.tk-status.bad{background:var(--now-soft);color:var(--now)}
+.tkgrid{display:grid;gap:10px}
+.row.flash .card{animation:flash 1.6s ease-out 1}
+@keyframes flash{0%,40%{box-shadow:0 0 0 4px var(--accent)}100%{box-shadow:0 0 0 0 transparent}}
+
+/* Full-screen ticket viewer: always white so codes scan well */
+.viewer{position:fixed;inset:0;z-index:30;background:#ffffff;color:#16222e;display:grid;grid-template-rows:auto 1fr}
+.vw-bar{display:flex;align-items:center;gap:10px;justify-content:space-between;background:#16222e;color:#ffffff;
+  padding:calc(10px + env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-right,0px)) 10px max(14px,env(safe-area-inset-left,0px))}
+.vw-title{font-weight:700;font-size:15.5px;line-height:1.25}
+.vw-sub{font-size:12.5px;opacity:.75}
+.vw-close{appearance:none;border:1px solid rgba(255,255,255,.35);background:transparent;color:#ffffff;border-radius:999px;height:40px;padding:0 16px;font-weight:700;font-size:14px;cursor:pointer;flex:none}
+.vw-pages{overflow:auto;-webkit-overflow-scrolling:touch;padding:12px max(10px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px));display:grid;gap:16px;justify-items:center;align-content:start}
+.vw-page{width:100%;max-width:900px;display:grid;gap:6px}
+.vw-page b{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#5b6b7a}
+.vw-page .scroller{overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid #d8dfe6;border-radius:6px}
+.vw-page img{display:block;width:100%;max-width:none;height:auto;background:#ffffff;cursor:zoom-in}
+.vw-page.zoom img{width:250%;cursor:zoom-out}
+.vw-hint{font-size:12.5px;color:#5b6b7a;text-align:center;margin:0}
+.vw-jump{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;width:100%;max-width:900px}
+.vw-jump a{font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid #d8dfe6;text-decoration:none;color:#16222e}
+.vw-pdf{font-size:13px;color:#5b6b7a}
+body.noscroll{overflow:hidden}
+
+/* Map view */
+.maptabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px}
+.mapwrap{position:relative;margin-top:10px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+#map{height:max(320px,58vh);height:max(320px,58dvh);width:100%;background:var(--line)}
+#map .leaflet-tile-pane{filter:var(--tile-filter)}
+.mapbtns{position:absolute;right:10px;top:10px;z-index:500;display:grid;gap:6px}
+.mapbtn{appearance:none;border:1px solid var(--glass-edge);background:var(--glass);-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);
+  box-shadow:inset 0 1px 0 var(--glass-hi),0 4px 12px var(--glass-shadow);color:var(--ink);border-radius:12px;min-height:40px;padding:0 12px;font-size:12.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;justify-content:center}
+.mapbtn svg{width:16px;height:16px}
+.mapmsg{position:absolute;left:10px;right:10px;bottom:10px;z-index:500;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:13px;color:var(--ink);box-shadow:0 4px 14px var(--glass-shadow)}
+.mapfallback{display:grid;place-items:center;text-align:center;padding:24px;height:100%;color:var(--muted);font-size:14px}
+.maplegend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12.5px;color:var(--muted);align-items:center}
+.maplegend i{display:inline-block;vertical-align:-2px;margin-right:5px}
+/* markers */
+.pin{display:grid;place-items:center;width:26px;height:26px;border-radius:50% 50% 50% 4px;transform:rotate(-45deg);background:var(--muted);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.pin b{transform:rotate(45deg);color:#fff;font:700 11.5px/1 var(--f-body)}
+.pin.k-visita{background:#b8891c}.pin.k-mercatino{background:#a3322b}.pin.k-cibo{background:#7a4a1f}.pin.k-base{background:#16222e}
+.pin.k-passeggio,.pin.k-passaggio{background:#5b6b7a}
+.pin.cur{outline:3px solid var(--now);outline-offset:1px}
+.medot{width:18px;height:18px;border-radius:50%;background:#1f6fe0;border:3px solid #fff;box-shadow:0 0 0 6px rgba(31,111,224,.25),0 2px 6px rgba(0,0,0,.35)}
+.pp{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--c,#444);color:#fff;font:800 14px/1 var(--f-body);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.pp.stale{filter:grayscale(.8);opacity:.75}
+.leaflet-popup-content{font-family:var(--f-body);font-size:13.5px;margin:10px 12px}
+.leaflet-popup-content b{display:block;font-size:14.5px}
+.leaflet-popup-content a{color:#1f5fbf;font-weight:600}
+/* travelers */
+.share{display:grid;gap:10px;padding:12px;border-top:0}
+.share-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.share select{font:inherit;font-size:14.5px;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:40px;flex:1;min-width:140px}
+.switch{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;cursor:pointer}
+.switch input{appearance:none;width:48px;height:28px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;transition:background .2s;flex:none;margin:0}
+.switch input::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .2s}
+.switch input:checked{background:var(--ok)}
+.switch input:checked::after{transform:translateX(20px)}
+.netstate{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.netstate.on{color:var(--ok);border-color:var(--ok)}
+.person{display:grid;grid-template-columns:auto 1fr auto;gap:2px 12px;align-items:center;padding:10px 12px;border-top:1px solid var(--line)}
+.person:first-child{border-top:0}
+.person .pp{width:36px;height:36px;grid-row:1/3;border-width:2px}
+.person .lab{font-weight:700;font-size:14.5px}
+.person .sub{color:var(--muted);font-size:12.5px;grid-column:2}
+.person .acts{grid-row:1/3;grid-column:3;display:flex;gap:6px}
+.poilist{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.poilist button{appearance:none;width:100%;display:grid;grid-template-columns:30px 48px 1fr;gap:8px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer;font-size:14px}
+.poilist .n{font:700 12px/1 var(--f-mono);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--muted)}
+.poilist .tm{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.poilist .k-visita .n{background:#b8891c}.poilist .k-mercatino .n{background:#a3322b}.poilist .k-cibo .n{background:#7a4a1f}.poilist .k-base .n{background:#16222e}
+
+/* Avatars */
+.pp.mini{width:40px;height:40px;font-size:16px;border-width:2px}
+.pp.big{width:72px;height:72px;font-size:28px;border-width:3px}
+.pp.huge{width:150px;height:150px;font-size:58px;border-width:4px;box-shadow:0 10px 30px var(--glass-shadow)}
+.medot.ph{width:34px;height:34px;background-size:cover;background-position:center;border:3px solid #1f6fe0}
+.mebtn{appearance:none;border:0;background:transparent;padding:0;cursor:pointer;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;color:var(--ink);align-self:center}
+.mebtn svg{width:28px;height:28px;border:1.5px solid var(--line);border-radius:50%;padding:5px;box-sizing:content-box}
+
+/* First-run setup */
+.onboard{position:fixed;inset:0;z-index:40;background:var(--bg);display:grid;grid-template-rows:auto 1fr;overflow:auto;
+  padding:calc(10px + env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
+.onboard::before{content:"";position:fixed;inset:-20% -20% auto auto;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(closest-side,var(--accent-soft),transparent);pointer-events:none;z-index:-1}
+.ob-top{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:460px;width:100%;margin:0 auto;min-height:44px}
+.ob-link{appearance:none;border:0;background:none;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;padding:8px 4px;min-height:40px}
+.ob-dots{display:flex;gap:6px}
+.ob-dots i{width:7px;height:7px;border-radius:999px;background:var(--line);transition:width .3s,background .3s}
+.ob-dots i.on{width:22px;background:var(--accent)}
+.ob-dots i.done{background:var(--accent)}
+.ob-body{max-width:460px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:14px;padding-top:18px}
+.ob-body h2{font-family:var(--f-display);font-size:34px;line-height:1.05;margin:0;text-wrap:balance}
+.ob-body h2 span{color:var(--accent)}
+.ob-body>p,.ob-hero p{margin:0;color:var(--muted);font-size:15.5px;max-width:40ch}
+.ob-hero{display:grid;gap:12px;justify-items:start;padding-top:4vh}
+.ob-wheel{width:120px;height:120px;color:var(--accent);margin-bottom:6px}
+.ob-wheel svg{width:100%;height:100%}
+.ob-who{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.ob-who button{appearance:none;border:2px solid var(--line);background:var(--surface);border-radius:18px;padding:16px 8px 14px;display:grid;justify-items:center;gap:10px;cursor:pointer;font-size:15.5px;font-weight:700;color:var(--ink)}
+.ob-who button[aria-checked="true"]{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.ob-photo{display:grid;place-items:center;padding:18px 0}
+.ob-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:10px}
+.ob-actions{display:grid;gap:8px;margin-top:auto;padding-top:18px}
+.ob-primary{appearance:none;border:0;background:var(--ink);color:var(--bg);border-radius:14px;min-height:52px;font-size:16px;font-weight:700;cursor:pointer}
+.ob-primary:disabled{opacity:.35;cursor:not-allowed}
+.ob-ghost{appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:14px;min-height:48px;font-size:15px;font-weight:600;cursor:pointer}
+
+/* Interactive guide */
+.tour{position:fixed;inset:0;z-index:45}
+.tour-spot{position:fixed;border-radius:14px;box-shadow:0 0 0 9999px rgba(8,13,18,.7);outline:2px solid var(--accent);outline-offset:2px;transition:left .3s,top .3s,width .3s,height .3s;pointer-events:none}
+.tour-card{position:fixed;background:var(--surface);color:var(--ink);border-radius:16px;padding:14px 14px 12px;box-shadow:0 14px 40px rgba(0,0,0,.35);display:grid;gap:6px;transition:top .3s,left .3s}
+.tour-card h3{margin:0;font-family:var(--f-display);font-size:21px;line-height:1.15}
+.tour-card p{margin:0;color:var(--muted);font-size:14px}
+.tour-step{font:600 11px/1 var(--f-mono);letter-spacing:.06em;color:var(--accent);text-transform:uppercase}
+.tour-btns{display:flex;align-items:center;gap:8px;margin-top:6px}
+
+/* Weather */
+#fx{position:fixed;inset:0;z-index:9;pointer-events:none}
+.wrap{position:relative;z-index:1}
+/* The weather tints the page background (behind the cards, so text stays readable) */
+#wxtint{position:fixed;inset:0;z-index:0;pointer-events:none;transition:background .8s}
+[data-wx="rain"] #wxtint{background:linear-gradient(180deg,rgba(60,95,140,.30),rgba(60,95,140,.10) 70%)}
+[data-wx="storm"] #wxtint{background:linear-gradient(180deg,rgba(35,35,70,.45),rgba(35,35,70,.15) 75%)}
+[data-wx="snow"] #wxtint{background:linear-gradient(180deg,rgba(200,225,250,.55),rgba(220,235,250,.15) 60%,rgba(220,235,250,.45))}
+[data-wx="fog"] #wxtint{background:linear-gradient(180deg,rgba(185,192,200,.45),rgba(185,192,200,.25))}
+[data-wx="clouds"] #wxtint{background:linear-gradient(180deg,rgba(130,142,160,.28),rgba(130,142,160,.05) 65%)}
+[data-wx="sun"] #wxtint{background:radial-gradient(circle at 92% 0%,rgba(255,190,70,.45),rgba(255,190,70,.08) 55%,transparent 75%)}
+[data-wx="stars"] #wxtint{background:linear-gradient(180deg,rgba(15,25,70,.45),rgba(15,25,70,.08) 65%)}
+/* small touches on the interface itself */
+[data-wx="snow"] nav.dock{box-shadow:inset 0 3px 0 rgba(255,255,255,.95),inset 0 1px 0 var(--glass-hi),0 12px 32px var(--glass-shadow)}
+[data-wx="snow"] .clock{box-shadow:inset 0 3px 0 rgba(255,255,255,.9)}
+[data-wx="rain"] .clock,[data-wx="storm"] .clock{box-shadow:0 6px 18px rgba(40,70,110,.35)}
+[data-wx="sun"] .clock{box-shadow:0 6px 22px rgba(255,170,40,.35)}
+[data-wx="fog"] .wrap{filter:saturate(.85)}
+.item select{font:inherit;font-size:14px;padding:7px 8px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:38px;max-width:150px}
+.wx-ic{display:inline-block;width:1.25em;height:1.25em;vertical-align:-.28em;flex:none}
+.wxnow{appearance:none;border:0;background:transparent;color:inherit;font:600 12px/1.3 var(--f-body);padding:3px 0 0;text-align:left;cursor:pointer;display:flex;align-items:center;gap:5px;justify-self:start}
+.wxnow b{font-family:var(--f-mono);font-weight:600}
+.wxnow span{opacity:.75;font-weight:500}
+.daytab .dwx{font:500 10.5px/1.2 var(--f-mono);color:var(--muted);display:flex;align-items:center;justify-content:center;gap:2px;margin-top:2px}
+.daytab[aria-selected="true"] .dwx{color:inherit;opacity:.85}
+.wxday{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:13.5px}
+.wxday .wx-ic{width:34px;height:34px;color:var(--accent)}
+.wxday b{font-family:var(--f-mono);font-size:16px;font-weight:600}
+.wxday .wxd{display:grid;gap:1px;min-width:0}
+.wxday .wxd span{color:var(--muted);font-size:12.5px}
+.wxday .wxlive{margin-left:auto;text-align:right;display:grid;gap:1px;padding-left:10px;border-left:1px solid var(--line)}
+.wxday .wxlive b{color:var(--now)}
+
+/* Games */
+.gamebanner{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;margin-top:14px;padding:12px 14px;border-radius:16px;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--line)}
+.gamebanner b{display:block;font-size:15.5px}
+.gamebanner span span{font-size:13px;color:var(--muted)}
+.gamebanner .go{font-size:22px;color:var(--muted)}
+.gb-art{width:56px;height:56px;border-radius:14px;background:var(--ink);color:var(--accent);display:grid;place-items:center}
+.gb-art svg{width:42px;height:42px}
+.gcards{display:grid;gap:10px}
+.gcard{appearance:none;width:100%;text-align:left;display:grid;grid-template-columns:64px 1fr;gap:4px 14px;align-items:center;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.gcard .gi{grid-row:1/4;width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-family:var(--f-display);font-weight:700;font-size:30px;color:#fff}
+.gcard b{font-size:16.5px}
+.gcard span{font-size:13.5px;color:var(--muted)}
+.gcard em{font-style:normal;font-family:var(--f-mono);font-size:12px;color:var(--accent)}
+.gtop{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-block:16px 4px}
+.gtop h2{font-family:var(--f-display);font-size:26px;margin:0}
+.gstat{display:flex;gap:14px;font-size:13px;color:var(--muted);margin-top:6px}
+.gstat b{font-family:var(--f-mono);color:var(--ink);font-weight:600}
+.qcard{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:12px}
+.qprog{height:5px;border-radius:3px;background:var(--line);overflow:hidden}
+.qprog i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.qcard h3{margin:0;font-size:18px;line-height:1.35;text-wrap:balance}
+.qopts{display:grid;gap:8px}
+.qopt{appearance:none;text-align:left;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:12px 14px;font-size:15px;font-weight:600;cursor:pointer;min-height:48px}
+.qopt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,var(--bg))}
+.qopt.wrong{border-color:var(--now);background:var(--now-soft)}
+.qopt:disabled{cursor:default}
+.qexp{font-size:14px;color:var(--muted);margin:0}
+.gend{text-align:center;display:grid;gap:10px;justify-items:center;padding:20px 10px}
+.gend .big{font-family:var(--f-display);font-size:56px;line-height:1;font-weight:700;color:var(--accent)}
+.gend p{margin:0;color:var(--muted);max-width:36ch}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.mcard{appearance:none;border:0;padding:0;background:transparent;aspect-ratio:3/4;perspective:600px;cursor:pointer;max-width:100%}
+.mcard .in{position:relative;display:block;width:100%;height:100%;transition:transform .35s;transform-style:preserve-3d}
+.mcard.up .in,.mcard.ok .in{transform:rotateY(180deg)}
+.mcard .f,.mcard .b{position:absolute;inset:0;border-radius:10px;display:grid;place-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:4px;text-align:center}
+.mcard .f{background:var(--ink);color:var(--accent);border:1px solid var(--ink)}
+.mcard .f svg{width:60%;height:60%;opacity:.9}
+.mcard .b{transform:rotateY(180deg);background:var(--surface);border:1.5px solid var(--line);color:var(--ink);font-weight:700;font-size:clamp(11px,3.4vw,15px);line-height:1.15;overflow-wrap:anywhere}
+.mcard .b small{display:block;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px}
+.mcard.ok .b{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--surface))}
+.hwheel{width:150px;height:150px;margin:6px auto 0;color:var(--accent)}
+.hwheel svg{width:100%;height:100%}
+.hwheel .off{opacity:.15}
+.hword{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px}
+.hword span{width:26px;height:36px;border-bottom:3px solid var(--ink);display:grid;place-items:center;font:700 22px/1 var(--f-mono)}
+.hword span.sp{border:0;width:12px}
+.hhint{text-align:center;color:var(--muted);font-size:14px;margin:4px 0 0}
+.kbd{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:14px}
+.kbd button{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;min-height:42px;font:700 16px/1 var(--f-mono);cursor:pointer}
+.kbd button.hit{background:var(--ok);border-color:var(--ok);color:#fff}
+.kbd button.miss{opacity:.3}
+
+/* Info */
+section.info{display:grid;gap:12px}
+section.info h2{font-family:var(--f-display);font-size:28px;margin:0;padding-top:18px}
+.legend{display:grid;gap:8px;font-size:13.5px}
+.legend div{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.note{font-size:13px;color:var(--muted);max-width:65ch;margin:0}
+.reset{appearance:none;background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px;cursor:pointer;padding:0}
+.confirm{font-size:13px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.confirm button{font-size:13px;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
+
+/* Larger screens */
+@media (min-width:640px){
+  :root{--rail:58px}
+  body{font-size:16px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+  h1{font-size:48px}
+  .clock .time{font-size:30px}
+  .daytab .dn{font-size:22px}
+  .dayhead h2{font-size:32px}
+  .card{padding:12px 14px}
+  .legend{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){nav.dock{background:var(--surface)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== Theme picker ===== */
+.skins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.skin{appearance:none;border:2px solid var(--line);border-radius:14px;padding:0;overflow:hidden;cursor:pointer;background:var(--surface);color:var(--ink);display:grid;text-align:left}
+.skin[aria-checked="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.skin .sw{height:62px;display:grid;align-content:space-between;padding:8px}
+.skin .sw i{display:block;height:6px;border-radius:3px}
+.skin .sw b{font-size:15px;line-height:1}
+.skin .nm{padding:7px 8px;font-size:12.5px;font-weight:700;border-top:1px solid var(--line)}
+
+/* ===== Skin A · Tabellone (one dark look) ===== */
+html:root[data-skin="tabellone"]{
+  --bg:#0d0f12;--surface:#16191e;--ink:#f2f2ee;--muted:#8f97a3;--line:#272c34;
+  --accent:#ffb000;--accent-soft:#2c240d;--market:#ff7a6b;--food:#e3ad73;--ok:#3ddc97;
+  --now:#ff4d3d;--now-soft:#3a1714;--now-ink:#0d0f12;
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --glass:rgba(16,18,22,.82);--glass-edge:rgba(255,255,255,.1);--glass-hi:rgba(255,255,255,.12);--glass-lo:rgba(0,0,0,.4);
+  --glass-sheen:rgba(255,255,255,.04);--glass-shadow:rgba(0,0,0,.55);--glass-active:rgba(255,176,0,.16);
+  --tile-filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9) saturate(.5);
+  --fx-rain:rgba(200,215,235,.4);--fx-snow:rgba(255,255,255,.9);--fx-mist:rgba(200,210,225,.18);--fx-sun:rgba(255,176,0,.14);--fx-star:rgba(255,255,255,.9);
+  color-scheme:dark;
+}
+[data-skin="tabellone"] h1,[data-skin="tabellone"] .dayhead h2,[data-skin="tabellone"] .viewhead h2,[data-skin="tabellone"] .gtop h2,[data-skin="tabellone"] section.info h2{text-transform:uppercase;letter-spacing:.03em;font-weight:700}
+[data-skin="tabellone"] h1 span{color:var(--accent)}
+[data-skin="tabellone"] .clock{background:#1a1d22;color:var(--ink);border:1px solid var(--line);border-radius:6px}
+[data-skin="tabellone"] .clock .time{color:var(--accent)}
+[data-skin="tabellone"] .daytab,[data-skin="tabellone"] .card,[data-skin="tabellone"] .list,[data-skin="tabellone"] .tk,[data-skin="tabellone"] .fact,[data-skin="tabellone"] .qcard,[data-skin="tabellone"] .gcard,[data-skin="tabellone"] .wxday,[data-skin="tabellone"] .mapwrap{border-radius:5px}
+[data-skin="tabellone"] .daytab .dn{font-size:20px;text-transform:uppercase}
+[data-skin="tabellone"] .daytab[aria-selected="true"]{background:var(--accent);color:#0d0f12;border-color:var(--accent)}
+[data-skin="tabellone"] .card{background:transparent;border-color:transparent;border-bottom:1px solid var(--line);border-radius:0}
+[data-skin="tabellone"] .row.now .card{background:var(--surface);border:0;border-left:4px solid var(--accent);border-radius:0;box-shadow:none}
+[data-skin="tabellone"] .card h3{font-weight:600}
+[data-skin="tabellone"] .card .kind,[data-skin="tabellone"] .eyebrow,[data-skin="tabellone"] .group h3{font-family:var(--f-display);letter-spacing:.14em}
+[data-skin="tabellone"] .row.now .kind .nowtag{background:var(--accent);color:#0d0f12;padding:1px 5px;border-radius:2px}
+[data-skin="tabellone"] .tkbtn{border-style:solid;border-radius:4px;background:#f2f2ee;color:#0d0f12;border-color:#f2f2ee}
+[data-skin="tabellone"] .tkbtn svg,[data-skin="tabellone"] .tkbtn span{color:#3a3f47}
+[data-skin="tabellone"] .smallbtn,[data-skin="tabellone"] .iconbtn,[data-skin="tabellone"] .chip,[data-skin="tabellone"] .routebtn{border-radius:4px}
+[data-skin="tabellone"] .smallbtn.call{background:var(--accent);border-color:var(--accent);color:#0d0f12}
+[data-skin="tabellone"] nav.dock{border-radius:10px}
+[data-skin="tabellone"] .dock .indicator{border-radius:7px}
+[data-skin="tabellone"] .dock button{font-family:var(--f-display);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;border-radius:7px}
+[data-skin="tabellone"] .dock button[aria-current="page"]{color:var(--accent)}
+[data-skin="tabellone"] .nowline .l span{font-family:var(--f-display);letter-spacing:.16em}
+[data-skin="tabellone"] .ob-primary{border-radius:6px;background:var(--accent);color:#0d0f12}
+[data-skin="tabellone"] .ob-body h2{text-transform:uppercase}
+
+/* ===== Skin C · Punsch (one warm light look) ===== */
+html:root[data-skin="punsch"]{
+  --bg:#fbf3ea;--surface:#ffffff;--ink:#2a1416;--muted:#76585b;--line:#eadbcb;
+  --accent:#8e1b2b;--accent-soft:#f8e0e2;--market:#8e1b2b;--food:#7a4a1f;--ok:#24694f;
+  --now:#c8410f;--now-soft:#fde4d6;--now-ink:#ffffff;
+  --f-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --f-body:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Nunito Sans",system-ui,sans-serif;
+  --glass:rgba(42,20,22,.9);--glass-edge:rgba(255,255,255,.08);--glass-hi:rgba(255,255,255,.1);--glass-lo:rgba(0,0,0,.3);
+  --glass-sheen:rgba(255,255,255,.05);--glass-shadow:rgba(42,20,22,.3);--glass-active:#ffd27a;
+  --tile-filter:sepia(.25) saturate(.9);
+  --fx-rain:rgba(90,60,70,.45);--fx-snow:rgba(150,120,125,.75);--fx-mist:rgba(170,150,145,.4);--fx-sun:rgba(255,180,80,.3);--fx-star:rgba(142,27,43,.6);
+  color-scheme:light;
+}
+[data-skin="punsch"] h1,[data-skin="punsch"] .dayhead h2,[data-skin="punsch"] .viewhead h2,[data-skin="punsch"] .gtop h2,[data-skin="punsch"] section.info h2{font-weight:800;letter-spacing:-.02em}
+[data-skin="punsch"] .clock{background:var(--accent);color:#fff;border-radius:20px}
+[data-skin="punsch"] .clock .time{font-weight:800}
+[data-skin="punsch"] .daytab{border-radius:999px;border-color:transparent;background:#efe1d2;min-height:52px}
+[data-skin="punsch"] .daytab[aria-selected="true"]{background:var(--accent);color:#fff}
+[data-skin="punsch"] .daytab .prog{display:none}
+[data-skin="punsch"] .card,[data-skin="punsch"] .list,[data-skin="punsch"] .tk,[data-skin="punsch"] .fact,[data-skin="punsch"] .qcard,[data-skin="punsch"] .gcard,[data-skin="punsch"] .wxday{border-radius:20px;border-color:transparent;box-shadow:0 2px 0 #eadbcb}
+[data-skin="punsch"] .row.now .card{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 10px 24px rgba(142,27,43,.28)}
+[data-skin="punsch"] .row.now .card .kind,[data-skin="punsch"] .row.now .card .kind .nowtag,[data-skin="punsch"] .row.now .card p{color:rgba(255,255,255,.85)}
+[data-skin="punsch"] .row.now .card h3{font-family:var(--f-display);font-size:21px;font-weight:800}
+[data-skin="punsch"] .row.now .iconbtn{border-color:rgba(255,255,255,.35);color:#fff}
+[data-skin="punsch"] .row.now .tkbtn{background:#fff;color:var(--accent);border:0}
+[data-skin="punsch"] .row.now .tkbtn span,[data-skin="punsch"] .row.now .tkbtn svg{color:var(--accent)}
+[data-skin="punsch"] .row.now .tag{background:rgba(255,255,255,.15);border-color:transparent;color:#fff}
+[data-skin="punsch"] .tkbtn{border-style:solid;border-radius:14px}
+[data-skin="punsch"] .smallbtn,[data-skin="punsch"] .iconbtn,[data-skin="punsch"] .routebtn{border-radius:12px}
+[data-skin="punsch"] .chip{border-radius:999px}
+[data-skin="punsch"] nav.dock{border-radius:26px}
+[data-skin="punsch"] .dock .indicator{border-radius:20px}
+[data-skin="punsch"] .dock button{color:#e9d9cb}
+[data-skin="punsch"] .dock button[aria-current="page"]{color:#2a1416}
+[data-skin="punsch"] .dock button.nowbtn{color:#ffb38a}
+[data-skin="punsch"] .ob-primary{background:var(--accent);color:#fff;border-radius:16px}
+[data-skin="punsch"] .time{font-weight:700}
+</style>
+</head>
+<body>
+<script>try{const q=new URLSearchParams(location.search).get('skin');document.documentElement.dataset.skin=q||JSON.parse(localStorage.getItem('vie26-skin')||'"imperiale"')}catch(e){}</script>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">24 – 27 novembre 2026 · mercatini di Natale</div>
+      <h1>Vienna <span>2026</span></h1>
+      <a class="home" id="home" target="_blank" rel="noopener">Alloggio · <b>Nestroygasse 7, 1020 Wien</b></a>
+    </div>
+    <button class="mebtn" id="me-btn" type="button" aria-label="Il tuo profilo"></button>
+  </header>
+
+  <div class="bar">
+    <div class="clock" aria-live="off">
+      <div class="when"><span class="date" id="cdate">–</span><span class="tz" id="ctrip">Ora di Vienna</span><button class="wxnow" id="wxnow" type="button" hidden></button></div>
+      <div class="time" id="ctime">--:--</div>
+    </div>
+    <div class="daytabs" role="tablist" aria-label="Giorni del viaggio" id="tabs" data-prog></div>
+    <div class="filters" role="group" aria-label="Filtra tappe" id="filters" data-prog></div>
+  </div>
+
+  <main id="day" class="view" data-view="programma"></main>
+
+  <section class="view" data-view="biglietti" hidden>
+    <div class="viewhead">
+      <h2>Biglietti</h2>
+      <p>Tutti i biglietti del viaggio, salvati nell’app e consultabili anche offline. Tocca “Mostra” all’ingresso: lo schermo bianco aiuta la lettura del codice.</p>
+    </div>
+    <div id="tickets"></div>
+  </section>
+
+  <section class="view" data-view="mappa" hidden>
+    <div class="viewhead">
+      <h2>Mappa</h2>
+      <p>Le tappe del giorno, dove sei tu e dove sono gli altri viaggiatori.</p>
+    </div>
+    <div class="maptabs" role="group" aria-label="Giorno sulla mappa" id="maptabs"></div>
+    <div class="mapwrap">
+      <div id="map" role="region" aria-label="Mappa di Vienna"></div>
+      <div class="mapbtns">
+        <button class="mapbtn" id="btn-locate" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Io</button>
+        <button class="mapbtn" id="btn-fit" type="button">Tappe</button>
+        <button class="mapbtn" id="btn-group" type="button">Gruppo</button>
+      </div>
+      <div class="mapmsg" id="mapmsg" hidden></div>
+    </div>
+    <div class="maplegend">
+      <span><i class="pin k-visita" style="width:14px;height:14px;border-width:1px"></i>Tappe numerate</span>
+      <span><i class="medot" style="width:12px;height:12px;border-width:2px;box-shadow:none"></i>Tu</span>
+      <span><i class="pp" style="width:16px;height:16px;border-width:1px;--c:#7b4fa3"></i>Altri viaggiatori</span>
+    </div>
+
+    <div class="group">
+      <h3>Viaggiatori</h3>
+      <div class="list">
+        <div class="share">
+          <div class="share-row">
+            <label for="me-name" class="lab" style="font-weight:600">Chi sei?</label>
+            <select id="me-name"><option value="">Scegli il tuo nome</option></select>
+          </div>
+          <div class="share-row" style="justify-content:space-between">
+            <label class="switch" for="me-share"><input type="checkbox" id="me-share" role="switch">Condividi la mia posizione</label>
+            <span class="netstate" id="netstate">Non collegato</span>
+          </div>
+          <p class="note" id="share-note">La posizione viene inviata cifrata e solo chi ha questa app può leggerla. Si aggiorna mentre l’app è aperta: con l’app chiusa gli altri vedono l’ultima posizione inviata.</p>
+        </div>
+      </div>
+      <div class="list" id="people" style="margin-top:8px"></div>
+    </div>
+
+    <div class="group">
+      <h3>Tappe sulla mappa</h3>
+      <ol class="poilist" id="poilist"></ol>
+    </div>
+  </section>
+
+  <section class="view" data-view="giochi" hidden>
+    <div id="games"></div>
+  </section>
+
+  <section class="view" data-view="utili" hidden>
+    <div class="viewhead">
+      <h2>Cose utili</h2>
+      <p>Numeri, prenotazioni, trasporti e qualche dritta per i mercatini.</p>
+    </div>
+
+    <a class="gamebanner" href="#giochi">
+      <span class="gb-art" aria-hidden="true"></span>
+      <span><b>Giochi per il viaggio</b><span>Quiz su Vienna, memory del tedesco e parola segreta. Funzionano anche in aereo.</span></span>
+      <span class="go">›</span>
+    </a>
+
+    <div class="group">
+      <h3>Il tuo profilo</h3>
+      <div class="list" id="profile"></div>
+    </div>
+
+    <div class="group">
+      <h3>Emergenze in Austria</h3>
+      <div class="list">
+        <div class="item big"><span class="lab">Emergenza unica europea</span><span class="sub">Funziona anche senza credito</span><span class="acts"><span class="num">112</span><a class="smallbtn call" href="tel:112">Chiama</a></span></div>
+        <div class="item"><span class="lab">Ambulanza</span><span class="sub">Rettung</span><span class="acts"><span class="num">144</span><button class="smallbtn" type="button" data-copy="144">Copia</button></span></div>
+        <div class="item"><span class="lab">Polizia</span><span class="sub">Polizei</span><span class="acts"><span class="num">133</span><button class="smallbtn" type="button" data-copy="133">Copia</button></span></div>
+        <div class="item"><span class="lab">Vigili del fuoco</span><span class="sub">Feuerwehr</span><span class="acts"><span class="num">122</span><button class="smallbtn" type="button" data-copy="122">Copia</button></span></div>
+        <div class="item"><span class="lab">Medico di turno a Vienna</span><span class="sub">Ärztefunkdienst, per urgenze non gravi</span><span class="acts"><span class="num">141</span><button class="smallbtn" type="button" data-copy="141">Copia</button></span></div>
+        <div class="item"><span class="lab">Consulenza sanitaria al telefono</span><span class="sub">Gesundheitsberatung</span><span class="acts"><span class="num">1450</span><button class="smallbtn" type="button" data-copy="1450">Copia</button></span></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Italiani all’estero</h3>
+      <div class="list">
+        <div class="item"><span class="lab">Ambasciata d’Italia a Vienna</span><span class="sub">Rennweg 27, 1030 Wien · <span class="num" style="font-size:13px">+43 1 712 5121</span></span><span class="acts"><button class="smallbtn" type="button" data-copy="+4317125121">Copia</button></span></div>
+        <div class="item"><span class="lab">Unità di Crisi Farnesina</span><span class="sub">Attiva 24 ore su 24 · <span class="num" style="font-size:13px">+39 06 36225</span></span><span class="acts"><button class="smallbtn" type="button" data-copy="+390636225">Copia</button></span></div>
+        <a class="item" href="https://www.dovesiamonelmondo.it" target="_blank" rel="noopener"><span class="lab">Dove siamo nel mondo</span><span class="sub">Registra il viaggio presso la Farnesina</span><span class="go">↗</span></a>
+        <a class="item" href="https://ambvienna.esteri.it" target="_blank" rel="noopener"><span class="lab">Sito dell’Ambasciata</span><span class="sub">Orari, contatti aggiornati, servizi consolari</span><span class="go">↗</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Alloggio</h3>
+      <div class="list">
+        <a class="item" id="homeitem" target="_blank" rel="noopener"><span class="lab">Nestroygasse 7</span><span class="sub">1020 Wien · Leopoldstadt. Telefono e istruzioni di check-in sono nella conferma di prenotazione.</span><span class="go">↗</span></a>
+        <div class="item"><span class="lab">Fermate vicine</span><span class="sub">U1 Nestroyplatz · U2/U4 Schottenring · bus 2A Leopoldsgasse</span></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Prenotazioni e biglietti</h3>
+      <div class="list" id="bookings"></div>
+    </div>
+
+    <div class="group">
+      <h3>Muoversi</h3>
+      <div class="list">
+        <a class="item" href="https://www.wienerlinien.at" target="_blank" rel="noopener"><span class="lab">Wiener Linien · app WienMobil</span><span class="sub">Orari, percorsi e biglietti di metro, tram e bus. Per 4 giorni conviene il biglietto 72 ore.</span><span class="go">↗</span></a>
+        <a class="item" href="https://www.cityairporttrain.com" target="_blank" rel="noopener"><span class="lab">City Airport Train (CAT)</span><span class="sub">Aeroporto ↔ Wien Mitte in 16 minuti, senza fermate</span><span class="go">↗</span></a>
+        <a class="item" href="https://www.viennaairport.com" target="_blank" rel="noopener"><span class="lab">Aeroporto di Vienna</span><span class="sub">Partenze, arrivi, terminal. In alternativa al CAT c’è il treno S7, più economico.</span><span class="go">↗</span></a>
+        <div class="item"><span class="lab">Taxi a Vienna</span><span class="sub">Radiotaxi <span class="num" style="font-size:13px">+43 1 40100</span> · <span class="num" style="font-size:13px">+43 1 31300</span></span><span class="acts"><button class="smallbtn" type="button" data-copy="+43140100">Copia</button></span></div>
+      </div>
+      <p class="note">I biglietti a tempo dei Wiener Linien valgono solo dentro Vienna: per l’aeroporto serve un biglietto a parte.</p>
+    </div>
+
+    <div class="group">
+      <h3>Mercatini: da sapere</h3>
+      <div class="facts">
+        <div class="fact"><b>Häferlpfand</b>Il Punsch e il Glühwein si servono in tazze di ceramica con cauzione di qualche euro: la riavete restituendo la tazza, oppure la tenete come ricordo.</div>
+        <div class="fact"><b>Cosa assaggiare</b>Glühwein, Punsch (anche analcolico, Kinderpunsch), Maroni, Langos, Kaiserschmarrn, Bratwurst.</div>
+        <div class="fact"><b>Date di apertura</b>Alcuni mercatini aprono solo a fine novembre: controllate le date 2026 prima di partire.</div>
+        <div class="fact"><b>Contanti</b>Molte bancarelle accettano carte, ma qualche euro in contanti è comodo.</div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Info pratiche</h3>
+      <div class="facts">
+        <div class="fact"><b>Clima</b>A fine novembre di solito tra 0 e 6 °C, può nevicare. Scarpe comode e impermeabili: si cammina molto.</div>
+        <div class="fact"><b>Prese elettriche</b>Tipo F (Schuko). Le spine italiane piatte entrano; per quelle grandi a tre poli serve un adattatore.</div>
+        <div class="fact"><b>Salute e documenti</b>Portate la tessera sanitaria (vale come TEAM) e la carta d’identità valida per l’espatrio.</div>
+        <div class="fact"><b>Ora e valuta</b>Stesso fuso orario dell’Italia, si paga in euro. Mancia abituale: arrotondare del 5–10%.</div>
+        <div class="fact"><b>Acqua</b>L’acqua del rubinetto viene dalle Alpi ed è ottima: portate una borraccia.</div>
+        <div class="fact"><b>Roaming</b>Nell’UE il roaming è incluso nella tariffa italiana, entro i limiti del vostro piano.</div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Due parole di tedesco</h3>
+      <dl class="phr">
+        <dt>Grüß Gott</dt><dd>Buongiorno (saluto viennese)</dd>
+        <dt>Danke / Bitte</dt><dd>Grazie / Prego, per favore</dd>
+        <dt>Die Rechnung, bitte</dt><dd>Il conto, per favore</dd>
+        <dt>Zahlen, bitte</dt><dd>Vorrei pagare</dd>
+        <dt>Ein Punsch, bitte</dt><dd>Un Punsch, per favore</dd>
+        <dt>Wo ist die U-Bahn?</dt><dd>Dov’è la metro?</dd>
+        <dt>Entschuldigung</dt><dd>Mi scusi</dd>
+      </dl>
+    </div>
+
+    <div class="group">
+      <h3>Tema dell’app</h3>
+      <div class="skins" role="radiogroup" aria-label="Tema dell’app" id="skins-utili"></div>
+    </div>
+
+    <div class="group">
+      <h3>App</h3>
+      <div class="list">
+        <div class="item"><label class="lab" for="fx-mode">Effetti meteo</label><span class="sub">Ora: <span id="fx-state">–</span></span>
+          <span class="acts"><select id="fx-mode">
+            <option value="auto">Come il meteo</option><option value="rain">Pioggia</option><option value="snow">Neve</option><option value="storm">Temporale</option>
+            <option value="fog">Nebbia</option><option value="clouds">Nuvole</option><option value="sun">Sole</option><option value="stars">Stelle</option><option value="off">Spenti</option>
+          </select></span></div>
+        <a class="item" href="#info"><span class="lab">Linee, legenda e installazione</span><span class="sub">Colori delle linee, installare l’app, azzerare le tappe spuntate</span><span class="go">›</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Siti utili</h3>
+      <div class="list">
+        <a class="item" href="https://www.wien.info/it" target="_blank" rel="noopener"><span class="lab">Wien.info</span><span class="sub">Ufficio del turismo, in italiano, con l’elenco dei mercatini</span><span class="go">↗</span></a>
+        <a class="item" href="https://www.christkindlmarkt.at" target="_blank" rel="noopener"><span class="lab">Wiener Christkindlmarkt</span><span class="sub">Il mercatino del Rathausplatz</span><span class="go">↗</span></a>
+        <a class="item" href="https://www.figlmueller.at" target="_blank" rel="noopener"><span class="lab">Figlmüller</span><span class="sub">Prenotazione consigliata per la cena del 25</span><span class="go">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="info view" data-view="info" hidden>
+    <h2>Linee e legenda</h2>
+    <div class="legend">
+      <div><span class="ln U1">U1</span> Metro rossa · Leopoldau ↔ Oberlaa</div>
+      <div><span class="ln U2">U2</span> Metro viola · Karlsplatz ↔ Seestadt</div>
+      <div><span class="ln U4">U4</span> Metro verde · Hütteldorf ↔ Heiligenstadt</div>
+      <div><span class="ln bus">1A</span><span class="ln bus">2A</span> Bus del centro</div>
+      <div><span class="ln tram">D</span> Tram D · Börse → Belvedere</div>
+      <div><span class="ln cat">CAT</span> Treno / bus aeroporto</div>
+    </div>
+    <p class="note">Gli orari vengono dal programma e sono indicativi. La linea rossa segna l’ora attuale di Vienna: nei giorni del viaggio è piena e le tappe passate si attenuano; negli altri giorni è tratteggiata e mostra solo dove cadrebbe l’ora attuale nel programma. Le tappe spuntate restano salvate solo su questo dispositivo.</p>
+    <div class="group" id="installbox" style="margin-top:6px">
+      <h3>App sul telefono</h3>
+      <div class="list">
+        <div class="item"><span class="lab" id="inst-lab">Installa Vienna 2026</span><span class="sub" id="inst-sub">Aggiungila alla schermata Home: funziona anche senza connessione.</span><span class="acts"><button class="smallbtn call" id="inst-btn" type="button" hidden>Installa</button></span></div>
+        <div class="item"><span class="lab">Uso offline</span><span class="sub" id="off-sub">Programma, numeri e note restano disponibili senza rete. Le mappe e i siti esterni richiedono la connessione.</span></div>
+      </div>
+    </div>
+    <div id="resetbox"><button class="reset" id="reset" type="button">Azzera le tappe spuntate</button></div>
+  </section>
+</div>
+
+<nav class="dock" aria-label="Sezioni">
+  <span class="indicator" id="indicator" aria-hidden="true"></span>
+  <button type="button" data-go="programma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Programma</button>
+  <button type="button" data-go="biglietti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v1.5a2.5 2.5 0 0 0 0 5V16a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-1.5a2.5 2.5 0 0 0 0-5z"/><path d="M14.5 6.5v2M14.5 11v2M14.5 15.5v2"/></svg>Biglietti</button>
+  <button type="button" data-go="adesso" class="nowbtn"><span class="live" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Adesso</button>
+  <button type="button" data-go="mappa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5 3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z"/><path d="M9 4.5v13M15 6.5v13"/></svg>Mappa</button>
+  <button type="button" data-go="utili"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.4 5 5.4.6-4 3.7 1.1 5.4L12 15.5l-4.9 2.7 1.1-5.4-4-3.7 5.4-.6z"/></svg>Utili</button>
+</nav>
+<div id="wxtint" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="toast" id="toast" hidden></div>
+<div class="onboard" id="onboard" hidden role="dialog" aria-modal="true" aria-label="Configura l’app">
+  <div class="ob-top">
+    <button class="ob-link" id="ob-back" type="button">‹ Indietro</button>
+    <div class="ob-dots" id="ob-dots" aria-hidden="true"></div>
+    <button class="ob-link" id="ob-skip" type="button">Salta</button>
+  </div>
+  <div class="ob-body" id="ob-body"></div>
+</div>
+<div class="tour" id="tour" hidden role="dialog" aria-modal="true" aria-labelledby="tour-title">
+  <div class="tour-spot" id="tour-spot"></div>
+  <div class="tour-card" id="tour-card">
+    <div class="tour-step" id="tour-step"></div>
+    <h3 id="tour-title"></h3>
+    <p id="tour-text"></p>
+    <div class="tour-btns">
+      <button class="ob-link" id="tour-skip" type="button">Esci</button>
+      <span style="flex:1"></span>
+      <button class="smallbtn" id="tour-prev" type="button">Indietro</button>
+      <button class="smallbtn call" id="tour-next" type="button">Avanti</button>
+    </div>
+  </div>
+</div>
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vw-title">
+  <div class="vw-bar">
+    <div><div class="vw-title" id="vw-title"></div><div class="vw-sub" id="vw-sub"></div></div>
+    <button class="vw-close" id="vw-close" type="button">Chiudi</button>
+  </div>
+  <div class="vw-pages" id="vw-pages"></div>
+</div>
+
+<script>
+const PIN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const HOME='Nestroygasse 7, 1020 Wien';
+const TZ='Europe/Vienna';
+const TICKET_ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v1.5a2.5 2.5 0 0 0 0 5V16a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-1.5a2.5 2.5 0 0 0 0-5z"/><path d="M14.5 6.5v2M14.5 11v2M14.5 15.5v2"/></svg>';
+
+const WHEEL_SVG=(()=>{let s='<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="60" cy="52" r="38" stroke-width="5"/><circle cx="60" cy="52" r="31" stroke-width="1.5"/>';
+  for(let i=0;i<12;i++){const a=i*Math.PI/6,x=60+Math.cos(a)*38,y=52+Math.sin(a)*38;s+=`<path d="M60 52L${x.toFixed(1)} ${y.toFixed(1)}" stroke-width="1.5"/><circle cx="${x.toFixed(1)}" cy="${(y+4.5).toFixed(1)}" r="3.6" fill="currentColor" stroke="none"/>`}
+  return s+'<path d="M60 52L40 104M60 52l20 52M30 104h60" stroke-width="4"/><circle cx="60" cy="52" r="6" fill="var(--now)" stroke="none"/></svg>'})();
+
+// Tickets (files in tickets/). status: ok | receipt
+const TICKETS=[
+ {id:'schb',date:'2026-11-25',time:'Ingresso 08:30–08:45',name:'Reggia di Schönbrunn',who:'4 adulti · un solo codice per tutti',ref:'Ordine 261106000810',
+  note:'L’orario è vincolante: in ritardo il biglietto non vale. Ingresso dall’edificio principale, audioguida gratuita.',
+  pages:[['schoenbrunn-1.jpg','Biglietto']],pdf:'schoenbrunn.pdf',status:'ok'},
+ {id:'onb',date:'2026-11-25',time:'Valido in qualsiasi orario di apertura',name:'Biblioteca nazionale · Prunksaal',who:'4 adulti · un solo codice',ref:'Biglietto 266040833305',
+  note:'Josefsplatz 1. Si va direttamente all’ingresso, senza passare dalla cassa.',
+  pages:[['biblioteca-1.jpg','Biglietto']],pdf:'biblioteca.pdf',status:'ok'},
+ {id:'belv',date:'2026-11-26',time:'Ore 09:15 · arrivare 10 minuti prima',name:'Belvedere superiore e collezione Klimt',who:'4 adulti · un QR per persona',ref:'Tiqets 138667923',
+  note:'Biglietto digitale: basta lo smartphone. Non si possono portare valigie.',
+  pages:[['belvedere-1.jpg','Biglietto 1 di 4'],['belvedere-2.jpg','Biglietto 2 di 4'],['belvedere-3.jpg','Biglietto 3 di 4'],['belvedere-4.jpg','Biglietto 4 di 4']],pdf:'belvedere.pdf',status:'ok'},
+ {id:'sisi',date:'2026-11-26',time:'Ingresso 14:15–14:30',name:'Museo di Sissi e Appartamenti imperiali',who:'4 adulti · un solo codice per tutti',ref:'Ordine 261106000872',
+  note:'Ingresso sotto la cupola Michaelerkuppel, passando dal Michaeltor. In ritardo il biglietto non vale.',
+  pages:[['sisi-1.jpg','Biglietto']],pdf:'sisi.pdf',status:'ok'},
+ {id:'karl',date:'2026-11-26',time:'Ore 16:40 secondo il programma',name:'Karlskirche · audioguida e terrazza',who:'3 adulti + 1 studente',ref:'Tiqets 1062805195',
+  note:'Lo studente deve mostrare il tesserino.',
+  warn:'Questo PDF è solo la ricevuta di pagamento e non vale per entrare. Il voucher con il QR è nell’email di conferma di Tiqets o nell’app Tiqets.',
+  pages:[],pdf:'karlskirche-ricevuta.pdf',status:'receipt'},
+ {id:'khm',date:'2026-11-27',time:'Ore 11:00',name:'Kunsthistorisches Museum',who:'4 biglietti nominativi',ref:'Transazione 2164448',
+  note:'Mostrare la pagina intera. Antonietta ha il biglietto studenti: serve il tesserino universitario.',
+  pages:[['khm-luisa-1.jpg','Luisa · intero'],['khm-giuseppe-1.jpg','Giuseppe · intero'],['khm-salvatore-1.jpg','Salvatore · intero'],['khm-antonietta-1.jpg','Antonietta · studenti']],pdf:null,
+  pdfs:[['khm-luisa.pdf','Luisa'],['khm-giuseppe.pdf','Giuseppe'],['khm-salvatore.pdf','Salvatore'],['khm-antonietta.pdf','Antonietta']],status:'ok'}
+];
+const MISSING=[
+ ['Parlamento austriaco','24 nov · visita gratuita su prenotazione: nessuna conferma caricata'],
+ ['Tesoro imperiale','25 nov · nessun biglietto caricato'],
+ ['Karlskirche','26 nov · manca il voucher con il QR, c’è solo la ricevuta']
+];
+const tkById=id=>TICKETS.find(t=>t.id===id);
+
+// Approximate coordinates of every stop, keyed by its map query
+const COORDS={
+ [HOME]:[48.2149,16.3838],
+ 'Flughafen Wien':[48.1103,16.5697],
+ 'Justizpalast Wien':[48.2054,16.3576],
+ 'Parlament Wien':[48.2083,16.3586],
+ 'Heldenplatz Wien':[48.2062,16.3638],
+ 'Palais Kinsky Wien':[48.2117,16.3655],
+ 'Graben Wien':[48.2087,16.3697],
+ 'Stephansdom Wien':[48.2085,16.3731],
+ 'Weihnachtsmarkt Stephansplatz Wien':[48.2081,16.3722],
+ 'Schwedenplatz Wien':[48.2117,16.3779],
+ 'Weihnachtsmarkt Am Hof Wien':[48.2107,16.3678],
+ 'Altwiener Christkindlmarkt Freyung':[48.2112,16.3647],
+ 'Wiener Christkindlmarkt Rathausplatz':[48.2104,16.3590],
+ 'Schloss Schönbrunn':[48.1849,16.3122],
+ 'Schlosspark Schönbrunn':[48.1812,16.3110],
+ 'Weihnachtsmarkt Schloss Schönbrunn':[48.1860,16.3122],
+ 'Prunksaal Österreichische Nationalbibliothek':[48.2063,16.3667],
+ 'Wiener Staatsoper':[48.2030,16.3690],
+ 'Kaiserliche Schatzkammer Wien':[48.2066,16.3654],
+ 'Mozart-Denkmal Burggarten':[48.2044,16.3665],
+ 'Café Sacher Wien':[48.2039,16.3699],
+ 'Teddy Café Wien Kärntner Straße':[48.2050,16.3707],
+ 'Stock-im-Eisen-Platz Wien':[48.2083,16.3716],
+ 'Votivkirche Wien':[48.2155,16.3590],
+ 'Campus der Universität Wien Weihnachtsmarkt':[48.2157,16.3530],
+ 'Figlmüller Wollzeile Wien':[48.2088,16.3754],
+ 'Oberes Belvedere Wien':[48.1914,16.3809],
+ 'Belvedere Garten Wien':[48.1937,16.3790],
+ 'Weihnachtsmarkt Belvedere Prinz-Eugen-Straße 27':[48.1919,16.3801],
+ 'Hochstrahlbrunnen Wien':[48.1985,16.3755],
+ 'Michaelerplatz Wien':[48.2083,16.3666],
+ 'Sisi Museum Hofburg Wien':[48.2078,16.3657],
+ 'Demel Kohlmarkt Wien':[48.2086,16.3673],
+ 'Karlskirche Wien':[48.1983,16.3716],
+ 'Art Advent Karlsplatz Wien':[48.1994,16.3704],
+ 'Weihnachtsdorf Maria-Theresien-Platz':[48.2047,16.3610],
+ 'Wintermarkt MuseumsQuartier Wien':[48.2034,16.3584],
+ 'Wintermarkt am Riesenradplatz Prater':[48.2166,16.3962],
+ 'LEGO Store Donauzentrum Wien':[48.2427,16.4335],
+ 'Kunsthistorisches Museum Wien':[48.2038,16.3617],
+ 'Albertina Wien':[48.2045,16.3683]
+};
+
+// kind: base | visita | mercatino | cibo | passeggio | passaggio ; leg = transfer
+const DAYS=[
+ {date:'2026-11-24',title:'Arrivo, Ring e primi mercatini',
+  intro:'Dall’aeroporto all’alloggio, poi il giro del Ring fino a Santo Stefano e la sera tre mercatini, chiudendo al Christkindlmarkt del Rathaus.',
+  items:[
+   {t:'12:00',kind:'base',name:'Arrivo in aeroporto',games:1,q:'Flughafen Wien'},
+   {leg:1,t:'12:00',dur:'45 min',lines:[['cat','CAT'],['U4','U4']],text:'Bus/CAT fino al terminal di Wien Mitte, a piedi a Landstraße, U4 verde direzione Heiligenstadt, scendere a Schottenring, a piedi all’alloggio.'},
+   {t:'13:00',end:'14:00',kind:'base',name:'Alloggio',note:'Nestroygasse 7, Leopoldstadt (2° distretto). Sistemazione in camera.',q:HOME},
+   {leg:1,t:'14:00',dur:'20 min',lines:[['walk','650 m'],['U2','U2']],text:'A piedi 10 min fino a Schottenring, U2 viola direzione Karlsplatz, scendere a Volkstheater, a piedi 3 min (210 m).'},
+   {t:'14:20',end:'15:00',kind:'visita',name:'Palazzo di Giustizia',note:'Aperto fino alle 15.',tags:['free','nobook'],q:'Justizpalast Wien'},
+   {leg:1,t:'15:00',dur:'3 min',lines:[['walk','190 m']],text:'A piedi.'},
+   {t:'15:15',end:'16:20',kind:'visita',name:'Parlamento austriaco',tags:['free','book'],q:'Parlament Wien'},
+   {t:'16:20',kind:'passeggio',name:'Passeggiata sul Ring',dist:'25 min · 1,9 km a piedi',way:['Burgtheater','Volksgarten e fontana Triton und Nymphe','Heldenplatz (Hofburg)'],q:'Heldenplatz Wien'},
+   {t:'17:30',end:'18:00',kind:'visita',name:'Palazzo Kinsky',note:'Aperto fino alle 18.',tags:['free','nobook'],q:'Palais Kinsky Wien'},
+   {t:'18:00',kind:'passeggio',name:'Dal Palazzo Kinsky al Duomo',dist:'20 min · 1 km a piedi',way:['Ferstel Passage','Herrengasse','Kohlmarkt','Graben','Stock-im-Eisen-Platz'],q:'Graben Wien'},
+   {t:'19:00',kind:'visita',name:'Duomo di Santo Stefano (Stephansdom)',note:'Aperto fino alle 22.',tags:['free','nobook'],q:'Stephansdom Wien'},
+   {t:'19:10',kind:'mercatino',name:'Mercatino di Stephansplatz',q:'Weihnachtsmarkt Stephansplatz Wien'},
+   {t:'19:30',kind:'passeggio',name:'Verso Am Hof',dist:'40 min · 2,5 km a piedi',way:['Rotenturmstraße','Schwedenplatz','Am Hof'],q:'Schwedenplatz Wien'},
+   {t:'20:20',kind:'mercatino',name:'Mercatino Am Hof',note:'Circa 1 ora.',q:'Weihnachtsmarkt Am Hof Wien'},
+   {t:'20:50',kind:'mercatino',name:'Mercatino della Freyung',note:'Circa 30 minuti.',q:'Altwiener Christkindlmarkt Freyung'},
+   {t:'21:20',kind:'mercatino',name:'Wiener Christkindlmarkt',note:'Piazza del Municipio (Rathausplatz).',q:'Wiener Christkindlmarkt Rathausplatz'},
+   {t:'fine',kind:'base',name:'Rientro all’alloggio',q:HOME}
+  ]},
+ {date:'2026-11-25',title:'Schönbrunn e la Vienna imperiale',
+  intro:'Mattina alla reggia di Schönbrunn, pomeriggio tra Biblioteca, Opera e Tesoro imperiale, poi Sachertorte, Votivkirche e cena da Figlmüller.',
+  items:[
+   {t:'07:45',kind:'base',name:'Partenza dall’alloggio',q:HOME},
+   {leg:1,t:'07:45',dur:'35 min',lines:[['walk','650 m'],['U4','U4']],text:'A piedi 10 min, U4 verde direzione Hütteldorf, scendere a Schönbrunn, a piedi 7 min (450 m).'},
+   {t:'08:30',end:'09:30',kind:'visita',name:'Reggia di Schönbrunn',note:'Ingresso tra le 08:30 e le 08:45: l’orario è vincolante.',tk:'schb',q:'Schloss Schönbrunn'},
+   {t:'09:30',end:'12:00',kind:'passeggio',name:'Giardini di Schönbrunn',q:'Schlosspark Schönbrunn'},
+   {t:'12:00',end:'12:40',kind:'mercatino',name:'Mercatino di Schönbrunn',note:'Cortile d’onore, vicino alle fontane.',q:'Weihnachtsmarkt Schloss Schönbrunn'},
+   {leg:1,t:'13:20',dur:'40 min',lines:[['walk','500 m'],['U4','U4']],text:'A piedi 10 min alla metro Schönbrunn, U4 verde direzione Heiligenstadt, scendere a Karlsplatz, a piedi 11 min (800 m).'},
+   {t:'14:30',kind:'visita',name:'Biblioteca nazionale',note:'Sala di Stato, circa 30 minuti.',tk:'onb',q:'Prunksaal Österreichische Nationalbibliothek'},
+   {leg:1,t:'15:05',dur:'8 min',lines:[['walk','550 m']],text:'A piedi.'},
+   {t:'15:30',kind:'visita',name:'Opera di Vienna',q:'Wiener Staatsoper'},
+   {leg:1,t:'15:45',dur:'15 min',lines:[['walk','950 m']],text:'A piedi.'},
+   {t:'16:15',end:'17:15',kind:'visita',name:'Tesoro imperiale',note:'Circa 1 ora.',warn:'Tra i biglietti caricati non ce n’è uno per il Tesoro imperiale.',q:'Kaiserliche Schatzkammer Wien'},
+   {leg:1,t:'17:15',dur:'10 min',lines:[['walk','600 m']],text:'A piedi.'},
+   {t:'17:25',kind:'passaggio',name:'Burggarten e statua di Mozart',q:'Mozart-Denkmal Burggarten'},
+   {leg:1,t:'17:45',dur:'10 min',lines:[['walk','550 m']],text:'A piedi.'},
+   {t:'18:00',kind:'cibo',name:'Hotel Sacher',note:'Sosta per la Sachertorte.',q:'Café Sacher Wien'},
+   {leg:1,t:'18:45',dur:'1 min',lines:[['walk','80 m']],text:'A piedi.'},
+   {t:'18:46',kind:'passaggio',name:'Hiiich Teddy Café',note:'Solo passaggio.',q:'Teddy Café Wien Kärntner Straße'},
+   {t:'19:00',kind:'passeggio',name:'Kärntner Straße fino a Stock-im-Eisen-Platz',dist:'10 min · 450 m a piedi',q:'Stock-im-Eisen-Platz Wien'},
+   {leg:1,t:'19:30',dur:'20 min',lines:[['walk','200 m'],['bus','1A']],text:'A piedi 3 min, bus 1A da Stephansplatz, scendere a Schottentor, a piedi 5 min (350 m).'},
+   {t:'20:00',kind:'visita',name:'Chiesa Votiva (Votivkirche)',q:'Votivkirche Wien'},
+   {leg:1,t:'20:05',dur:'7 min',lines:[['walk','550 m']],text:'A piedi.'},
+   {t:'20:10',kind:'mercatino',name:'Mercatino del campus universitario',note:'Campus der Universität Wien.',q:'Campus der Universität Wien Weihnachtsmarkt'},
+   {leg:1,t:'21:20',dur:'30 min',lines:[['walk','800 m'],['bus','1A']],text:'A piedi 15 min, oppure bus 1A da Schottentor fino a Stephansplatz e a piedi 4 min (300 m).'},
+   {t:'21:50',kind:'cibo',name:'Cena da Figlmüller',note:'La Wiener Schnitzel.',q:'Figlmüller Wollzeile Wien'},
+   {t:'22:30',kind:'base',name:'Rientro all’alloggio',q:HOME}
+  ]},
+ {date:'2026-11-26',title:'Belvedere, Sissi e il Prater',
+  intro:'Il Belvedere con il suo mercatino, il Museo di Sissi alle 14:15, merenda da Demel, la Karlskirche e Art Advent con le luci accese, poi MuseumsQuartier e la ruota panoramica del Prater.',
+  items:[
+   {t:'08:00',kind:'base',name:'Partenza dall’alloggio',q:HOME},
+   {leg:1,t:'08:00',dur:'20 min',lines:[['walk','1 km'],['tram','D']],text:'A piedi 15 min fino a Börse, tram D direzione Absberggasse, scendere a Schloss Belvedere, a piedi 2 min (170 m).'},
+   {t:'09:15',end:'12:15',kind:'visita',name:'Castello del Belvedere',note:'Belvedere superiore e collezione Klimt. Ingresso alle 09:15, arrivare 10 minuti prima.',tk:'belv',q:'Oberes Belvedere Wien'},
+   {t:'12:15',kind:'passeggio',name:'Giardini del Belvedere',q:'Belvedere Garten Wien'},
+   {t:'12:30',end:'12:50',kind:'mercatino',name:'Mercatino del Belvedere',note:'Prinz-Eugen-Straße 27.',q:'Weihnachtsmarkt Belvedere Prinz-Eugen-Straße 27'},
+   {leg:1,t:'12:50',dur:'15 min',lines:[['walk','900 m']],text:'A piedi.'},
+   {t:'13:05',kind:'passaggio',name:'Fontana Hochstrahlbrunnen',note:'Schwarzenbergplatz.',q:'Hochstrahlbrunnen Wien'},
+   {leg:1,t:'13:15',dur:'25 min',lines:[['walk','1,6 km'],['U1','U1']],text:'A piedi lungo il Ring, passando dall’Opera e dall’Albertina, fino a Michaelerplatz. In alternativa: a piedi 5 min fino a Karlsplatz, U1 rossa direzione Leopoldau fino a Stephansplatz, a piedi 7 min (600 m).'},
+   {t:'13:40',end:'14:10',kind:'passaggio',name:'Michaelerplatz',note:'Margine prima del museo: c’è tempo per uno spuntino. Entro le 14:15 bisogna essere all’ingresso sotto la cupola, dal Michaeltor.',q:'Michaelerplatz Wien'},
+   {t:'14:15',end:'15:30',kind:'visita',name:'Museo di Sissi e Appartamenti imperiali',note:'Ingresso tra le 14:15 e le 14:30: l’orario è vincolante. Il percorso comprende anche la collezione dell’argenteria.',tk:'sisi',q:'Sisi Museum Hofburg Wien'},
+   {leg:1,t:'15:30',dur:'2 min',lines:[['walk','150 m']],text:'A piedi su Kohlmarkt.'},
+   {t:'15:35',end:'16:15',kind:'cibo',name:'Café Demel',note:'Merenda in pasticceria, Kohlmarkt 14.',q:'Demel Kohlmarkt Wien'},
+   {leg:1,t:'16:15',dur:'20 min',lines:[['walk','1,4 km'],['U1','U1']],text:'A piedi 20 min, oppure a piedi 7 min fino a Stephansplatz, U1 rossa direzione Oberlaa fino a Karlsplatz, a piedi 5 min.'},
+   {t:'16:40',end:'17:20',kind:'visita',name:'Chiesa di San Carlo Borromeo',note:'Con audioguida e salita alla terrazza. Controllate l’ultimo ingresso alla terrazza sul voucher.',tk:'karl',q:'Karlskirche Wien'},
+   {leg:1,t:'17:20',dur:'2 min',lines:[['walk','100 m']],text:'Il mercatino è sulla piazza davanti alla chiesa.'},
+   {t:'17:25',end:'18:30',kind:'mercatino',name:'Art Advent Karlsplatz',note:'Mercatino d’arte e artigianato, ormai al buio con le luci accese.',q:'Art Advent Karlsplatz Wien'},
+   {leg:1,t:'18:30',dur:'13 min',lines:[['walk','1 km']],text:'A piedi lungo Getreidemarkt, passando dalla Secessione.'},
+   {t:'18:45',kind:'mercatino',name:'Mercatino di Maria-Theresien-Platz',q:'Weihnachtsdorf Maria-Theresien-Platz'},
+   {leg:1,t:'19:00',dur:'6 min',lines:[['walk','400 m']],text:'A piedi.'},
+   {t:'19:05',kind:'mercatino',name:'Mercatino del MuseumsQuartier',q:'Wintermarkt MuseumsQuartier Wien'},
+   {leg:1,t:'19:30',dur:'17 min',lines:[['walk','250 m'],['U2','U2']],text:'A piedi 4 min fino alla metro, U2 viola direzione Karlsplatz fino a Volkstheater (2 min), poi U2 direzione Aspernstraße fino a Praterstern, a piedi 6 min (250 m).'},
+   {t:'20:00',kind:'mercatino',name:'Prater: mercatino e luna park',note:'Wintermarkt e ruota panoramica.',q:'Wintermarkt am Riesenradplatz Prater'},
+   {t:'fine',kind:'base',name:'Rientro all’alloggio',q:HOME}
+  ]},
+ {date:'2026-11-27',title:'Lego Store, musei e partenza',
+  intro:'Ultima mattina tra Lego Store e Kunsthistorisches Museum, con l’Albertina da valutare, poi il trasferimento in aeroporto per il volo delle 17:40.',
+  items:[
+   {t:'08:15',kind:'base',name:'Partenza dall’alloggio',note:'Check-out.',q:HOME},
+   {leg:1,t:'08:15',dur:'35 min',lines:[['walk','220 m'],['bus','2A'],['U1','U1']],text:'A piedi 4 min, bus 2A da Leopoldsgasse fino a Stephansplatz, U1 rossa direzione Leopoldau, scendere a Kagran, a piedi 5 min (350 m).'},
+   {t:'09:30',end:'10:10',kind:'visita',name:'Lego Store ufficiale',q:'LEGO Store Donauzentrum Wien'},
+   {leg:1,t:'10:10',dur:'40 min',lines:[['walk','350 m'],['U1','U1'],['U2','U2']],text:'A piedi 6 min alla metro Kagran, U1 rossa direzione Oberlaa fino a Karlsplatz, U2 viola direzione Aspernstraße fino a Museumsquartier, a piedi 4 min (210 m).'},
+   {t:'11:00',end:'13:00',kind:'visita',name:'Kunsthistorisches Museum e Café Central',note:'Ingresso alle 11:00. Antonietta ha il biglietto studenti: serve il tesserino universitario.',tk:'khm',q:'Kunsthistorisches Museum Wien'},
+   {t:'13:00',end:'15:00',kind:'visita',name:'Museo Albertina',note:'Da valutare in base al tempo.',tags:['opt'],q:'Albertina Wien'},
+   {leg:1,t:'15:00',dur:'circa 1 ora',lines:[['cat','CAT']],text:'Trasferimento all’aeroporto.'},
+   {t:'16:00',kind:'base',name:'Aeroporto',q:'Flughafen Wien'},
+   {t:'17:40',kind:'base',name:'Partenza del volo',games:1,q:'Flughafen Wien'}
+  ]}
+];
+
+// ids + effective minutes (non-numeric times inherit the previous one; "fine" goes to end of day)
+const toMin=t=>/^\d\d:\d\d$/.test(t)?(+t.slice(0,2))*60+ +t.slice(3):null;
+DAYS.forEach((d,di)=>{let last=0;d.items.forEach((it,i)=>{
+  it.id=`d${di+1}-${i}`;
+  const m=toMin(it.t); it.m=m!=null?m:(it.t==='fine'?Math.max(last+30,last):last); last=it.m;
+})});
+
+const KIND={base:'Base',visita:'Visita',mercatino:'Mercatino',cibo:'Cibo',passeggio:'Passeggiata',passaggio:'Di passaggio'};
+const TAG={free:['free','Gratis'],nobook:['','Senza prenotazione'],book:['book','Prenotazione'],opt:['opt','Opzionale']};
+const FILTERS=[['all','Tutto'],['visita','Visite'],['mercatino','Mercatini'],['cibo','Cibo']];
+
+const store={
+  get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+// Preview mode (?preview=1&skin=punsch&fx=rain&at=2026-11-26T14:32): shows a theme/weather/time without saving anything
+const QS=new URLSearchParams(location.search);
+const PREVIEW=QS.has('preview');
+let NOW_OFFSET=0;
+if(PREVIEW){
+  store.set=()=>{};
+  const at=QS.get('at'); if(at&&!isNaN(Date.parse(at+':00+01:00')))NOW_OFFSET=Date.parse(at+':00+01:00')-Date.now();
+}
+const nowDate=()=>new Date(Date.now()+NOW_OFFSET);
+let done=new Set(store.get('vie26-done',[]));
+let filter=store.get('vie26-filter','all');
+
+const mapUrl=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+function routeUrl(day){
+  const pts=[];
+  day.items.forEach(it=>{if(!it.leg&&it.kind!=='base'&&!pts.includes(it.q))pts.push(it.q)});
+  const dst=pts[pts.length-1],w=pts.slice(0,-1).slice(0,9);
+  return 'https://www.google.com/maps/dir/?api=1&travelmode=walking&origin='+encodeURIComponent(HOME)+'&destination='+encodeURIComponent(dst)+(w.length?'&waypoints='+encodeURIComponent(w.join('|')):'');
+}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pad=n=>String(n).padStart(2,'0');
+const fmtMin=m=>`${pad(Math.floor(m/60))}:${pad(m%60)}`;
+
+// Vienna clock
+function viennaNow(){
+  const p=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(nowDate());
+  const g=t=>p.find(x=>x.type===t).value;
+  const h=+g('hour')%24,mi=+g('minute');
+  return {date:`${g('year')}-${g('month')}-${g('day')}`,h,mi,s:+g('second'),min:h*60+mi};
+}
+const tripIndex=()=>DAYS.findIndex(d=>d.date===viennaNow().date);
+function dayIndexFromHash(){
+  const m=location.hash.match(/^#giorno-([1-4])$/);
+  if(m)return +m[1]-1;
+  const i=tripIndex(); return i>=0?i:0;
+}
+let cur=dayIndexFromHash();
+let lastMin=-1;
+
+function tripLabel(){
+  const n=viennaNow(),[y,mo,d]=n.date.split('-').map(Number);
+  const diff=Math.round((Date.UTC(2026,10,24)-Date.UTC(y,mo-1,d))/864e5);
+  const di=tripIndex();
+  if(di>=0)return `Giorno ${di+1} di 4`;
+  if(diff>0)return `Si parte tra ${diff} ${diff===1?'giorno':'giorni'}`;
+  return 'Viaggio concluso';
+}
+function tickClock(){
+  const n=viennaNow(), now=nowDate();
+  document.getElementById('cdate').textContent=new Intl.DateTimeFormat('it-IT',{timeZone:TZ,weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+  document.getElementById('ctime').innerHTML=`${pad(n.h)}:${pad(n.mi)}<small>:${pad(n.s)}</small>`;
+  if(n.min!==lastMin){
+    lastMin=n.min;
+    document.getElementById('ctrip').textContent='Ora di Vienna · '+tripLabel();
+    renderTabs(); renderDay();
+  }
+}
+
+function renderTabs(){
+  const ti=tripIndex();
+  document.getElementById('tabs').innerHTML=DAYS.map((d,i)=>{
+    const stops=d.items.filter(x=>!x.leg), pct=Math.round(stops.filter(x=>done.has(x.id)).length/stops.length*100);
+    const dt=new Date(d.date+'T12:00:00');
+    return `<button class="daytab" role="tab" id="tab-${i}" aria-selected="${i===cur}" aria-controls="day" data-i="${i}">
+      ${i===ti?'<span class="today">Oggi</span>':''}
+      <span class="dw">${new Intl.DateTimeFormat('it-IT',{weekday:'short'}).format(dt)}</span><span class="dn">${dt.getDate()} nov</span>
+      ${(()=>{if(typeof wx==='undefined'||!wx||!wx.daily)return '';const f=wx.daily[d.date];
+        if(!f)return `<span class="dwx" title="Media del periodo: la previsione arriva circa 15 giorni prima">≈${WX_TYPICAL.max}°/${WX_TYPICAL.min}°</span>`;
+        return `<span class="dwx" title="${wxInfo(f.code)[1]}">${wxIcon(wxInfo(f.code)[0])}${Math.round(f.max)}°/${Math.round(f.min)}°</span>`})()}
+      <span class="prog" aria-hidden="true"><i style="width:${pct}%"></i></span></button>`}).join('');
+  document.getElementById('filters').innerHTML=FILTERS.map(([k,l])=>`<button class="chip" type="button" data-f="${k}" aria-pressed="${filter===k}">${l}</button>`).join('');
+}
+
+function renderDay(){
+  const d=DAYS[cur], n=viennaNow(), live=n.date===d.date, nowM=n.min;
+  const stops=d.items.filter(x=>!x.leg);
+  const count=k=>stops.filter(s=>s.kind===k).length;
+  // current stop = last stop already started (only on the real day)
+  let curId=null; if(live) stops.forEach(s=>{if(s.m<=nowM)curId=s.id});
+  // now line goes before first item starting after now
+  let nowIdx=d.items.findIndex(it=>it.m>nowM); if(nowIdx<0)nowIdx=d.items.length;
+  const first=stops[0].m, lastStop=stops[stops.length-1].m, span=Math.max(1,lastStop-first);
+  const pct=Math.min(100,Math.max(0,(nowM-first)/span*100));
+
+  let h=`<div class="dayhead">
+    <div class="eyebrow">Giorno ${cur+1} · ${new Intl.DateTimeFormat('it-IT',{weekday:'long',day:'numeric',month:'long'}).format(new Date(d.date+'T12:00:00'))}</div>
+    <h2>${esc(d.title)}</h2><p>${esc(d.intro)}</p>
+    <div class="dayfoot"><span><b>${count('visita')}</b>visite</span><span><b>${count('mercatino')}</b>mercatini</span>
+      <span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap"><a class="routebtn" style="margin-left:0" href="#mappa">${PIN} Mappa</a><a class="routebtn" style="margin-left:0" href="${routeUrl(d)}" target="_blank" rel="noopener">Google Maps ↗</a></span></div>
+    ${typeof wx!=='undefined'?wxDayHtml(d,live):''}
+    <div class="daybar" aria-label="Momento della giornata">
+      <div class="track"><span class="fill" style="width:${pct}%"></span></div>
+      <div class="lbl"><span>${fmtMin(first)}</span><b>${live?'Adesso':'Ora attuale'} ${fmtMin(nowM)}</b><span>${fmtMin(lastStop)}</span></div>
+    </div>
+  </div><ol class="tl">`;
+
+  const nowLine=`<li class="nowline${live?'':' preview'}" id="nowline" aria-label="Ora attuale ${fmtMin(nowM)}">
+    <span class="t">${fmtMin(nowM)}</span><span class="d"><i></i></span>
+    <span class="l"><span>${live?'Adesso':'Ora attuale · da vedere il '+new Date(d.date+'T12:00:00').getDate()+' nov'}</span></span></li>`;
+
+  d.items.forEach((it,i)=>{
+    if(i===nowIdx)h+=nowLine;
+    const past=live&&it.m<nowM&&it.id!==curId;
+    if(it.leg){
+      h+=`<li class="leg${past?' past':''}${filter!=='all'?' hidden':''}"><div class="time">${esc(it.t)}</div><div class="dot"><i></i></div>
+        <div class="ticket"><div class="lines">${it.lines.map(([c,l])=>`<span class="ln ${c}">${esc(l)}</span>`).join('')}<span class="dur">${esc(it.dur)}</span></div><div>${esc(it.text)}</div></div></li>`;
+      return;
+    }
+    const isDone=done.has(it.id), isNow=it.id===curId;
+    const hide=filter!=='all'&&it.kind!==filter;
+    const tags=(it.tags||[]).map(t=>`<span class="tag ${TAG[t][0]}">${TAG[t][1]}</span>`).join('')+(it.dist?`<span class="tag">${esc(it.dist)}</span>`:'');
+    h+=`<li id="s-${it.id}" class="row k-${it.kind}${isDone?' done':''}${isNow?' now':''}${past?' past':''}${hide?' hidden':''}">
+      <div class="time">${esc(it.t)}${it.end?`<span class="e">${esc(it.end)}</span>`:''}</div><div class="dot"><i></i></div>
+      <div class="card">
+        <div><div class="kind">${isNow?'<span class="nowtag">In corso · </span>':''}${KIND[it.kind]}</div><h3>${esc(it.name)}</h3></div>
+        <div class="actions">
+          <a class="iconbtn" href="${mapUrl(it.q)}" target="_blank" rel="noopener" aria-label="Apri ${esc(it.name)} in Google Maps">${PIN}</a>
+          <button class="iconbtn check" type="button" data-id="${it.id}" aria-pressed="${isDone}" aria-label="Segna ${esc(it.name)} come fatta">${CHECK}</button>
+        </div>
+        ${it.note?`<p>${esc(it.note)}</p>`:''}
+        ${it.way?`<div class="waypoints">${it.way.map(w=>`<span>${esc(w)}</span>`).join('')}</div>`:''}
+        ${tags?`<div class="tags">${tags}</div>`:''}
+        ${it.tk?tkButton(it.tk):''}
+        ${it.games?`<a class="tkbtn" href="#giochi" style="text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="11" rx="4"/><path d="M8 10.5v4M6 12.5h4M15.5 11.5h.01M17.5 13.5h.01"/></svg>Giochi per il volo <span>· funzionano offline</span></a>`:''}
+        ${it.warn?`<div class="warn">${esc(it.warn)}</div>`:''}
+      </div></li>`;
+  });
+  if(nowIdx===d.items.length)h+=nowLine;
+  h+='</ol>';
+  const main=document.getElementById('day');
+  main.innerHTML=h; main.setAttribute('aria-labelledby','tab-'+cur); main.setAttribute('role','tabpanel');
+}
+
+// Bookings checklist
+const BOOK=[
+ ['parl','Parlamento austriaco','24 nov · gratis, prenotazione obbligatoria','https://www.parlament.gv.at'],
+ ['schb','Reggia di Schönbrunn','25 nov · ingresso a orario, 09:30','https://www.schoenbrunn.at'],
+ ['onb','Biblioteca nazionale (Prunksaal)','25 nov · 14:30','https://www.onb.ac.at'],
+ ['oper','Opera di Vienna, visita guidata','25 nov · visite a orari fissi','https://www.wiener-staatsoper.at'],
+ ['schatz','Tesoro imperiale','25 nov · 16:15','https://www.khm.at'],
+ ['figl','Cena da Figlmüller','25 nov · 21:50','https://www.figlmueller.at'],
+ ['belv','Belvedere superiore','26 nov · 09:15','https://www.belvedere.at'],
+ ['karl','Karlskirche e terrazza','26 nov · 16:00','https://www.karlskirche.at'],
+ ['sisi','Museo di Sissi e Appartamenti imperiali','26 nov · 17:00','https://www.sisimuseum-hofburg.at'],
+ ['khm','Kunsthistorisches Museum','27 nov · opzionale','https://www.khm.at'],
+ ['alb','Albertina','27 nov · da valutare','https://www.albertina.at']
+];
+let booked=new Set(store.get('vie26-booked',['schb','onb','belv','sisi','karl','khm']));
+function renderBookings(){
+  document.getElementById('bookings').innerHTML=BOOK.map(([id,l,s,u])=>`<div class="chk">
+    <input type="checkbox" id="bk-${id}" data-bk="${id}"${booked.has(id)?' checked':''}>
+    <label for="bk-${id}">${esc(l)}</label><span class="sub">${esc(s)}${booked.has(id)?' · fatto':''}</span>
+    <a class="smallbtn" href="${u}" target="_blank" rel="noopener">Sito ↗</a></div>`).join('');
+}
+document.getElementById('bookings').addEventListener('change',e=>{
+  const id=e.target.dataset.bk; if(!id)return;
+  e.target.checked?booked.add(id):booked.delete(id); store.set('vie26-booked',[...booked]); renderBookings();
+});
+
+// Copy numbers
+let toastT;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,1800)}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-copy]'); if(!b)return;
+  const v=b.dataset.copy;
+  const fallback=()=>{const n=b.closest('.item').querySelector('.num');if(n){const r=document.createRange();r.selectNodeContents(n);const s=getSelection();s.removeAllRanges();s.addRange(r)}toast('Numero selezionato: '+v)};
+  try{navigator.clipboard.writeText(v).then(()=>toast('Copiato: '+v),fallback)}catch(err){fallback()}
+});
+
+// Tickets
+function stopForTicket(id){for(const d of DAYS)for(const it of d.items)if(it.tk===id)return it;return null}
+function tkButton(id){
+  const t=tkById(id); if(!t)return '';
+  const bad=t.status!=='ok';
+  return `<button class="tkbtn${bad?' bad':''}" type="button" data-tk="${id}">${TICKET_ICON}${bad?'Solo ricevuta':'Biglietto'} <span>· ${esc(t.who)}</span></button>`;
+}
+// Biglietti cifrati: nel sito ci sono solo i file .enc; con la password del viaggio
+// l'app li decifra e li salva in una cache locale, che il service worker serve offline.
+const TK_CACHE='vienna26-tickets', tkUrl=f=>new URL('tickets/'+f,location.href).href;
+let tkReady=false, tkBusy=false, tkErr='';
+const tkFiles=()=>[...new Set(TICKETS.flatMap(t=>[...t.pages.map(p=>p[0]),...(t.pdf?[t.pdf]:[]),...(t.pdfs||[]).map(p=>p[0])]))];
+async function tkCheck(){
+  try{const c=await caches.open(TK_CACHE);const all=await Promise.all(tkFiles().map(f=>c.match(tkUrl(f))));tkReady=all.every(Boolean)}catch(e){tkReady=false}
+  return tkReady;
+}
+async function tkUnlock(pass){
+  const b64=s=>Uint8Array.from(atob(s),ch=>ch.charCodeAt(0));
+  const meta=await (await fetch('tickets-enc/meta.json',{cache:'no-cache'})).json();
+  const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',hash:'SHA-256',salt:b64(meta.salt),iterations:meta.iter},base,{name:'AES-GCM',length:256},false,['decrypt']);
+  const dec=buf=>crypto.subtle.decrypt({name:'AES-GCM',iv:buf.slice(0,12)},key,buf.slice(12));
+  try{await dec(b64(meta.check))}catch(e){throw new Error('pass')}
+  const c=await caches.open(TK_CACHE);
+  for(const f of tkFiles()){
+    const enc=new Uint8Array(await (await fetch('tickets-enc/'+f+'.enc')).arrayBuffer());
+    const type=f.endsWith('.pdf')?'application/pdf':'image/jpeg';
+    await c.put(tkUrl(f),new Response(new Blob([await dec(enc)],{type}),{headers:{'Content-Type':type}}));
+  }
+}
+const tkBlobs={};
+async function tkSrc(f){
+  if(tkBlobs[f])return tkBlobs[f];
+  const r=await (await caches.open(TK_CACHE)).match(tkUrl(f)); if(!r)return '';
+  return tkBlobs[f]=URL.createObjectURL(await r.blob());
+}
+function tkLockHtml(){
+  return `<section class="tklock" id="tklock"><h3>Biglietti protetti</h3>
+    <p>I biglietti sono cifrati. Inserisci la password del viaggio una volta sola: poi restano su questo telefono e si aprono anche offline.</p>
+    <form id="tkform" autocomplete="off"><input id="tkpass" type="password" placeholder="Password del viaggio" aria-label="Password del viaggio" autocapitalize="off" autocorrect="off" spellcheck="false">
+    <button type="submit" ${tkBusy?'disabled':''}>${tkBusy?'Sblocco…':'Sblocca'}</button></form>
+    ${tkErr?`<p class="err" role="alert">${esc(tkErr)}</p>`:''}</section>`;
+}
+function tkFocus(){showView('biglietti');requestAnimationFrame(()=>{const i=document.getElementById('tkpass');if(i){i.scrollIntoView({block:'center'});i.focus()}})}
+document.addEventListener('submit',async e=>{
+  if(e.target.id!=='tkform')return; e.preventDefault();
+  const pass=document.getElementById('tkpass').value; if(!pass||tkBusy)return;
+  tkBusy=true; tkErr=''; renderTickets();
+  try{await tkUnlock(pass); await tkCheck(); tkBusy=false; renderTickets(); toast('Biglietti sbloccati su questo telefono')}
+  catch(err){tkBusy=false; tkErr=err.message==='pass'?'Password sbagliata.':'Non riesco a scaricare i biglietti: la prima volta serve la connessione.'; renderTickets(); tkFocus()}
+});
+document.addEventListener('click',async e=>{
+  if(e.target.closest('#tkrelock')){if(!confirm('Togliere i biglietti da questo telefono? Per rivederli servirà di nuovo la password.'))return;
+    await caches.delete(TK_CACHE); Object.values(tkBlobs).forEach(u=>URL.revokeObjectURL(u)); for(const k in tkBlobs)delete tkBlobs[k];
+    tkReady=false; renderTickets(); return}
+  const a=e.target.closest('a[data-tkpdf]'); if(!a)return;
+  if(!tkReady){e.preventDefault();tkFocus();return}
+  if(!(navigator.serviceWorker&&navigator.serviceWorker.controller)){e.preventDefault();const u=await tkSrc(a.dataset.tkpdf);if(u)window.open(u,'_blank')}
+});
+function renderTickets(){
+  const byDate={};
+  TICKETS.forEach(t=>(byDate[t.date]=byDate[t.date]||[]).push(t));
+  let h=tkReady?'':tkLockHtml();
+  Object.keys(byDate).sort().forEach(date=>{
+    const label=new Intl.DateTimeFormat('it-IT',{weekday:'long',day:'numeric',month:'long'}).format(new Date(date+'T12:00:00'));
+    h+=`<div class="group"><h3>${esc(label)}</h3><div class="tkgrid">`;
+    byDate[date].forEach(t=>{
+      const ok=t.status==='ok', stop=stopForTicket(t.id);
+      const pdfs=t.pdfs?t.pdfs.map(([f,l])=>`<a class="smallbtn" href="tickets/${f}" data-tkpdf="${f}" target="_blank" rel="noopener">PDF ${esc(l)}</a>`).join(''):(t.pdf?`<a class="smallbtn" href="tickets/${t.pdf}" data-tkpdf="${t.pdf}" target="_blank" rel="noopener">${ok?'PDF':'Ricevuta PDF'}</a>`:'');
+      h+=`<article class="tk"><div class="tk-body">
+        <span class="tk-status${ok?'':' bad'}">${ok?'Valido':'Manca il voucher'}</span>
+        <div class="tk-time">${esc(t.time)}</div><h4>${esc(t.name)}</h4>
+        <p class="tk-who">${esc(t.who)}</p><p class="tk-note">${esc(t.note)}</p>
+        ${t.warn?`<div class="warn">${esc(t.warn)}</div>`:''}
+        <p class="tk-ref">${esc(t.ref)}</p></div>
+        <div class="tk-stub">
+          ${t.pages.length?`<button class="smallbtn call" type="button" data-show="${t.id}">Mostra${t.pages.length>1?' ('+t.pages.length+')':''}</button>`:''}
+          ${pdfs}
+          ${stop?`<button class="smallbtn" type="button" data-stop="${stop.id}">Nel programma</button>`:''}
+        </div></article>`;
+    });
+    h+='</div></div>';
+  });
+  h+=`<div class="group"><h3>Da completare</h3><div class="list">${MISSING.map(([l,s])=>`<div class="item"><span class="lab">${esc(l)}</span><span class="sub">${esc(s)}</span></div>`).join('')}</div></div>`;
+  if(tkReady)h+=`<p class="tkrelock">Biglietti salvati su questo telefono · <button type="button" id="tkrelock">Toglili</button></p>`;
+  document.getElementById('tickets').innerHTML=h;
+}
+document.getElementById('tickets').addEventListener('click',e=>{
+  const s=e.target.closest('[data-show]'); if(s){openTicket(s.dataset.show);return}
+  const p=e.target.closest('[data-stop]'); if(p)goToStop(p.dataset.stop);
+});
+function goToStop(id){
+  const di=+id.slice(1,id.indexOf('-'))-1;
+  cur=di; filter='all'; store.set('vie26-filter',filter);
+  history.pushState(null,'','#giorno-'+(cur+1)); renderTabs(); renderDay(); showView('programma');
+  requestAnimationFrame(()=>{const el=document.getElementById('s-'+id); if(!el)return;
+    el.scrollIntoView({block:'center'}); el.classList.add('flash'); setTimeout(()=>el.classList.remove('flash'),1700)});
+}
+let openedInApp=false, wakeLock=null;
+function openTicket(id){
+  const t=tkById(id); if(!t)return;
+  if(!t.pages.length){location.hash='#biglietti';return}
+  if(!tkReady){location.hash='#biglietti';tkFocus();return}
+  openedInApp=true; location.hash='#biglietto-'+id;
+}
+function showViewer(t){
+  document.getElementById('vw-title').textContent=t.name;
+  document.getElementById('vw-sub').textContent=`${new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'long'}).format(new Date(t.date+'T12:00:00'))} · ${t.time} · ${t.who}`;
+  const jump=t.pages.length>1?`<nav class="vw-jump">${t.pages.map((p,i)=>`<a href="#vw-${t.id}-${i}" data-jump="vw-${t.id}-${i}">${esc(p[1])}</a>`).join('')}</nav>`:'';
+  document.getElementById('vw-pages').innerHTML=jump+`<p class="vw-hint">Tocca il biglietto per ingrandire il codice.</p>`+t.pages.map(([src,l],i)=>`<figure class="vw-page" id="vw-${t.id}-${i}" style="margin:0">${t.pages.length>1?`<b>${esc(l)}</b>`:''}<div class="scroller"><img data-tksrc="${src}" alt="${esc(t.name)}, ${esc(l)}" loading="${i?'lazy':'eager'}"></div></figure>`).join('')
+    +`<p class="vw-pdf">${esc(t.ref)}</p>`;
+  document.querySelectorAll('#vw-pages img[data-tksrc]').forEach(async img=>{img.src=await tkSrc(img.dataset.tksrc)});
+  document.getElementById('viewer').hidden=false; document.body.classList.add('noscroll');
+  document.getElementById('vw-pages').scrollTop=0;
+  try{navigator.wakeLock&&navigator.wakeLock.request('screen').then(l=>wakeLock=l).catch(()=>{})}catch(e){}
+}
+function hideViewer(){
+  const v=document.getElementById('viewer'); if(v.hidden)return;
+  v.hidden=true; document.body.classList.remove('noscroll');
+  try{wakeLock&&wakeLock.release()}catch(e){} wakeLock=null;
+}
+document.getElementById('vw-pages').addEventListener('click',e=>{
+  const img=e.target.closest('.vw-page img');
+  if(img){const f=img.closest('.vw-page'),sc=img.parentElement,r=img.getBoundingClientRect();
+    const fx=(e.clientX-r.left)/r.width, fy=(e.clientY-r.top)/r.height;
+    f.classList.toggle('zoom');
+    if(f.classList.contains('zoom'))requestAnimationFrame(()=>{sc.scrollLeft=fx*img.offsetWidth-sc.clientWidth/2;
+      const pg=document.getElementById('vw-pages');pg.scrollTop+=img.getBoundingClientRect().top+fy*img.offsetHeight-pg.clientHeight/2-pg.getBoundingClientRect().top});
+    return}
+  const a=e.target.closest('[data-jump]'); if(!a)return; e.preventDefault();
+  document.getElementById(a.dataset.jump).scrollIntoView({block:'start',behavior:'smooth'});
+});
+document.getElementById('vw-close').addEventListener('click',()=>{
+  if(openedInApp){openedInApp=false;history.back()} else location.hash='#biglietti';
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('viewer').hidden)document.getElementById('vw-close').click()});
+
+// ---------- Map ----------
+const EMBEDDED=window.self!==window.top;      // inside claude.ai: no tiles, no location
+const LEAFLET_JS='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+const LEAFLET_CSS='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+const MQTT_JS='https://unpkg.com/mqtt@5.10.1/dist/mqtt.min.js';
+const loadScript=src=>new Promise((ok,ko)=>{if([...document.scripts].some(s=>s.src===src))return ok();const s=document.createElement('script');s.src=src;s.onload=ok;s.onerror=ko;document.head.appendChild(s)});
+const loadCss=href=>{if(document.querySelector(`link[href="${href}"]`))return;const l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l)};
+let map=null,mapDay=null,poiLayer=null,poiMarkers={},meMarker=null,meCircle=null,myPos=null,watchId=null,peopleLayer=null,peopleMarkers={},fittedOnce=false;
+function mapMsg(t){const m=document.getElementById('mapmsg');if(!t){m.hidden=true;return}m.textContent=t;m.hidden=false}
+async function initMap(){
+  renderMapTabs(); renderPoiList();
+  if(EMBEDDED){
+    document.getElementById('map').innerHTML='<div class="mapfallback">La mappa, la tua posizione e quella degli altri funzionano nell’app installata sul telefono.</div>';
+    document.querySelector('.mapbtns').hidden=true; return;
+  }
+  if(!map){
+    try{loadCss(LEAFLET_CSS);await loadScript(LEAFLET_JS)}catch(e){mapMsg('Non riesco a caricare la mappa. Serve la connessione la prima volta che la apri.');return}
+    map=L.map('map',{zoomControl:false,attributionControl:true}).setView([48.2082,16.3719],14);
+    L.control.zoom({position:'bottomleft'}).addTo(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
+    poiLayer=L.layerGroup().addTo(map); peopleLayer=L.layerGroup().addTo(map);
+    drawDay(true); drawPeople();
+    refreshMe();
+  } else { drawDay(mapDay!==cur); }
+  setTimeout(()=>map.invalidateSize(),50);
+  startWatch();
+}
+function dayStops(di){return DAYS[di].items.filter(it=>!it.leg&&COORDS[it.q])}
+function drawDay(fit){
+  if(!map)return; mapDay=cur; poiLayer.clearLayers(); poiMarkers={};
+  const stops=dayStops(cur), seen={}, line=[];
+  const n=viennaNow(); let curId=null; if(n.date===DAYS[cur].date)stops.forEach(s=>{if(s.m<=n.min)curId=s.id});
+  stops.forEach((s,i)=>{
+    const c=COORDS[s.q]; line.push(c);
+    const key=c.join(','); const off=seen[key]=(seen[key]||0)+1; // nudge repeated points (home)
+    const pos=off>1?[c[0]+0.00012*(off-1),c[1]+0.00012*(off-1)]:c;
+    const icon=L.divIcon({className:'',html:`<span class="pin k-${s.kind}${s.id===curId?' cur':''}"><b>${i+1}</b></span>`,iconSize:[26,26],iconAnchor:[4,26],popupAnchor:[9,-24]});
+    const mk=L.marker(pos,{icon,title:s.name}).bindPopup(`<b>${i+1}. ${esc(s.name)}</b>${esc(s.t)}${s.end?'–'+esc(s.end):''} · ${KIND[s.kind]}<br><a href="${mapUrl(s.q)}" target="_blank" rel="noopener">Apri in Google Maps</a>${s.tk?` · <a href="#biglietto-${s.tk}">Biglietto</a>`:''}`);
+    mk.addTo(poiLayer); poiMarkers[s.id]=mk;
+  });
+  L.polyline(line,{color:'#b8891c',weight:3,opacity:.7,dashArray:'6 8'}).addTo(poiLayer);
+  if(fit)fitDay();
+}
+function fitDay(){if(!map)return;const pts=dayStops(cur).map(s=>COORDS[s.q]).filter(c=>c[0]>48.15&&c[1]<16.5);if(pts.length)map.fitBounds(pts,{paddingTopLeft:[30,30],paddingBottomRight:[96,30],maxZoom:16})}
+function renderMapTabs(){
+  document.getElementById('maptabs').innerHTML=DAYS.map((d,i)=>{const dt=new Date(d.date+'T12:00:00');
+    return `<button class="daytab" type="button" data-md="${i}" aria-pressed="${i===cur}" ${i===cur?'aria-selected="true"':''}><span class="dw">${new Intl.DateTimeFormat('it-IT',{weekday:'short'}).format(dt)}</span><span class="dn">${dt.getDate()} nov</span></button>`}).join('');
+}
+function renderPoiList(){
+  document.getElementById('poilist').innerHTML=dayStops(cur).map((s,i)=>`<li class="k-${s.kind}"><button type="button" data-poi="${s.id}"><span class="n">${i+1}</span><span class="tm">${esc(s.t)}</span><span>${esc(s.name)}</span></button></li>`).join('');
+}
+document.getElementById('maptabs').addEventListener('click',e=>{
+  const b=e.target.closest('[data-md]');if(!b)return;cur=+b.dataset.md;renderTabs();renderDay();renderMapTabs();renderPoiList();drawDay(true);
+});
+document.getElementById('poilist').addEventListener('click',e=>{
+  const b=e.target.closest('[data-poi]');if(!b||!map)return;const mk=poiMarkers[b.dataset.poi];if(!mk)return;
+  map.flyTo(mk.getLatLng(),17,{duration:.6});mk.openPopup();document.querySelector('.mapwrap').scrollIntoView({block:'start',behavior:'smooth'});
+});
+document.getElementById('btn-fit').addEventListener('click',fitDay);
+document.getElementById('btn-locate').addEventListener('click',()=>{startWatch();if(myPos&&map)map.flyTo([myPos.lat,myPos.lng],17,{duration:.6});else mapMsg('Sto cercando la tua posizione…')});
+document.getElementById('btn-group').addEventListener('click',()=>{
+  if(!map)return;const pts=Object.values(people).map(p=>[p.lat,p.lng]);if(myPos)pts.push([myPos.lat,myPos.lng]);
+  if(pts.length)map.fitBounds(pts,{padding:[40,40],maxZoom:16});else mapMsg('Nessun viaggiatore sta condividendo la posizione.');
+});
+
+// ---------- My position ----------
+function startWatch(){
+  if(watchId!==null||EMBEDDED)return;
+  if(!('geolocation' in navigator)){mapMsg('Questo dispositivo non fornisce la posizione.');return}
+  watchId=navigator.geolocation.watchPosition(onPos,err=>{
+    watchId=null;
+    mapMsg(err.code===1?'Posizione non consentita: abilitala nelle impostazioni del browser per questa app.':'Posizione non disponibile al momento.');
+  },{enableHighAccuracy:true,maximumAge:15000,timeout:30000});
+}
+function onPos(p){
+  myPos={lat:p.coords.latitude,lng:p.coords.longitude,acc:Math.round(p.coords.accuracy),t:Date.now()};
+  refreshMe(); renderPeople(); maybePublish();
+}
+function meIcon(){
+  return myPhoto?L.divIcon({className:'',html:`<span class="medot ph" style="background-image:url(${myPhoto})"></span>`,iconSize:[34,34],iconAnchor:[17,17]})
+    :L.divIcon({className:'',html:'<span class="medot"></span>',iconSize:[18,18],iconAnchor:[9,9]});
+}
+function refreshMe(){
+  if(!map||!myPos)return;
+  const ll=[myPos.lat,myPos.lng];
+  if(!meMarker){meMarker=L.marker(ll,{icon:meIcon(),zIndexOffset:1000,title:'Tu'}).bindPopup('<b>Sei qui</b>').addTo(map);
+    meCircle=L.circle(ll,{radius:myPos.acc,color:'#1f6fe0',weight:1,fillOpacity:.08}).addTo(map); mapMsg('');}
+  else{meMarker.setLatLng(ll).setIcon(meIcon());meCircle.setLatLng(ll).setRadius(myPos.acc)}
+}
+
+// ---------- Travelers (encrypted, via public MQTT broker) ----------
+const TRAVELERS=[['Salvatore','#1f6fe0'],['Luisa','#c2378a'],['Giuseppe','#2f8f5b'],['Antonietta','#c27a12']];
+const GROUP_ID='w26-q8Zt4Lk2Rv';                       // topic namespace
+const GROUP_SECRET='vienna26·Nestroygasse7·7xK2pQ9mVb4cTz8L'; // shared key: change it to reset the group
+const BROKER='wss://broker.hivemq.com:8884/mqtt';
+const TOPIC=`viaggi/${GROUP_ID}/pos/`;
+const TOPIC_AV=`viaggi/${GROUP_ID}/av/`;
+let mq=null,aesKey=null,people=store.get('vie26-people',{}),lastPub=null,pubTimer=null;
+let meName=store.get('vie26-name',''),sharing=store.get('vie26-share',false),dev=store.get('vie26-dev','');
+if(!dev){dev=Math.random().toString(36).slice(2,8);store.set('vie26-dev',dev)}
+const myId=()=>meName?meName.toLowerCase()+'-'+dev:null;
+const colorOf=n=>(TRAVELERS.find(t=>t[0]===n)||[0,'#5b6b7a'])[1];
+async function getKey(){if(aesKey)return aesKey;const h=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(GROUP_SECRET+GROUP_ID));aesKey=await crypto.subtle.importKey('raw',h,'AES-GCM',false,['encrypt','decrypt']);return aesKey}
+async function encrypt(o){const iv=crypto.getRandomValues(new Uint8Array(12));const ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},await getKey(),new TextEncoder().encode(JSON.stringify(o))));const out=new Uint8Array(12+ct.length);out.set(iv);out.set(ct,12);return out}
+async function decrypt(b){b=new Uint8Array(b);const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b.slice(0,12)},await getKey(),b.slice(12));return JSON.parse(new TextDecoder().decode(pt))}
+function setNet(on,txt){const s=document.getElementById('netstate');s.textContent=txt;s.classList.toggle('on',on)}
+async function connectGroup(){
+  if(mq||EMBEDDED||!window.crypto||!crypto.subtle)return;
+  try{await loadScript(MQTT_JS)}catch(e){setNet(false,'Offline');return}
+  setNet(false,'Collegamento…');
+  mq=mqtt.connect(BROKER,{clientId:'v26_'+dev+'_'+Math.random().toString(16).slice(2,6),clean:true,reconnectPeriod:6000,connectTimeout:15000,keepalive:45});
+  mq.on('connect',()=>{setNet(true,'Collegato');mq.subscribe([TOPIC+'+',TOPIC_AV+'+'],{qos:0});lastPub=null;maybePublish();publishAvatar()});
+  mq.on('reconnect',()=>setNet(false,'Ricollegamento…'));
+  mq.on('offline',()=>setNet(false,'Offline'));
+  mq.on('error',()=>setNet(false,'Errore di rete'));
+  mq.on('message',async(topic,payload)=>{
+    if(topic.startsWith(TOPIC_AV)){
+      const id=topic.slice(TOPIC_AV.length);
+      if(!payload||!payload.length)delete avatars[id];
+      else{try{const a=await decrypt(payload);if(typeof a.img==='string'&&a.img.startsWith('data:image/'))avatars[id]=a.img}catch(e){return}}
+      try{localStorage.setItem('vie26-avatars',JSON.stringify(avatars))}catch(e){}
+      renderPeople(); drawPeople(); return;
+    }
+    const id=topic.slice(TOPIC.length);
+    if(!payload||!payload.length){delete people[id]}
+    else{try{const p=await decrypt(payload);if(typeof p.lat==='number')people[id]=p}catch(e){return}}
+    store.set('vie26-people',people); renderPeople(); drawPeople();
+  });
+}
+function maybePublish(force){
+  if(!sharing||!meName||!myPos||!mq||!mq.connected)return;
+  const moved=lastPub?distM(lastPub,myPos):Infinity, age=lastPub?Date.now()-lastPub.t:Infinity;
+  if(!force&&moved<20&&age<60000)return;
+  const msg={n:meName,lat:+myPos.lat.toFixed(5),lng:+myPos.lng.toFixed(5),acc:myPos.acc,t:Date.now()};
+  encrypt(msg).then(b=>{mq.publish(TOPIC+myId(),b,{retain:true,qos:0});lastPub={...msg}});
+}
+function clearMine(id){if(mq&&mq.connected&&id){mq.publish(TOPIC+id,new Uint8Array(0),{retain:true,qos:0});mq.publish(TOPIC_AV+id,new Uint8Array(0),{retain:true,qos:0})}}
+function distM(a,b){const R=6371e3,r=x=>x*Math.PI/180,dl=r(b.lat-a.lat),dg=r(b.lng-a.lng);const h=Math.sin(dl/2)**2+Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dg/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
+const fmtDist=m=>m<1000?Math.round(m/10)*10+' m':(m/1000).toFixed(1).replace('.',',')+' km';
+function ago(t){const s=Math.round((Date.now()-t)/1000);if(s<60)return 'adesso';const m=Math.round(s/60);if(m<60)return m+' min fa';const h=Math.round(m/60);if(h<24)return h+' h fa';return new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(t)}
+function others(){return Object.entries(people).filter(([id])=>id!==myId())}
+function renderPeople(){
+  const el=document.getElementById('people'); if(!el)return;
+  const list=others().sort((a,b)=>b[1].t-a[1].t);
+  if(!list.length){el.innerHTML=`<div class="person"><span class="pp" style="--c:#8a97a3">?</span><span class="lab">Nessuno sta condividendo</span><span class="sub">Quando un altro viaggiatore attiva la condivisione, compare qui e sulla mappa.</span></div>`;return}
+  el.innerHTML=list.map(([id,p])=>{
+    const d=myPos?' · a '+fmtDist(distM(myPos,p)):'';
+    const stale=Date.now()-p.t>30*60000;
+    return `<div class="person">${avatarHtml(p.n,avatars[id],stale?'stale':'')}
+      <span class="lab">${esc(p.n)}</span><span class="sub">Aggiornata ${ago(p.t)}${d}</span>
+      <span class="acts"><button class="smallbtn" type="button" data-findp="${esc(id)}">Mappa</button><a class="smallbtn" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=${p.lat},${p.lng}" target="_blank" rel="noopener">Raggiungi</a></span></div>`}).join('');
+}
+function drawPeople(){
+  if(!map)return; peopleLayer.clearLayers(); peopleMarkers={};
+  others().forEach(([id,p])=>{
+    const stale=Date.now()-p.t>30*60000;
+    const mk=L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',html:avatarHtml(p.n,avatars[id],stale?'stale':''),iconSize:[34,34],iconAnchor:[17,17]}),zIndexOffset:900,title:p.n})
+      .bindPopup(`<b>${esc(p.n)}</b>Aggiornata ${ago(p.t)}<br><a href="https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=${p.lat},${p.lng}" target="_blank" rel="noopener">Raggiungi a piedi</a>`);
+    mk.addTo(peopleLayer); peopleMarkers[id]=mk;
+  });
+}
+document.getElementById('people').addEventListener('click',e=>{
+  const b=e.target.closest('[data-findp]');if(!b||!map)return;const mk=peopleMarkers[b.dataset.findp];if(!mk)return;
+  map.flyTo(mk.getLatLng(),17,{duration:.6});mk.openPopup();document.querySelector('.mapwrap').scrollIntoView({block:'start',behavior:'smooth'});
+});
+// ---------- Profile: name, photo, sharing ----------
+let myPhoto=store.get('vie26-photo',''), myPhotoS=store.get('vie26-photo-s','');
+let avatars=store.get('vie26-avatars',{});
+function setMyName(n){
+  const old=myId(); meName=n; store.set('vie26-name',n);
+  if(sharing&&old&&old!==myId())clearMine(old);
+  if(!meName&&sharing)setSharing(false,true);
+  document.getElementById('me-name').value=n;
+  lastPub=null; maybePublish(true); publishAvatar(); renderPeople(); renderProfile();
+}
+function setSharing(on,quiet){
+  if(on&&!meName){toast('Prima scegli chi sei');document.getElementById('me-share').checked=false;return false}
+  if(on&&EMBEDDED){document.getElementById('me-share').checked=false;return false}
+  sharing=on; store.set('vie26-share',on); document.getElementById('me-share').checked=on;
+  if(on){startWatch();connectGroup();lastPub=null;maybePublish(true);publishAvatar();if(!quiet)toast('Condivisione attiva')}
+  else{clearMine(myId());if(!quiet)toast('Condivisione disattivata')}
+  renderProfile(); return true;
+}
+function setPhoto(big,small){
+  myPhoto=big||''; myPhotoS=small||'';
+  try{localStorage.setItem('vie26-photo',JSON.stringify(myPhoto));localStorage.setItem('vie26-photo-s',JSON.stringify(myPhotoS))}catch(e){toast('Non riesco a salvare la foto su questo dispositivo')}
+  publishAvatar(); renderProfile(); if(meMarker&&myPos)refreshMe();
+}
+async function processPhoto(file){
+  const url=URL.createObjectURL(file); const img=new Image(); img.src=url; await img.decode();
+  const s=Math.min(img.naturalWidth,img.naturalHeight),sx=(img.naturalWidth-s)/2,sy=(img.naturalHeight-s)/2;
+  const mk=size=>{const c=document.createElement('canvas');c.width=c.height=size;c.getContext('2d').drawImage(img,sx,sy,s,s,0,0,size,size);return c.toDataURL('image/jpeg',.82)};
+  const out=[mk(320),mk(96)]; URL.revokeObjectURL(url); return out;
+}
+async function publishAvatar(){
+  if(!sharing||!meName||!mq||!mq.connected)return;
+  const id=myId(); if(!myPhotoS){mq.publish(TOPIC_AV+id,new Uint8Array(0),{retain:true});return}
+  mq.publish(TOPIC_AV+id,await encrypt({n:meName,img:myPhotoS}),{retain:true,qos:0});
+}
+function avatarHtml(name,img,cls,extra){
+  const st=`--c:${colorOf(name)};${img?`background-image:url(${img});background-size:cover;background-position:center;color:transparent;`:''}${extra||''}`;
+  return `<span class="pp ${cls||''}" style="${st}">${esc((name||'?')[0])}</span>`;
+}
+function renderProfile(){
+  const b=document.getElementById('me-btn');
+  b.innerHTML=meName||myPhoto?avatarHtml(meName||'?',myPhoto,'mini'):'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="3.5"/><path d="M5 19.5c1.4-3.2 4-4.5 7-4.5s5.6 1.3 7 4.5"/></svg>';
+  b.setAttribute('aria-label',meName?`Profilo di ${meName}`:'Configura il profilo');
+  const p=document.getElementById('profile'); if(!p)return;
+  p.innerHTML=`<div class="person">${avatarHtml(meName||'?',myPhoto,'')}
+    <span class="lab">${meName?esc(meName):'Profilo non configurato'}</span>
+    <span class="sub">${EMBEDDED?'Posizione disponibile nell’app installata':sharing?'Stai condividendo la posizione':'Posizione non condivisa'}</span>
+    <span class="acts"><button class="smallbtn" type="button" id="prof-edit">Modifica</button></span></div>
+    <button class="item" type="button" id="prof-tour" style="width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);font:inherit;color:inherit;cursor:pointer"><span class="lab">Guida dell’app</span><span class="sub">Un giro di un minuto tra le funzioni principali</span><span class="go">›</span></button>`;
+}
+document.getElementById('me-btn').addEventListener('click',()=>{location.hash='#utili';setTimeout(()=>document.getElementById('profile').scrollIntoView({block:'center'}),60)});
+document.addEventListener('click',e=>{
+  if(e.target.closest('#prof-edit'))openOnboarding(1);
+  if(e.target.closest('#prof-tour'))startTour();
+});
+(function setupShare(){
+  const sel=document.getElementById('me-name'), sw=document.getElementById('me-share');
+  sel.insertAdjacentHTML('beforeend',TRAVELERS.map(([n])=>`<option value="${n}">${n}</option>`).join(''));
+  sel.value=meName; sw.checked=sharing&&!!meName;
+  if(EMBEDDED){sel.disabled=true;sw.disabled=true;document.getElementById('share-note').textContent='La condivisione della posizione funziona nell’app installata sul telefono.'}
+  sel.addEventListener('change',()=>setMyName(sel.value));
+  sw.addEventListener('change',()=>setSharing(sw.checked));
+})();
+
+// ---------- First-run setup ----------
+let obStep=0, obTour=true;
+function openOnboarding(step){obStep=step||0;document.getElementById('onboard').hidden=false;document.body.classList.add('noscroll');renderOnboarding()}
+function closeOnboarding(){document.getElementById('onboard').hidden=true;document.body.classList.remove('noscroll');store.set('vie26-onboarded',true)}
+function renderOnboarding(){
+  const el=document.getElementById('ob-body'), steps=5;
+  document.getElementById('ob-dots').innerHTML=Array.from({length:steps},(_,i)=>`<i class="${i===obStep?'on':i<obStep?'done':''}"></i>`).join('');
+  document.getElementById('ob-back').style.visibility=obStep>0?'visible':'hidden';
+  let h='';
+  if(obStep===0)h=`<div class="ob-hero"><div class="ob-wheel" aria-hidden="true">${WHEEL_SVG}</div>
+      <div class="eyebrow">24 – 27 novembre 2026</div><h2>Benvenuti a <span>Vienna</span></h2>
+      <p>Il programma del viaggio, i biglietti, la mappa e il gruppo in un’unica app. Due minuti per configurarla.</p></div>
+      <div class="ob-actions"><button class="ob-primary" type="button" data-ob="next">Iniziamo</button></div>`;
+  if(obStep===1)h=`<h2>Chi sei?</h2><p>Serve per mostrarti agli altri sulla mappa.</p>
+      <div class="ob-who" role="radiogroup" aria-label="Scegli il tuo nome">${TRAVELERS.map(([n])=>`<button type="button" role="radio" aria-checked="${meName===n}" data-who="${n}">${avatarHtml(n,meName===n?myPhoto:'','big')}<span>${n}</span></button>`).join('')}</div>
+      <div class="ob-actions"><button class="ob-primary" type="button" data-ob="next" ${meName?'':'disabled'}>Avanti</button></div>`;
+  if(obStep===2)h=`<h2>La tua foto</h2><p>Gli altri ti riconosceranno sulla mappa. Resta solo nell’app del gruppo.</p>
+      <div class="ob-photo">${avatarHtml(meName||'?',myPhoto,'huge')}</div>
+      <input type="file" id="ob-file" accept="image/*" hidden>
+      <div class="ob-actions">
+        <button class="ob-primary" type="button" data-ob="pick">${myPhoto?'Cambia foto':'Scatta o scegli una foto'}</button>
+        ${myPhoto?'<button class="ob-ghost" type="button" data-ob="rmphoto">Togli la foto</button>':''}
+        <button class="ob-ghost" type="button" data-ob="next">${myPhoto?'Avanti':'Più tardi'}</button></div>`;
+  if(obStep===3)h=`<h2>Condividi la posizione</h2><p>Mentre l’app è aperta gli altri vedono dove sei, e tu vedi loro. I dati viaggiano cifrati.</p>
+      <div class="ob-card"><label class="switch" for="ob-share"><input type="checkbox" id="ob-share" role="switch" ${sharing?'checked':''} ${EMBEDDED?'disabled':''}>Condividi la mia posizione</label>
+      <p class="note">${EMBEDDED?'Disponibile solo nell’app installata sul telefono.':'Il telefono ti chiederà il permesso. Puoi cambiare idea quando vuoi dalla Mappa o dal profilo.'}</p></div>
+      <div class="ob-actions"><button class="ob-primary" type="button" data-ob="next">Avanti</button></div>`;
+  if(obStep===4)h=`<div class="ob-hero">${avatarHtml(meName||'?',myPhoto,'huge')}<h2>Tutto pronto${meName?', '+esc(meName):''}!</h2>
+      <p>Scegli lo stile che preferisci: puoi cambiarlo quando vuoi da Utili.</p></div>
+      <div class="skins" role="radiogroup" aria-label="Tema dell’app">${skinCards()}</div>
+      <p style="margin:0;color:var(--muted);font-size:14.5px">Vuoi un giro veloce dell’app? Ti mostro dove trovare ogni cosa.</p>
+      <div class="ob-actions"><button class="ob-primary" type="button" data-ob="tour">Fai il giro guidato</button>
+      <button class="ob-ghost" type="button" data-ob="finish">Inizia subito</button></div>`;
+  el.innerHTML=h;
+  const f=el.querySelector('h2,button'); if(f&&f.focus)f.setAttribute('tabindex','-1');
+}
+document.getElementById('onboard').addEventListener('click',async e=>{
+  const w=e.target.closest('[data-who]'); if(w){setMyName(w.dataset.who);renderOnboarding();return}
+  const a=e.target.closest('[data-ob]'); if(!a)return;
+  const act=a.dataset.ob;
+  if(act==='next'){obStep=Math.min(4,obStep+1);renderOnboarding()}
+  if(act==='pick')document.getElementById('ob-file').click();
+  if(act==='rmphoto'){setPhoto('','');renderOnboarding()}
+  if(act==='finish'){closeOnboarding()}
+  if(act==='tour'){closeOnboarding();startTour()}
+});
+document.getElementById('onboard').addEventListener('change',async e=>{
+  if(e.target.id==='ob-file'&&e.target.files[0]){try{const [b,s]=await processPhoto(e.target.files[0]);setPhoto(b,s);renderOnboarding()}catch(err){toast('Questa immagine non si apre: provane un’altra')}}
+  if(e.target.id==='ob-share')setSharing(e.target.checked,true);
+});
+document.getElementById('ob-back').addEventListener('click',()=>{obStep=Math.max(0,obStep-1);renderOnboarding()});
+document.getElementById('ob-skip').addEventListener('click',closeOnboarding);
+
+// ---------- Interactive guide ----------
+const TOUR=[
+ {view:'programma',sel:'.clock',title:'Data e ora di Vienna',text:'Sempre in vista: oggi, l’ora esatta e quanto manca alla partenza. Durante il viaggio ti dice in che giorno sei.'},
+ {view:'programma',sel:'#tabs',title:'I quattro giorni',text:'Tocca un giorno per vederne il programma. Durante il viaggio si apre da solo su oggi, con l’etichetta “Oggi”.'},
+ {view:'programma',sel:'#nowline',title:'La linea di adesso',text:'Segna l’ora attuale nel programma. Le tappe passate si attenuano, quella in corso è evidenziata.'},
+ {view:'programma',sel:'#day .row .actions',title:'Mappa e spunta',text:'Il segnaposto apre il luogo in Google Maps. La spunta segna la tappa come fatta e fa avanzare la barra del giorno.'},
+ {view:'programma',day:1,sel:'#day .tkbtn',title:'Biglietto della tappa',text:'Dove serve un biglietto trovi questo pulsante: lo apre a schermo intero, pronto da mostrare all’ingresso.'},
+ {view:'programma',sel:'.dock [data-go="biglietti"]',title:'Tutti i biglietti',text:'Tutti i biglietti del viaggio, divisi per giorno. Funzionano anche senza internet.'},
+ {view:'programma',sel:'.dock [data-go="adesso"]',title:'Adesso',text:'Ti riporta al giorno di oggi e al punto del programma in cui siete.'},
+ {view:'programma',sel:'.dock [data-go="mappa"]',title:'Mappa e gruppo',text:'Le tappe di ogni giorno sulla mappa, la tua posizione e dove sono gli altri viaggiatori.'},
+ {view:'programma',sel:'.dock [data-go="utili"]',title:'Cose utili',text:'Numeri di emergenza, prenotazioni, trasporti, consigli per i mercatini e il tuo profilo.'},
+ {view:'programma',sel:'#me-btn',title:'Il tuo profilo',text:'Da qui cambi nome, foto e condivisione della posizione, e riapri questa guida quando vuoi.'}
+];
+let tourI=0,tourDay=0;
+function startTour(){tourI=0;tourDay=cur;document.getElementById('tour').hidden=false;showTourStep()}
+function endTour(){document.getElementById('tour').hidden=true;store.set('vie26-toured',true);
+  if(cur!==tourDay){cur=tourDay;history.replaceState(null,'','#giorno-'+(cur+1));renderTabs();renderDay()}}
+function showTourStep(){
+  const s=TOUR[tourI];
+  const want=s.day!=null?s.day:tourDay;
+  if(view!==s.view){cur=want;location.hash='#giorno-'+(cur+1)}
+  else if(cur!==want){cur=want;history.replaceState(null,'','#giorno-'+(cur+1));renderTabs();renderDay()}
+  if(filter!=='all'){filter='all';store.set('vie26-filter',filter);renderTabs();renderDay()}
+  const go=()=>{
+    const el=document.querySelector(s.sel);
+    if(!el){if(tourI<TOUR.length-1){tourI++;showTourStep()}else endTour();return}
+    const fixed=el.closest('.dock,.bar,header');
+    if(!fixed)el.scrollIntoView({block:'center'}); else if(el.closest('header'))window.scrollTo({top:0});
+    setTimeout(()=>placeTour(el,s),90);
+  };
+  setTimeout(go,view!==s.view?120:0);
+}
+function placeTour(el,s){
+  const r=el.getBoundingClientRect(),pad=6,spot=document.getElementById('tour-spot'),card=document.getElementById('tour-card');
+  Object.assign(spot.style,{left:(r.left-pad)+'px',top:(r.top-pad)+'px',width:(r.width+pad*2)+'px',height:(r.height+pad*2)+'px'});
+  document.getElementById('tour-step').textContent=`${tourI+1} di ${TOUR.length}`;
+  document.getElementById('tour-title').textContent=s.title;
+  document.getElementById('tour-text').textContent=s.text;
+  document.getElementById('tour-prev').style.visibility=tourI?'visible':'hidden';
+  document.getElementById('tour-next').textContent=tourI===TOUR.length-1?'Fine':'Avanti';
+  const cw=Math.min(340,innerWidth-24); card.style.width=cw+'px';
+  const ch=card.offsetHeight, below=r.bottom+pad+12, above=r.top-pad-12-ch;
+  const top=(r.top+r.height/2<innerHeight/2||above<12)?Math.min(below,innerHeight-ch-12):above;
+  card.style.top=Math.max(12,top)+'px';
+  card.style.left=Math.max(12,Math.min(innerWidth-cw-12,r.left+r.width/2-cw/2))+'px';
+  document.getElementById('tour-next').focus({preventScroll:true});
+}
+document.getElementById('tour-next').addEventListener('click',()=>{if(tourI<TOUR.length-1){tourI++;showTourStep()}else endTour()});
+document.getElementById('tour-prev').addEventListener('click',()=>{if(tourI>0){tourI--;showTourStep()}});
+document.getElementById('tour-skip').addEventListener('click',endTour);
+addEventListener('resize',()=>{if(!document.getElementById('tour').hidden)showTourStep()});
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('tour').hidden)return;
+  if(e.key==='Escape')endTour(); if(e.key==='ArrowRight')document.getElementById('tour-next').click(); if(e.key==='ArrowLeft')document.getElementById('tour-prev').click();
+});
+setInterval(()=>{renderPeople();drawPeople();maybePublish()},60000);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){lastPub=null;maybePublish(true)}});
+if(sharing&&meName&&!EMBEDDED){startWatch();connectGroup()}
+
+// ---------- Themes ----------
+const SKINS=[
+ {id:'imperiale',name:'Notte imperiale',bg:'linear-gradient(135deg,#f3f5f7 50%,#0f161d 50%)',fg:'#16222e',acc:'#b8891c',font:'"Bodoni Moda",Georgia,serif',bar:'#f3f5f7',barDark:'#0f161d'},
+ {id:'tabellone',name:'Tabellone',bg:'#0d0f12',fg:'#f2f2ee',acc:'#ffb000',font:'"Barlow Condensed",sans-serif',bar:'#0d0f12'},
+ {id:'punsch',name:'Punsch',bg:'#fbf3ea',fg:'#2a1416',acc:'#8e1b2b',font:'"Bricolage Grotesque",sans-serif',bar:'#fbf3ea'}
+];
+let skin=QS.get('skin')||store.get('vie26-skin','imperiale'); if(!SKINS.some(s=>s.id===skin))skin='imperiale';
+function skinCards(){return SKINS.map(s=>`<button class="skin" type="button" role="radio" aria-checked="${s.id===skin}" data-skin="${s.id}">
+  <span class="sw" style="background:${s.bg};color:${s.fg}"><b style="font-family:${s.font};${s.id==='imperiale'?'color:#16222e':''}">Wien</b><i style="background:${s.acc};width:${s.id==='tabellone'?'60%':'40%'}"></i></span>
+  <span class="nm">${s.name}</span></button>`).join('')}
+function applySkin(id){
+  skin=id; store.set('vie26-skin',id); document.documentElement.dataset.skin=id;
+  const s=SKINS.find(x=>x.id===id);
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m=>{
+    const dark=(m.getAttribute('media')||'').includes('dark');
+    m.setAttribute('content',s.barDark&&dark?s.barDark:s.bar)});
+  document.querySelectorAll('.skins').forEach(g=>g.querySelectorAll('.skin').forEach(b=>b.setAttribute('aria-checked',b.dataset.skin===id)));
+  try{if(FX.kind)FX.col=fxColors()}catch(e){/* effects not initialised yet */}
+}
+document.getElementById('skins-utili').innerHTML=skinCards();
+document.addEventListener('click',e=>{const b=e.target.closest('.skin[data-skin]');if(b){applySkin(b.dataset.skin);toast('Tema: '+SKINS.find(s=>s.id===b.dataset.skin).name)}});
+applySkin(skin);
+
+// ---------- Weather (Open-Meteo, no key) ----------
+const WX_VIENNA=[48.2082,16.3738];
+const WX_TYPICAL={max:6,min:0}; // late-November average, shown until the forecast reaches a day
+let wx=store.get('vie26-wx',null), wxBusy=false;
+function wxInfo(c){
+  if(c===0)return ['sun','Sereno'];
+  if(c===1)return ['sun','Poco nuvoloso'];
+  if(c===2)return ['partly','Parzialmente nuvoloso'];
+  if(c===3)return ['cloud','Coperto'];
+  if(c===45||c===48)return ['fog','Nebbia'];
+  if(c>=51&&c<=57)return ['rain','Pioggerella'];
+  if(c===66||c===67)return ['rain','Pioggia gelata'];
+  if(c>=61&&c<=65)return ['rain','Pioggia'];
+  if(c>=71&&c<=77)return ['snow','Neve'];
+  if(c>=80&&c<=82)return ['rain','Rovesci'];
+  if(c===85||c===86)return ['snow','Rovesci di neve'];
+  if(c>=95)return ['storm','Temporale'];
+  return ['cloud','Variabile'];
+}
+function wxIcon(kind){
+  const cl='<path d="M7 18h10a4 4 0 0 0 .6-7.96A5.5 5.5 0 0 0 7 11a3.5 3.5 0 0 0 0 7z"/>';
+  const p={
+    sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/>',
+    partly:'<circle cx="9" cy="8.5" r="3.2"/><path d="M9 2.8v1.4M3.3 8.5h1.4M4.9 4.4l1 1M13.1 4.4l-1 1"/><path d="M9 19h9a3.4 3.4 0 0 0 .5-6.77A4.7 4.7 0 0 0 9.4 12.5 3 3 0 0 0 9 19z"/>',
+    cloud:cl,
+    fog:'<path d="M4 9h16M3 13h18M5 17h14"/>',
+    moon:'<path d="M19.5 14.5A7.5 7.5 0 1 1 9.5 4.5a6 6 0 0 0 10 10z"/>',
+    rain:cl.replace('18h10','15h10').replace('a3.5 3.5 0 0 0 0 7z','a3.5 3.5 0 0 0 0 4z')+'<path d="M9 18l-1 3M13 18l-1 3M17 18l-1 3"/>',
+    snow:cl.replace('18h10','15h10').replace('a3.5 3.5 0 0 0 0 7z','a3.5 3.5 0 0 0 0 4z')+'<path d="M9 19.5h.01M12.5 21h.01M16 19.5h.01"/>',
+    storm:cl.replace('18h10','15h10').replace('a3.5 3.5 0 0 0 0 7z','a3.5 3.5 0 0 0 0 4z')+'<path d="M12.5 15l-2 3.5h3l-2 3.5"/>'
+  }[kind]||cl;
+  return `<svg class="wx-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+}
+const wxUrl=(lat,lng,daily)=>`https://api.open-meteo.com/v1/forecast?latitude=${lat.toFixed(3)}&longitude=${lng.toFixed(3)}&current=temperature_2m,apparent_temperature,weather_code,is_day,wind_speed_10m${daily?'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&forecast_days=16':''}&timezone=Europe%2FVienna`;
+async function weatherPos(ask){
+  if(myPos&&Date.now()-myPos.t<20*60000)return myPos;
+  if(!('geolocation' in navigator)||EMBEDDED)return null;
+  let granted=false;
+  try{granted=(await navigator.permissions.query({name:'geolocation'})).state==='granted'}catch(e){}
+  if(!granted&&!ask)return null;
+  return new Promise(ok=>navigator.geolocation.getCurrentPosition(p=>ok({lat:p.coords.latitude,lng:p.coords.longitude,acc:p.coords.accuracy,t:Date.now()}),()=>ok(null),{timeout:10000,maximumAge:600000}));
+}
+async function loadWeather(force,ask){
+  if(PREVIEW&&QS.get('fx')){ // fake current weather matching the previewed effect
+    const m={rain:[63,6,1],snow:[73,-1,1],storm:[95,9,1],fog:[45,2,1],clouds:[3,4,1],sun:[0,7,1],stars:[0,-2,0]}[QS.get('fx')]||[2,4,1];
+    wx={t:Date.now(),daily:(wx&&wx.daily)||{},cur:{temp:m[1],feel:m[1]-3,code:m[0],wind:8,day:m[2],here:false,t:Date.now()}};
+    renderWeather(); return;
+  }
+  if(EMBEDDED||wxBusy)return;
+  if(!force&&wx&&Date.now()-wx.t<30*60000){renderWeather();return}
+  wxBusy=true;
+  try{
+    const v=await fetch(wxUrl(WX_VIENNA[0],WX_VIENNA[1],true)).then(r=>{if(!r.ok)throw 0;return r.json()});
+    const daily={};
+    v.daily.time.forEach((d,i)=>{daily[d]={code:v.daily.weather_code[i],max:v.daily.temperature_2m_max[i],min:v.daily.temperature_2m_min[i],pp:v.daily.precipitation_probability_max[i]}});
+    let src=v.current, here=false;
+    const pos=await weatherPos(ask);
+    if(pos){try{const p=await fetch(wxUrl(pos.lat,pos.lng,false)).then(r=>r.json());if(p.current){src=p.current;here=true}}catch(e){}}
+    wx={t:Date.now(),daily,cur:{temp:src.temperature_2m,feel:src.apparent_temperature,code:src.weather_code,wind:src.wind_speed_10m,day:src.is_day,here,t:Date.now()}};
+    store.set('vie26-wx',wx);
+  }catch(e){/* offline: keep the last saved weather */}
+  wxBusy=false; renderWeather();
+}
+function renderWeather(){
+  const b=document.getElementById('wxnow');
+  if(wx&&wx.cur){
+    let [k,l]=wxInfo(wx.cur.code); const old=Date.now()-wx.cur.t>3*3600000;
+    if(wx.cur.day===0&&(k==='sun'||k==='partly')){k='moon';if(l==='Sereno')l='Sereno, notte'}
+    b.innerHTML=`${wxIcon(k)}<b>${Math.round(wx.cur.temp)}°</b> ${l} <span>· ${wx.cur.here?'dove sei':'Vienna'}${old?' · '+ago(wx.cur.t):''}</span>`;
+    b.title=wx.cur.here?'Meteo attuale nella tua posizione':'Tocca per il meteo nella tua posizione';
+    b.hidden=false;
+  }
+  renderTabs(); renderDay(); fxUpdate();
+}
+function wxDayHtml(d,live){
+  if(EMBEDDED)return '';
+  const f=wx&&wx.daily&&wx.daily[d.date];
+  let h='<div class="wxday">';
+  if(f){const [k,l]=wxInfo(f.code);
+    h+=`${wxIcon(k)}<span class="wxd"><span><b>${Math.round(f.max)}°</b> / ${Math.round(f.min)}° · ${l}</span><span>Previsione per Vienna${f.pp!=null?` · pioggia ${f.pp}%`:''}</span></span>`}
+  else h+=`${wxIcon('cloud')}<span class="wxd"><span><b>${WX_TYPICAL.max}°</b> / ${WX_TYPICAL.min}° · media del periodo</span><span>La previsione arriva circa 15 giorni prima</span></span>`;
+  if(live&&wx&&wx.cur){const [k,l]=wxInfo(wx.cur.code);
+    h+=`<span class="wxlive"><span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--now)">Adesso</span><span><b>${Math.round(wx.cur.temp)}°</b></span><span style="color:var(--muted);font-size:12px">percepiti ${Math.round(wx.cur.feel)}°</span></span>`}
+  return h+'</div>';
+}
+document.getElementById('wxnow').addEventListener('click',()=>{toast('Aggiorno il meteo…');loadWeather(true,true)});
+
+// ---------- Weather effects layer ----------
+const FX={mode:QS.get('fx')||store.get('vie26-fx','auto'),kind:null,level:1,parts:[],raf:0,last:0,flash:0,c:null,ctx:null,w:0,h:0,dpr:1};
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+function fxKindFromWeather(){
+  if(!wx||!wx.cur)return [null,1];
+  const c=wx.cur.code, k=wxInfo(c)[0], night=wx.cur.day===0;
+  if(k==='rain')return ['rain',(c>=51&&c<=55)?.45:(c===61||c===80)?.75:(c===65||c===82||c===67)?1.6:1.1];
+  if(k==='snow')return ['snow',(c===71||c===85||c===77)?.6:(c===75||c===86)?1.6:1];
+  if(k==='storm')return ['storm',1.5];
+  if(k==='fog')return ['fog',1];
+  if(k==='cloud')return ['clouds',1.2];
+  if(k==='partly')return [night?'stars':'clouds',.6];
+  return [night?'stars':'sun',1];
+}
+function fxResolve(){
+  if(FX.mode==='off')return [null,1];
+  if(FX.mode!=='auto')return [FX.mode,1];
+  return fxKindFromWeather();
+}
+function fxColors(){const s=getComputedStyle(document.documentElement);return {rain:s.getPropertyValue('--fx-rain').trim(),snow:s.getPropertyValue('--fx-snow').trim(),mist:s.getPropertyValue('--fx-mist').trim(),sun:s.getPropertyValue('--fx-sun').trim(),star:s.getPropertyValue('--fx-star').trim()}}
+function fxResize(){
+  const c=FX.c; FX.dpr=Math.min(2,devicePixelRatio||1); FX.w=innerWidth; FX.h=innerHeight;
+  c.width=FX.w*FX.dpr; c.height=FX.h*FX.dpr; c.style.width=FX.w+'px'; c.style.height=FX.h+'px';
+  FX.ctx.setTransform(FX.dpr,0,0,FX.dpr,0,0);
+}
+const rnd=(a,b)=>a+Math.random()*(b-a);
+function fxSeed(){
+  const k=FX.kind,W=FX.w,H=FX.h,L=FX.level,area=W*H/(390*844);
+  FX.parts=[];
+  if(k==='rain'||k==='storm'){const n=Math.round(110*L*area);for(let i=0;i<n;i++)FX.parts.push({x:rnd(0,W),y:rnd(-H,H),l:rnd(10,22),v:rnd(11,18)*(k==='storm'?1.25:1),o:rnd(.35,1)})}
+  if(k==='snow'){const n=Math.round(90*L*area);for(let i=0;i<n;i++)FX.parts.push({x:rnd(0,W),y:rnd(-H,H),r:rnd(1.2,3.4),v:rnd(.5,1.4),ph:rnd(0,6.28),sw:rnd(.3,1.2)})}
+  if(k==='fog'){for(let i=0;i<6;i++)FX.parts.push({y:rnd(.1,.95)*H,h:rnd(70,160),x:rnd(-W,0),v:rnd(.08,.25),a:rnd(.35,.7)})}
+  if(k==='clouds'){const n=Math.round(5*L)+2;for(let i=0;i<n;i++)FX.parts.push({x:rnd(-.3,1)*W,y:rnd(.0,.55)*H,r:rnd(90,190),v:rnd(.06,.18),a:rnd(.6,.95)})}
+  if(k==='stars'){for(let i=0;i<70;i++)FX.parts.push({x:rnd(0,W),y:rnd(0,H*.6),r:rnd(.5,1.6),ph:rnd(0,6.28),sp:rnd(.6,2)})}
+}
+function fxFrame(ts){
+  if(!FX.kind){FX.ctx.clearRect(0,0,FX.w,FX.h);return}
+  const dt=Math.min(3,(ts-(FX.last||ts))/16.7); FX.last=ts;
+  const g=FX.ctx,W=FX.w,H=FX.h,k=FX.kind,col=FX.col; g.clearRect(0,0,W,H);
+  if(k==='rain'||k==='storm'){
+    g.strokeStyle=col.rain; g.lineWidth=1.2; g.lineCap='round';
+    for(const p of FX.parts){p.y+=p.v*dt;p.x-=p.v*.18*dt;if(p.y>H+20){p.y=rnd(-40,-10);p.x=rnd(0,W+60)}
+      g.globalAlpha=p.o; g.beginPath(); g.moveTo(p.x,p.y); g.lineTo(p.x+p.l*.18,p.y-p.l); g.stroke()}
+    g.globalAlpha=1;
+    if(k==='storm'){ if(FX.flash<=0&&Math.random()<.0025*dt)FX.flash=1;
+      if(FX.flash>0){g.fillStyle=`rgba(255,255,255,${(FX.flash*.55).toFixed(3)})`;g.fillRect(0,0,W,H);FX.flash-=.06*dt} }
+  }
+  if(k==='snow'){
+    g.fillStyle=col.snow;
+    for(const p of FX.parts){p.y+=p.v*dt;p.ph+=.02*dt;p.x+=Math.sin(p.ph)*p.sw*.6*dt;if(p.y>H+6){p.y=-6;p.x=rnd(0,W)}if(p.x<-6)p.x=W+6;if(p.x>W+6)p.x=-6;
+      g.beginPath(); g.arc(p.x,p.y,p.r,0,6.283); g.fill()}
+  }
+  if(k==='fog'){
+    for(const p of FX.parts){p.x+=p.v*dt;if(p.x>W)p.x=-W*1.2;
+      const gr=g.createLinearGradient(0,p.y-p.h/2,0,p.y+p.h/2); gr.addColorStop(0,'transparent'); gr.addColorStop(.5,col.mist); gr.addColorStop(1,'transparent');
+      g.globalAlpha=p.a; g.fillStyle=gr; g.fillRect(p.x,p.y-p.h/2,W*2.2,p.h)}
+    g.globalAlpha=1;
+  }
+  if(k==='clouds'){
+    for(const p of FX.parts){p.x+=p.v*dt;if(p.x-p.r*2>W)p.x=-p.r*2;
+      for(const [dx,dy,s] of [[0,0,1],[p.r*.8,p.r*.15,.75],[-p.r*.75,p.r*.2,.7]]){
+        const gr=g.createRadialGradient(p.x+dx,p.y+dy,0,p.x+dx,p.y+dy,p.r*s); gr.addColorStop(0,col.mist); gr.addColorStop(1,'transparent');
+        g.globalAlpha=p.a; g.fillStyle=gr; g.beginPath(); g.arc(p.x+dx,p.y+dy,p.r*s,0,6.283); g.fill()}}
+    g.globalAlpha=1;
+  }
+  if(k==='sun'){
+    const t=ts/1000, R=Math.max(W,H)*.55, cx=W*.92, cy=H*.04;
+    const gr=g.createRadialGradient(cx,cy,0,cx,cy,R*(1+.04*Math.sin(t*.8))); gr.addColorStop(0,col.sun); gr.addColorStop(1,'transparent');
+    g.fillStyle=gr; g.fillRect(0,0,W,H);
+    g.save(); g.translate(cx,cy); g.rotate(t*.03); g.strokeStyle=col.sun; g.lineWidth=18; g.globalAlpha=.35;
+    for(let i=0;i<10;i++){g.rotate(Math.PI/5);g.beginPath();g.moveTo(40,0);g.lineTo(R*.8,0);g.stroke()}
+    g.restore(); g.globalAlpha=1;
+  }
+  if(k==='stars'){
+    g.fillStyle=col.star; const t=ts/1000;
+    for(const p of FX.parts){g.globalAlpha=.35+.65*Math.abs(Math.sin(t*p.sp+p.ph));g.beginPath();g.arc(p.x,p.y,p.r,0,6.283);g.fill()}
+    g.globalAlpha=1;
+  }
+  // With "reduce motion" on, keep a still frame instead of animating
+  FX.raf=reduceMotion.matches?-1:requestAnimationFrame(fxFrame);
+}
+function fxStop(){cancelAnimationFrame(FX.raf);FX.raf=0;if(FX.ctx)FX.ctx.clearRect(0,0,FX.w,FX.h)}
+function fxUpdate(){
+  const [k,l]=fxResolve();
+  if(!FX.c){FX.c=document.getElementById('fx');FX.ctx=FX.c.getContext('2d');fxResize()}
+  document.documentElement.dataset.wx=k||'none';
+  if(k===FX.kind&&l===FX.level&&FX.raf)return;
+  fxStop(); FX.kind=k; FX.level=l;
+  // Haze-type effects sit behind the cards so text stays readable; falling ones go on top
+  FX.c.style.zIndex=(k==='rain'||k==='snow'||k==='storm')?'9':'0';
+  if(!k||document.hidden)return;
+  FX.col=fxColors(); fxSeed(); FX.last=0; FX.raf=requestAnimationFrame(fxFrame);
+  const lab=document.getElementById('fx-state'); if(lab)lab.textContent=fxLabel();
+}
+function fxLabel(){const [k]=fxResolve();return k?{rain:'Pioggia',snow:'Neve',storm:'Temporale',fog:'Nebbia',clouds:'Nuvole',sun:'Sole',stars:'Cielo stellato'}[k]:'Nessun effetto'}
+addEventListener('resize',()=>{if(!FX.c)return;fxResize();if(FX.kind){fxSeed()}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)fxStop();else{FX.kind=null;fxUpdate()}});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{FX.col=fxColors()});
+reduceMotion.addEventListener('change',()=>{FX.kind=null;fxUpdate()});
+document.addEventListener('change',e=>{
+  if(e.target.id!=='fx-mode')return;
+  FX.mode=e.target.value; store.set('vie26-fx',FX.mode); FX.kind=null; fxUpdate();
+  document.getElementById('fx-state').textContent=fxLabel();
+});
+setInterval(()=>loadWeather(false),15*60000);
+addEventListener('online',()=>loadWeather(true));
+
+// ---------- Games (all offline) ----------
+const QUIZ=[
+ ['In che anno è stata costruita la ruota panoramica del Prater?',['1873','1897','1912','1955'],1,'Il Riesenrad fu costruito nel 1897 per il giubileo dell’imperatore Francesco Giuseppe.'],
+ ['Chi ha dipinto “Il bacio”, esposto al Belvedere?',['Egon Schiele','Gustav Klimt','Oskar Kokoschka','Hans Makart'],1,'È di Gustav Klimt: lo vedrete il 26 al Belvedere superiore.'],
+ ['Chi inventò la Sachertorte, nel 1832?',['Franz Sacher','Anna Demel','Johann Strauss','Eduard Sacher'],0,'Franz Sacher, allora apprendista di sedici anni alla corte del principe Metternich.'],
+ ['Dove nacque Mozart?',['Vienna','Linz','Salisburgo','Praga'],2,'A Salisburgo nel 1756. A Vienna visse e lavorò per gli ultimi dieci anni.'],
+ ['Come si chiama la campana più grande del Duomo di Santo Stefano?',['Pummerin','Glockerl','Stephanie','Domglocke'],0,'La Pummerin, rifusa dopo la Seconda guerra mondiale, suona solo nelle grandi occasioni.'],
+ ['Chi compose il valzer “Sul bel Danubio blu”?',['Mozart','Johann Strauss figlio','Beethoven','Haydn'],1,'Johann Strauss figlio, nel 1866.'],
+ ['Con quale carne si prepara la Wiener Schnitzel tradizionale?',['Maiale','Pollo','Vitello','Manzo'],2,'Vitello, impanato e fritto. Con il maiale si chiama “Schnitzel alla viennese”.'],
+ ['Quante stanze ha la reggia di Schönbrunn?',['Circa 300','Circa 700','1.441','2.900'],2,'1.441 stanze: nella visita ne vedrete una quarantina.'],
+ ['Qual era il nome di Sissi prima del matrimonio?',['Elisabetta di Baviera','Maria Teresa d’Austria','Sofia di Sassonia','Elena di Baviera'],0,'Elisabetta, duchessa in Baviera, sposò Francesco Giuseppe nel 1854.'],
+ ['Per chi fu costruito il Belvedere?',['Maria Teresa','Il principe Eugenio di Savoia','Francesco Giuseppe','Carlo VI'],1,'Era la residenza estiva del principe Eugenio di Savoia, all’inizio del Settecento.'],
+ ['Qual è lo zoo più antico del mondo ancora aperto?',['Londra','Berlino','Schönbrunn','Parigi'],2,'Il Tiergarten di Schönbrunn, aperto nel 1752.'],
+ ['Che cos’è una Wiener Melange?',['Una torta','Un caffè con latte schiumato','Una birra scura','Un valzer'],1,'Il caffè viennese per eccellenza, simile a un cappuccino.'],
+ ['Quale palazzo era la residenza invernale degli Asburgo?',['Schönbrunn','Belvedere','Hofburg','Palazzo Kinsky'],2,'L’Hofburg, dove si trovano il Museo di Sissi e il Tesoro imperiale. Schönbrunn era la residenza estiva.'],
+ ['Quali cavalli si esibiscono alla Scuola di equitazione spagnola?',['Lipizzani','Haflinger','Frisoni','Andalusi'],0,'I lipizzani, che nascono scuri e diventano bianchi crescendo.'],
+ ['Il Kunsthistorisches Museum ha la collezione più grande al mondo di quale pittore?',['Rembrandt','Pieter Bruegel il Vecchio','Caravaggio','Dürer'],1,'Una dozzina di opere di Bruegel il Vecchio, tra cui “La torre di Babele”.'],
+ ['In che città fu uccisa l’imperatrice Sissi, nel 1898?',['Vienna','Trieste','Ginevra','Budapest'],2,'A Ginevra, sul lungolago, da un anarchico italiano.'],
+ ['Che cos’è il Kaiserschmarrn?',['Uno stufato','Una frittata dolce a pezzetti','Un panino con wurstel','Un liquore'],1,'Una frittata dolce sminuzzata, servita con zucchero a velo e composta di prugne.'],
+ ['Quale fiume attraversa Vienna?',['Reno','Elba','Danubio','Inn'],2,'Il Danubio, che passa poco lontano dal vostro alloggio a Leopoldstadt.'],
+ ['In che anno fu inaugurata l’Opera di Vienna?',['1748','1869','1910','1955'],1,'Nel 1869, con il “Don Giovanni” di Mozart.'],
+ ['Che cos’è il Glühwein che troverete ai mercatini?',['Birra calda','Vino caldo speziato','Tè con rum','Sidro di mele'],1,'Vino rosso scaldato con cannella, chiodi di garofano e agrumi.']
+];
+const MEMO=[['Danke','Grazie'],['Bitte','Prego'],['Kaffee','Caffè'],['Kuchen','Torta'],['Bahnhof','Stazione'],['Kirche','Chiesa'],['Schloss','Castello'],['Markt','Mercato'],['Rechnung','Conto'],['Wasser','Acqua'],['Weihnachten','Natale'],['Schnee','Neve'],['Straße','Strada'],['Ausgang','Uscita']];
+const WORDS=[['SACHERTORTE','La torta al cioccolato più famosa di Vienna'],['RIESENRAD','La ruota panoramica del Prater'],['BELVEDERE','Ci vedrete il Bacio di Klimt'],['STEPHANSDOM','Il duomo nel cuore della città'],['KAISERSCHMARRN','Frittata dolce sminuzzata'],['HOFBURG','La residenza invernale degli Asburgo'],['LIPIZZANI','Cavalli bianchi della Scuola spagnola'],['MELANGE','Il caffè viennese con latte schiumato'],['STRUDEL','Dolce di mele arrotolato'],['MERCATINO','Ce ne sono uno in ogni piazza a novembre'],['DANUBIO','Il fiume di Vienna'],['MOZART','Ha una statua nel Burggarten'],['KLIMT','Pittore dorato della Secessione'],['PRATER','Il parco con il luna park'],['FIGLMUELLER','Dove si mangia la Schnitzel il 25 sera'],['GLUEHWEIN','Si beve caldo nelle tazze con cauzione'],['NASCHMARKT','Il grande mercato all’aperto vicino a Karlsplatz'],['KARLSKIRCHE','Chiesa barocca con la terrazza panoramica']];
+const GAME_LIST=[
+ {id:'quiz',name:'Quiz su Vienna',desc:'10 domande su storia, arte e cucina, con la spiegazione dopo ogni risposta.',color:'#b8891c',letter:'?',best:()=>{const b=store.get('vie26-g-quiz',null);return b!=null?`Record: ${b}/10`:'Mai giocato'}},
+ {id:'memo',name:'Memory del tedesco',desc:'Abbina la parola tedesca alla traduzione: 8 coppie da trovare con meno mosse possibile.',color:'#2f7d4f',letter:'Ä',best:()=>{const b=store.get('vie26-g-memo',null);return b!=null?`Record: ${b} mosse`:'Mai giocato'}},
+ {id:'word',name:'Parola segreta',desc:'Indovina la parola viennese lettera per lettera prima che si spengano le cabine della ruota.',color:'#a3322b',letter:'W',best:()=>{const b=store.get('vie26-g-word',0);return b?`Serie migliore: ${b}`:'Mai giocato'}}
+];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let G=null;
+const gEl=()=>document.getElementById('games');
+function gTop(title,stats){return `<div class="gtop"><div><h2>${esc(title)}</h2>${stats?`<div class="gstat">${stats}</div>`:''}</div><button class="smallbtn" type="button" data-g="menu">‹ Giochi</button></div>`}
+function renderGames(){
+  G=null;
+  gEl().innerHTML=`<div class="viewhead"><h2>Giochi</h2><p>Per l’aereo e per le attese. Funzionano senza connessione.</p></div>
+    <div class="gcards">${GAME_LIST.map(g=>`<button class="gcard" type="button" data-g="${g.id}"><span class="gi" style="background:${g.color}">${g.letter}</span><b>${esc(g.name)}</b><span>${esc(g.desc)}</span><em>${esc(g.best())}</em></button>`).join('')}</div>`;
+}
+// Quiz
+function startQuiz(){G={k:'quiz',qs:shuffle(QUIZ).slice(0,10).map(q=>{const o=q[1].map((t,i)=>[t,i===q[2]]);return {q:q[0],opts:shuffle(o),exp:q[3]}}),i:0,score:0,ans:null};renderQuiz()}
+function renderQuiz(){
+  const s=G; if(s.i>=s.qs.length){
+    const best=store.get('vie26-g-quiz',0); if(s.score>best)store.set('vie26-g-quiz',s.score);
+    const msg=s.score>=9?'Siete pronti per fare da guida!':s.score>=6?'Ottimo, Vienna non ha segreti.':'Qualcosa lo scoprirete di persona.';
+    gEl().innerHTML=gTop('Quiz su Vienna')+`<div class="qcard gend"><div class="big">${s.score}/10</div><p>${msg}${s.score>best?' Nuovo record!':''}</p><button class="smallbtn call" type="button" data-g="quiz">Gioca ancora</button></div>`;return}
+  const q=s.qs[s.i];
+  gEl().innerHTML=gTop('Quiz su Vienna',`<span>Domanda <b>${s.i+1}</b>/10</span><span>Punti <b>${s.score}</b></span>`)+
+   `<div class="qcard"><div class="qprog"><i style="width:${s.i*10}%"></i></div><h3>${esc(q.q)}</h3>
+    <div class="qopts">${q.opts.map(([t,ok],i)=>`<button class="qopt${s.ans!=null?(ok?' right':(i===s.ans?' wrong':'')):''}" type="button" data-qa="${i}" ${s.ans!=null?'disabled':''}>${esc(t)}</button>`).join('')}</div>
+    ${s.ans!=null?`<p class="qexp">${q.opts[s.ans][1]?'Giusto! ':'Non proprio. '}${esc(q.exp)}</p><button class="smallbtn call" type="button" data-g="qnext" style="justify-self:end">${s.i===9?'Risultato':'Avanti'}</button>`:''}</div>`;
+}
+// Memory
+function startMemo(){
+  const pairs=shuffle(MEMO).slice(0,8);
+  const cards=shuffle(pairs.flatMap((p,i)=>[{p:i,t:p[0],l:'Tedesco'},{p:i,t:p[1],l:'Italiano'}]));
+  G={k:'memo',cards,open:[],done:new Set(),moves:0,lock:false};renderMemo();
+}
+function renderMemo(){
+  const s=G, won=s.done.size===8;
+  let h=gTop('Memory del tedesco',`<span>Mosse <b>${s.moves}</b></span><span>Coppie <b>${s.done.size}</b>/8</span>`);
+  if(won){const best=store.get('vie26-g-memo',null);if(best==null||s.moves<best)store.set('vie26-g-memo',s.moves);
+    h+=`<div class="qcard gend"><div class="big">${s.moves}</div><p>mosse per trovare tutte le coppie.${best==null||s.moves<best?' Nuovo record!':''}</p><button class="smallbtn call" type="button" data-g="memo">Gioca ancora</button></div>`}
+  h+=`<div class="mgrid">${s.cards.map((c,i)=>{const up=s.open.includes(i),ok=s.done.has(c.p);
+    return `<button class="mcard${up?' up':''}${ok?' ok':''}" type="button" data-mc="${i}" aria-label="${up||ok?esc(c.t):'Carta coperta'}" ${ok?'disabled':''}><span class="in"><span class="f">${WHEEL_SVG}</span><span class="b"><span><small>${c.l}</small>${esc(c.t)}</span></span></span></button>`}).join('')}</div>`;
+  gEl().innerHTML=h;
+}
+function flipMemo(i){
+  const s=G; if(s.lock||s.open.includes(i)||s.done.has(s.cards[i].p))return;
+  s.open.push(i);
+  if(s.open.length===2){s.moves++;const [a,b]=s.open;
+    if(s.cards[a].p===s.cards[b].p){s.done.add(s.cards[a].p);s.open=[];renderMemo();return}
+    s.lock=true;renderMemo();setTimeout(()=>{s.open=[];s.lock=false;if(G===s)renderMemo()},900);return}
+  renderMemo();
+}
+// Secret word
+const GONDOLAS=8;
+function wheelSvg(on){let s='<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="60" cy="52" r="38" stroke-width="4"/>';
+  for(let i=0;i<GONDOLAS;i++){const a=-Math.PI/2+i*2*Math.PI/GONDOLAS,x=60+Math.cos(a)*38,y=52+Math.sin(a)*38;
+    s+=`<path d="M60 52L${x.toFixed(1)} ${y.toFixed(1)}" stroke-width="1.5"/><circle class="${i<on?'':'off'}" cx="${x.toFixed(1)}" cy="${(y+6).toFixed(1)}" r="7" fill="currentColor" stroke="none"/>`}
+  return s+'<path d="M60 52L40 108M60 52l20 56M28 108h64" stroke-width="4"/><circle cx="60" cy="52" r="5" fill="var(--now)" stroke="none"/></svg>'}
+function startWord(keepStreak){const prev=G&&G.k==='word'?G:null;const pool=WORDS.filter(w=>!prev||w[0]!==prev.w);const [w,h]=pool[Math.floor(Math.random()*pool.length)];
+  G={k:'word',w,h,got:new Set(),miss:new Set(),streak:keepStreak&&prev?prev.streak:0};renderWord()}
+function renderWord(){
+  const s=G, left=GONDOLAS-s.miss.size, won=[...s.w].every(c=>s.got.has(c)), lost=left<=0;
+  if(won&&!s.counted){s.counted=true;s.streak++;if(s.streak>store.get('vie26-g-word',0))store.set('vie26-g-word',s.streak)}
+  if(lost&&!s.counted){s.counted=true;s.streak=0}
+  let h=gTop('Parola segreta',`<span>Cabine accese <b>${left}</b>/${GONDOLAS}</span><span>Serie <b>${s.streak}</b></span>`);
+  h+=`<div class="qcard"><div class="hwheel" aria-hidden="true">${wheelSvg(left)}</div>
+    <div class="hword" aria-label="Parola da indovinare">${[...s.w].map(c=>`<span>${won||lost||s.got.has(c)?c:''}</span>`).join('')}</div>
+    <p class="hhint">${esc(s.h)}</p>`;
+  if(won||lost)h+=`<div class="gend" style="padding:8px 0 0"><p>${won?'Indovinata!':'La parola era <b>'+s.w+'</b>.'}</p><button class="smallbtn call" type="button" data-g="wnext">Nuova parola</button></div>`;
+  else h+=`<div class="kbd">${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(c=>`<button type="button" data-k="${c}" class="${s.got.has(c)?'hit':s.miss.has(c)?'miss':''}" ${s.got.has(c)||s.miss.has(c)?'disabled':''}>${c}</button>`).join('')}</div>`;
+  gEl().innerHTML=h+'</div>';
+}
+function guess(c){const s=G;if(!s||s.k!=='word'||s.counted)return;(s.w.includes(c)?s.got:s.miss).add(c);renderWord()}
+gEl().addEventListener('click',e=>{
+  const g=e.target.closest('[data-g]');
+  if(g){const a=g.dataset.g;
+    if(a==='menu')renderGames(); if(a==='quiz')startQuiz(); if(a==='memo')startMemo(); if(a==='word')startWord(false);
+    if(a==='qnext'){G.i++;G.ans=null;renderQuiz()} if(a==='wnext')startWord(true);
+    if(['menu','quiz','memo','word'].includes(a))window.scrollTo({top:0});
+    return}
+  const qa=e.target.closest('[data-qa]'); if(qa&&G&&G.k==='quiz'&&G.ans==null){G.ans=+qa.dataset.qa;if(G.qs[G.i].opts[G.ans][1])G.score++;renderQuiz();return}
+  const mc=e.target.closest('[data-mc]'); if(mc&&G&&G.k==='memo'){flipMemo(+mc.dataset.mc);return}
+  const k=e.target.closest('[data-k]'); if(k)guess(k.dataset.k);
+});
+document.addEventListener('keydown',e=>{if(view==='giochi'&&G&&G.k==='word'&&/^[a-z]$/i.test(e.key)&&!e.metaKey&&!e.ctrlKey)guess(e.key.toUpperCase())});
+document.querySelector('.gb-art').innerHTML=WHEEL_SVG;
+renderGames();
+
+// Views + dock
+let view='programma';
+const VIEW_IDX={programma:0,biglietti:1,mappa:3,utili:4};
+function showView(v){
+  view=v;
+  document.querySelectorAll('.view').forEach(el=>el.hidden=el.dataset.view!==v);
+  document.querySelectorAll('[data-prog]').forEach(el=>el.hidden=v!=='programma');
+  document.querySelectorAll('.dock [data-go]').forEach(b=>b.dataset.go===v?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current'));
+  const ind=document.getElementById('indicator');
+  ind.style.opacity=v in VIEW_IDX?1:0;
+  if(v in VIEW_IDX)ind.style.transform=`translateX(${VIEW_IDX[v]*100}%)`;
+  if(v==='mappa'){initMap();connectGroup()}
+}
+function route(){
+  const h=location.hash;
+  const tm=h.match(/^#biglietto-([a-z]+)$/);
+  if(tm&&tkById(tm[1])&&tkById(tm[1]).pages.length){showView('biglietti');if(tkReady)showViewer(tkById(tm[1]));else{hideViewer();tkFocus()}return}
+  hideViewer();
+  if(h==='#biglietti')return showView('biglietti');
+  if(h==='#utili')return showView('utili');
+  if(h==='#mappa')return showView('mappa');
+  if(h==='#giochi'){if(view!=='giochi'&&!G)renderGames();return showView('giochi')}
+  if(h==='#info')return showView('info');
+  if(h==='#adesso'){const ti=tripIndex();if(ti>=0)cur=ti;history.replaceState(null,'','#giorno-'+(cur+1));renderTabs();renderDay();showView('programma');requestAnimationFrame(()=>scrollToNow(false));return}
+  const m=h.match(/^#giorno-([1-4])$/);
+  cur=m?+m[1]-1:(tripIndex()>=0?tripIndex():cur);
+  renderTabs(); renderDay(); showView('programma');
+}
+document.querySelector('.dock').addEventListener('click',e=>{
+  const b=e.target.closest('[data-go]'); if(!b)return;
+  const go=b.dataset.go;
+  if(go==='adesso'){
+    const ti=tripIndex(); if(ti>=0)cur=ti;
+    history.replaceState(null,'','#giorno-'+(cur+1)); renderTabs(); renderDay(); showView('programma');
+    requestAnimationFrame(()=>scrollToNow(true)); return;
+  }
+  const target=go==='programma'?'#giorno-'+(cur+1):'#'+go;
+  if(location.hash!==target)location.hash=target; else showView(go);
+  window.scrollTo({top:0});
+});
+
+function scrollToNow(smooth){
+  const el=document.getElementById('nowline'); if(!el)return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.scrollIntoView({block:'center',behavior:smooth&&!reduce?'smooth':'auto'});
+}
+
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('.daytab'); if(!b)return;
+  cur=+b.dataset.i; history.replaceState(null,'','#giorno-'+(cur+1)); renderTabs(); renderDay();
+  const bar=document.querySelector('.bar'); if(bar.getBoundingClientRect().top<=0) window.scrollTo({top:document.getElementById('day').offsetTop-bar.offsetHeight-8});
+});
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b)return;
+  filter=b.dataset.f; store.set('vie26-filter',filter); renderTabs(); renderDay();
+});
+document.getElementById('day').addEventListener('click',e=>{
+  const t=e.target.closest('.tkbtn'); if(t){openTicket(t.dataset.tk);return}
+  const b=e.target.closest('.check'); if(!b)return;
+  const id=b.dataset.id; done.has(id)?done.delete(id):done.add(id);
+  store.set('vie26-done',[...done]); renderTabs(); renderDay();
+});
+window.addEventListener('hashchange',route);
+document.getElementById('resetbox').addEventListener('click',e=>{
+  const box=document.getElementById('resetbox');
+  if(e.target.id==='reset'){box.innerHTML='<div class="confirm">Azzerare tutte le tappe spuntate? <button type="button" id="yes">Azzera</button><button type="button" id="no">Annulla</button></div>';return}
+  if(e.target.id==='yes'){done=new Set();store.set('vie26-done',[]);renderTabs();renderDay()}
+  if(e.target.id==='yes'||e.target.id==='no')box.innerHTML='<button class="reset" id="reset" type="button">Azzera le tappe spuntate</button>';
+});
+document.getElementById('home').href=mapUrl(HOME);
+document.getElementById('homeitem').href=mapUrl(HOME);
+
+renderBookings();
+renderTickets();
+tkCheck().then(ok=>{if(ok){renderTickets();if(/^#biglietto-/.test(location.hash))route()}});
+renderProfile();
+document.getElementById('fx-mode').value=FX.mode;
+if(wx)renderWeather();
+fxUpdate(); document.getElementById('fx-state').textContent=fxLabel();
+loadWeather(false);
+if(!EMBEDDED&&!PREVIEW&&!store.get('vie26-onboarded',false))openOnboarding(0);
+tickClock();
+route();
+setInterval(tickClock,1000);
+if(view==='programma'&&tripIndex()>=0)requestAnimationFrame(()=>scrollToNow(false));
+</script>
+
+<script>
+(function(){
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const lab = document.getElementById('inst-lab'), sub = document.getElementById('inst-sub'), btn = document.getElementById('inst-btn');
+  if (standalone) { lab.textContent = 'App installata'; sub.textContent = 'Stai usando Vienna 2026 come app: funziona anche senza connessione.'; }
+  else if (isIOS) { sub.textContent = 'In Safari tocca Condividi (il quadrato con la freccia), poi "Aggiungi alla schermata Home".'; }
+  else { sub.textContent = 'Tocca Installa, oppure apri il menu del browser e scegli "Installa app" o "Aggiungi a schermata Home".'; }
+  let deferred = null;
+  addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; btn.hidden = false; });
+  btn.addEventListener('click', async () => { if (!deferred) return; deferred.prompt(); await deferred.userChoice; deferred = null; btn.hidden = true; });
+  addEventListener('appinstalled', () => { lab.textContent = 'App installata'; sub.textContent = 'Trovi Vienna 2026 nella schermata Home.'; btn.hidden = true; });
+
+  // Offline badge next to the clock
+  const tz = document.getElementById('ctrip');
+  const badge = document.createElement('span'); badge.className = 'offline'; badge.textContent = 'Offline';
+  const setNet = () => { badge.hidden = navigator.onLine; };
+  tz.after(badge); setNet();
+  addEventListener('online', setNet); addEventListener('offline', setNet);
+
+  if ('serviceWorker' in navigator) {
+    addEventListener('load', () => navigator.serviceWorker.register('sw.js').then(reg => {
+      const off = document.getElementById('off-sub');
+      navigator.serviceWorker.ready.then(() => { off.textContent = 'Pronta per l’uso offline: programma, numeri e note restano disponibili senza rete. Le mappe e i siti esterni richiedono la connessione.'; });
+    }).catch(() => {}));
+  }
+})();
+</script>
+</body>
+</html>

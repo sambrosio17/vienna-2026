@@ -1,0 +1,23 @@
+{
+  "name": "Vienna 2026",
+  "short_name": "Vienna 26",
+  "description": "Programma del viaggio a Vienna, 24–27 novembre 2026: tappe, spostamenti, mercatini e numeri utili. Funziona anche offline.",
+  "lang": "it",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#16222e",
+  "theme_color": "#16222e",
+  "categories": ["travel"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Adesso", "url": "./#adesso", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Cose utili", "url": "./#utili", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

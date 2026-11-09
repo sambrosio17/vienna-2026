@@ -1,0 +1,28 @@
+{
+ "v": 1,
+ "iter": 600000,
+ "salt": "AQ2A3FbpIh6DKPLOoctjMQ==",
+ "check": "p02AZytmlBQeJdtEM2fnWJtXmpmS2vyxNos+aslxh3FIT0qOnkFB",
+ "files": [
+  "belvedere-1.jpg",
+  "belvedere-2.jpg",
+  "belvedere-3.jpg",
+  "belvedere-4.jpg",
+  "belvedere.pdf",
+  "biblioteca-1.jpg",
+  "biblioteca.pdf",
+  "karlskirche-ricevuta.pdf",
+  "khm-antonietta-1.jpg",
+  "khm-antonietta.pdf",
+  "khm-giuseppe-1.jpg",
+  "khm-giuseppe.pdf",
+  "khm-luisa-1.jpg",
+  "khm-luisa.pdf",
+  "khm-salvatore-1.jpg",
+  "khm-salvatore.pdf",
+  "schoenbrunn-1.jpg",
+  "schoenbrunn.pdf",
+  "sisi-1.jpg",
+  "sisi.pdf"
+ ]
+}
