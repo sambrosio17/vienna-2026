@@ -441,6 +441,20 @@ body.noscroll{overflow:hidden}
 .wxday .wxd span{color:var(--muted);font-size:12.5px}
 .wxday .wxlive{margin-left:auto;text-align:right;display:grid;gap:1px;padding-left:10px;border-left:1px solid var(--line)}
 .wxday .wxlive b{color:var(--now)}
+.sunrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:8px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted)}
+.sunrow span{display:inline-flex;align-items:center;gap:6px}
+.sunrow svg{width:20px;height:20px;color:var(--accent);flex:none}
+.sunrow b{font-family:var(--f-mono);font-size:14px;font-weight:600;color:var(--ink)}
+.sunrow .sunleft{margin-left:auto;color:var(--now);font-weight:600}
+.evbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:8px 0}
+.evbar input[type=search]{flex:1 1 180px;min-width:0;min-height:40px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;font-size:16px;background:var(--surface);color:var(--ink)}
+.evlist{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.evlist li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
+.evlist .evt{appearance:none;background:none;border:0;padding:0;text-align:left;font:inherit;font-weight:700;font-size:14.5px;color:var(--ink);cursor:pointer;display:flex;gap:8px;align-items:baseline}
+.evlist .evt i{font-style:normal;font:600 12px/1 var(--f-mono);color:#7b4fa3;white-space:nowrap;margin-left:auto}
+.evlist p{margin:0;font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.evlist a{font-size:13px;font-weight:600;color:var(--accent);justify-self:start}
+.evdot{width:14px;height:14px;border-radius:50%;background:#7b4fa3;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);display:block}
 
 /* Games */
 .gamebanner{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;margin-top:14px;padding:12px 14px;border-radius:16px;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--line)}
@@ -657,6 +671,7 @@ html:root[data-skin="punsch"]{
       <span><i class="pin k-visita" style="width:14px;height:14px;border-width:1px"></i>Tappe numerate</span>
       <span><i class="medot" style="width:12px;height:12px;border-width:2px;box-shadow:none"></i>Tu</span>
       <span><i class="pp" style="width:16px;height:16px;border-width:1px;--c:#7b4fa3"></i>Altri viaggiatori</span>
+      <span id="evlegend" hidden><i class="evdot" style="width:12px;height:12px"></i>Eventi</span>
     </div>
 
     <div class="group">
@@ -680,6 +695,17 @@ html:root[data-skin="punsch"]{
     <div class="group">
       <h3>Tappe sulla mappa</h3>
       <ol class="poilist" id="poilist"></ol>
+    </div>
+
+    <div class="group" id="evgroup">
+      <h3>Eventi vicini</h3>
+      <p class="note">Dal calendario ufficiale della città, <a href="https://www.wien.gv.at/veranstaltungen/" target="_blank" rel="noopener">Wien erleben</a>. Ordinati per distanza <span id="evfrom">dalle tappe del giorno</span>. Date e orari sono sulla pagina di ogni evento.</p>
+      <div class="evbar">
+        <label class="switch" for="ev-show"><input type="checkbox" id="ev-show" role="switch">Mostra sulla mappa</label>
+        <input id="ev-q" type="search" placeholder="Cerca: Advent, Konzert, Markt…" aria-label="Cerca tra gli eventi" autocomplete="off">
+      </div>
+      <ol class="evlist" id="evlist"></ol>
+      <button class="smallbtn" type="button" id="ev-more" hidden style="margin-top:8px">Mostra altri</button>
     </div>
   </section>
 
@@ -1160,6 +1186,7 @@ function renderDay(){
     <div class="dayfoot"><span><b>${count('visita')}</b>visite</span><span><b>${count('mercatino')}</b>mercatini</span>
       <span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap"><a class="routebtn" style="margin-left:0" href="#mappa">${PIN} Mappa</a><a class="routebtn" style="margin-left:0" href="${routeUrl(d)}" target="_blank" rel="noopener">Google Maps ↗</a></span></div>
     ${typeof wx!=='undefined'?wxDayHtml(d,live):''}
+    ${typeof sunHtml!=='undefined'?sunHtml(d,live,nowM):''}
     <div class="daybar" aria-label="Momento della giornata">
       <div class="track"><span class="fill" style="width:${pct}%"></span></div>
       <div class="lbl"><span>${fmtMin(first)}</span><b>${live?'Adesso':'Ora attuale'} ${fmtMin(nowM)}</b><span>${fmtMin(lastStop)}</span></div>
@@ -1401,7 +1428,7 @@ async function initMap(){
     refreshMe();
   } else { drawDay(mapDay!==cur); }
   setTimeout(()=>map.invalidateSize(),50);
-  startWatch();
+  startWatch(); loadEvents();
 }
 function dayStops(di){return DAYS[di].items.filter(it=>!it.leg&&COORDS[it.q])}
 function drawDay(fit){
@@ -1428,13 +1455,71 @@ function renderPoiList(){
   document.getElementById('poilist').innerHTML=dayStops(cur).map((s,i)=>`<li class="k-${s.kind}"><button type="button" data-poi="${s.id}"><span class="n">${i+1}</span><span class="tm">${esc(s.t)}</span><span>${esc(s.name)}</span></button></li>`).join('');
 }
 document.getElementById('maptabs').addEventListener('click',e=>{
-  const b=e.target.closest('[data-md]');if(!b)return;cur=+b.dataset.md;renderTabs();renderDay();renderMapTabs();renderPoiList();drawDay(true);
+  const b=e.target.closest('[data-md]');if(!b)return;cur=+b.dataset.md;renderTabs();renderDay();renderMapTabs();renderPoiList();drawDay(true);if(evList)renderEvents();
 });
 document.getElementById('poilist').addEventListener('click',e=>{
   const b=e.target.closest('[data-poi]');if(!b||!map)return;const mk=poiMarkers[b.dataset.poi];if(!mk)return;
   map.flyTo(mk.getLatLng(),17,{duration:.6});mk.openPopup();document.querySelector('.mapwrap').scrollIntoView({block:'start',behavior:'smooth'});
 });
 document.getElementById('btn-fit').addEventListener('click',fitDay);
+
+// ---------- Nearby events: City of Vienna "Wien erleben" feed, copied to events.json every 6 h by a GitHub Action
+// (the city server sends a duplicated CORS header, so browsers cannot read it directly) ----------
+const EV_URL='events.json';
+let evList=null, evShown=12, evLayer=null, evMarkers={}, evLoading=false;
+async function loadEvents(force){
+  const c=store.get('vie26-ev',null);
+  if(c&&c.list){evList=c.list; renderEvents()}
+  if(evLoading||(!force&&c&&Date.now()-c.t<6*36e5))return;
+  evLoading=true; if(!evList)renderEvents();
+  try{
+    const j=await (await fetch(EV_URL,{cache:'no-cache'})).json();
+    evList=j.list||[];
+    try{store.set('vie26-ev',{t:Date.now(),list:evList})}catch(e){}
+  }catch(e){if(!evList){evLoading=false;document.getElementById('evlist').innerHTML='<li><p>Non riesco a scaricare gli eventi. Serve la connessione la prima volta.</p></li>';return}}
+  evLoading=false; renderEvents();
+}
+function evOrigin(){
+  if(myPos&&distM(myPos,VIE)<30000)return {p:myPos,l:'da dove sei'};
+  const pts=dayStops(cur).map(s=>COORDS[s.q]).filter(c=>c[0]>48.15&&c[1]<16.5);
+  if(!pts.length)return {p:VIE,l:'dal centro'};
+  return {p:{lat:pts.reduce((a,c)=>a+c[0],0)/pts.length,lng:pts.reduce((a,c)=>a+c[1],0)/pts.length},l:'dalle tappe del '+new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'long'}).format(new Date(DAYS[cur].date+'T12:00:00'))};
+}
+function evFiltered(){
+  const o=evOrigin(), q=(document.getElementById('ev-q').value||'').trim().toLowerCase();
+  return {o,items:(evList||[]).filter(e=>!q||(e.t+' '+e.d).toLowerCase().includes(q)).map(e=>({...e,dist:distM(o.p,e)})).sort((a,b)=>a.dist-b.dist)};
+}
+function renderEvents(){
+  const ul=document.getElementById('evlist'); if(!ul)return;
+  if(!evList){ul.innerHTML='<li><p>Carico gli eventi…</p></li>';return}
+  const {o,items}=evFiltered(); document.getElementById('evfrom').textContent=o.l;
+  const vis=items.slice(0,evShown);
+  ul.innerHTML=vis.length?vis.map(e=>`<li><button class="evt" type="button" data-ev="${esc(e.id)}"><span>${esc(e.t)}</span><i>${fmtDist(e.dist)}</i></button>${e.d?`<p>${esc(e.d)}</p>`:''}<a href="${esc(e.u)}" target="_blank" rel="noopener">Date e dettagli ↗</a></li>`).join(''):'<li><p>Nessun evento trovato.</p></li>';
+  const more=document.getElementById('ev-more'); more.hidden=items.length<=evShown;
+  drawEvents(vis);
+}
+function drawEvents(vis){
+  if(!map||!window.L)return;
+  if(!evLayer)evLayer=L.layerGroup();
+  evLayer.clearLayers(); evMarkers={};
+  const on=document.getElementById('ev-show').checked; document.getElementById('evlegend').hidden=!on;
+  if(!on){map.removeLayer(evLayer);return}
+  evLayer.addTo(map);
+  (vis||evFiltered().items.slice(0,evShown)).forEach(e=>{
+    evMarkers[e.id]=L.marker([e.lat,e.lng],{icon:L.divIcon({className:'',html:'<span class="evdot"></span>',iconSize:[14,14],iconAnchor:[7,7]}),title:e.t})
+      .bindPopup(`<b>${esc(e.t)}</b><br><a href="${esc(e.u)}" target="_blank" rel="noopener">Date e dettagli</a>`).addTo(evLayer);
+  });
+}
+document.getElementById('ev-q').addEventListener('input',()=>{evShown=12;renderEvents()});
+document.getElementById('ev-more').addEventListener('click',()=>{evShown+=12;renderEvents()});
+document.getElementById('ev-show').addEventListener('change',()=>drawEvents());
+document.getElementById('evlist').addEventListener('click',e=>{
+  const b=e.target.closest('[data-ev]'); if(!b)return;
+  const ev=(evList||[]).find(x=>x.id===b.dataset.ev); if(!ev||!map)return;
+  const sw=document.getElementById('ev-show'); if(!sw.checked){sw.checked=true;drawEvents()}
+  map.flyTo([ev.lat,ev.lng],17,{duration:.6}); const mk=evMarkers[ev.id]; if(mk)mk.openPopup();
+  document.querySelector('.mapwrap').scrollIntoView({block:'start',behavior:'smooth'});
+});
 document.getElementById('btn-locate').addEventListener('click',()=>{startWatch();if(myPos&&map)map.flyTo([myPos.lat,myPos.lng],17,{duration:.6});else mapMsg('Sto cercando la tua posizione…')});
 document.getElementById('btn-group').addEventListener('click',()=>{
   if(!map)return;const pts=Object.values(people).map(p=>[p.lat,p.lng]);if(myPos)pts.push([myPos.lat,myPos.lng]);
@@ -1812,6 +1897,30 @@ function renderWeather(){
     b.hidden=false;
   }
   renderTabs(); renderDay(); fxUpdate();
+}
+// ---------- Sunrise / sunset (computed on the phone, works offline) ----------
+var VIE={lat:48.2082,lng:16.3738};
+function sunTimes(date,lat=48.2082,lng=16.3738){
+  const rad=Math.PI/180, J0=Date.UTC(+date.slice(0,4),+date.slice(5,7)-1,+date.slice(8,10),12)/864e5+2440587.5;
+  const n=Math.round(J0-2451545-0.0009+(-lng)/360);
+  const Js=2451545+0.0009+(-lng)/360+n;
+  const M=(357.5291+0.98560028*(Js-2451545))%360;
+  const C=1.9148*Math.sin(M*rad)+0.02*Math.sin(2*M*rad)+0.0003*Math.sin(3*M*rad);
+  const L=(M+C+180+102.9372)%360;
+  const Jt=Js+0.0053*Math.sin(M*rad)-0.0069*Math.sin(2*L*rad);
+  const dec=Math.asin(Math.sin(L*rad)*Math.sin(23.4397*rad));
+  const w=Math.acos((Math.sin(-0.833*rad)-Math.sin(lat*rad)*Math.sin(dec))/(Math.cos(lat*rad)*Math.cos(dec)))/rad;
+  const toDate=J=>new Date((J-2440587.5)*864e5);
+  const vm=d=>{const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Vienna',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(d).split(':');return +p[0]*60+ +p[1]};
+  return {rise:vm(toDate(Jt-w/360)),set:vm(toDate(Jt+w/360))};
+}
+function sunIc(set){return set?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 18a7 7 0 0 1 14 0"/><path d="M2 18h20M12 7V3M9.5 5.5 12 8l2.5-2.5"/></svg>':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 18a7 7 0 0 1 14 0"/><path d="M2 18h20M12 4v3M4.9 8.9l1.6 1.6M19.1 8.9l-1.6 1.6"/></svg>'}
+function sunHtml(d,live,nowM){
+  const s=sunTimes(d.date), len=s.set-s.rise;
+  const dur=m=>m>=60?Math.floor(m/60)+' h '+String(m%60).padStart(2,'0')+' min':m+' min';
+  let left='';
+  if(live){if(nowM<s.rise)left='Alba tra '+dur(s.rise-nowM);else if(nowM<s.set)left='Buio tra '+dur(s.set-nowM);else left='Già buio';}
+  return `<div class="sunrow" aria-label="Alba e tramonto"><span>${sunIc(0)}Alba <b>${fmtMin(s.rise)}</b></span><span>${sunIc(1)}Tramonto <b>${fmtMin(s.set)}</b></span><span>${dur(len)} di luce</span>${left?`<span class="sunleft">${left}</span>`:''}</div>`;
 }
 function wxDayHtml(d,live){
   if(EMBEDDED)return '';

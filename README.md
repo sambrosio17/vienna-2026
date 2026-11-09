@@ -36,6 +36,13 @@ Ognuno sceglie sul proprio telefono tra tre temi: **Notte imperiale** (l'origina
 - **Effetti meteo**: l'app riflette il tempo attuale con pioggia, neve, temporale con lampi, nebbia, nuvole, sole o stelle di notte. Si spengono, o si provano uno per uno, da Utili → App → Effetti meteo. Con "riduci movimento" attivo sul telefono restano spenti in automatico.
 - **Giochi**: quiz su Vienna, memory del tedesco e parola segreta, tutti offline. Si aprono da Utili o dalle tappe in aeroporto.
 
+## Alba, tramonto ed eventi
+
+- **Alba e tramonto**: calcolati sul telefono per ogni giorno (funzionano offline). Nel giorno in corso l'app dice anche quanto manca al buio.
+- **Eventi vicini** (sezione Mappa): dal calendario ufficiale della città, [Wien erleben](https://www.wien.gv.at/veranstaltungen/), ordinati per distanza da te (se sei a Vienna) o dalle tappe del giorno. Si possono cercare e mostrare sulla mappa.
+- Il server della città manda un header CORS doppio e il browser non può leggerlo direttamente. Per questo la GitHub Action `Aggiorna eventi di Vienna` (`.github/workflows/events.yml`) scarica il feed ogni 6 ore e lo salva in `events.json`. Si può lanciare a mano da *Actions → Aggiorna eventi di Vienna → Run workflow*.
+- Il feed non riporta le date in forma strutturata: date e orari sono sulla pagina di ogni evento.
+
 ## Mappa e posizione degli altri
 
 - **Mappa**: tappe numerate per ogni giorno, percorso tratteggiato e la tua posizione (punto blu). Usa le mappe OpenStreetMap; le zone già viste restano disponibili offline.

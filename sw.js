@@ -1,6 +1,6 @@
 // Vienna 2026 — service worker per l'uso offline.
 // Cambia VERSION a ogni pubblicazione di una nuova versione dei file.
-const VERSION = 'vienna26-v11';
+const VERSION = 'vienna26-v12';
 const TICKETS = "vienna26-tickets";      // biglietti decifrati sul telefono con la password
 const TILES = 'vienna26-tiles';          // mappe già viste, tenute tra un aggiornamento e l'altro
 const MAX_TILES = 1500;
