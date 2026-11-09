@@ -1,0 +1,39 @@
+{
+  "title": "Vienna 2026",
+  "subtitle": "24 – 27 novembre 2026 · mercatini di Natale",
+  "start": "2026-11-24",
+  "end": "2026-11-27",
+  "timeZone": "Europe/Vienna",
+  "city": {
+    "name": "Vienna",
+    "lat": 48.2082,
+    "lng": 16.3738
+  },
+  "home": {
+    "name": "Nestroygasse 7",
+    "address": "Nestroygasse 7, 1020 Wien",
+    "district": "1020 Wien · Leopoldstadt"
+  },
+  "travelers": [
+    {
+      "name": "Salvatore",
+      "color": "#1f6fe0"
+    },
+    {
+      "name": "Luisa",
+      "color": "#c2378a"
+    },
+    {
+      "name": "Giuseppe",
+      "color": "#2f8f5b"
+    },
+    {
+      "name": "Antonietta",
+      "color": "#c27a12"
+    }
+  ],
+  "typicalWeather": {
+    "max": 6,
+    "min": 0
+  }
+}

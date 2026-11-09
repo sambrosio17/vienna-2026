@@ -1,0 +1,95 @@
+{
+  "intro": "Numeri, prenotazioni, trasporti e qualche dritta per i mercatini.",
+  "sections": [
+    { "slot": "games" },
+    { "slot": "profile", "title": "Il tuo profilo" },
+    {
+      "title": "Emergenze in Austria",
+      "type": "list",
+      "items": [
+        { "label": "Emergenza unica europea", "sub": "Funziona anche senza credito", "number": "112", "call": true, "big": true },
+        { "label": "Ambulanza", "sub": "Rettung", "number": "144" },
+        { "label": "Polizia", "sub": "Polizei", "number": "133" },
+        { "label": "Vigili del fuoco", "sub": "Feuerwehr", "number": "122" },
+        { "label": "Medico di turno a Vienna", "sub": "Ärztefunkdienst, per urgenze non gravi", "number": "141" },
+        { "label": "Consulenza sanitaria al telefono", "sub": "Gesundheitsberatung", "number": "1450" }
+      ]
+    },
+    {
+      "title": "Italiani all’estero",
+      "type": "list",
+      "items": [
+        { "label": "Ambasciata d’Italia a Vienna", "sub": "Rennweg 27, 1030 Wien", "number": "+43 1 712 5121", "inline": true },
+        { "label": "Unità di Crisi Farnesina", "sub": "Attiva 24 ore su 24", "number": "+39 06 36225", "inline": true },
+        { "label": "Dove siamo nel mondo", "sub": "Registra il viaggio presso la Farnesina", "url": "https://www.dovesiamonelmondo.it" },
+        { "label": "Sito dell’Ambasciata", "sub": "Orari, contatti aggiornati, servizi consolari", "url": "https://ambvienna.esteri.it" }
+      ]
+    },
+    {
+      "title": "Alloggio",
+      "type": "list",
+      "items": [
+        { "label": "Nestroygasse 7", "sub": "1020 Wien · Leopoldstadt. Telefono e istruzioni di check-in sono nella conferma di prenotazione.", "place": "Nestroygasse 7, 1020 Wien" },
+        { "label": "Fermate vicine", "sub": "U1 Nestroyplatz · U2/U4 Schottenring · bus 2A Leopoldsgasse" }
+      ]
+    },
+    { "slot": "bookings", "title": "Prenotazioni e biglietti" },
+    {
+      "title": "Muoversi",
+      "type": "list",
+      "items": [
+        { "label": "Wiener Linien · app WienMobil", "sub": "Orari, percorsi e biglietti di metro, tram e bus. Per 4 giorni conviene il biglietto 72 ore.", "url": "https://www.wienerlinien.at" },
+        { "label": "City Airport Train (CAT)", "sub": "Aeroporto ↔ Wien Mitte in 16 minuti, senza fermate", "url": "https://www.cityairporttrain.com" },
+        { "label": "Aeroporto di Vienna", "sub": "Partenze, arrivi, terminal. In alternativa al CAT c’è il treno S7, più economico.", "url": "https://www.viennaairport.com" },
+        { "label": "Taxi a Vienna", "sub": "Radiotaxi", "number": "+43 1 40100", "also": "+43 1 31300", "inline": true }
+      ],
+      "note": "I biglietti a tempo dei Wiener Linien valgono solo dentro Vienna: per l’aeroporto serve un biglietto a parte."
+    },
+    {
+      "title": "Mercatini: da sapere",
+      "type": "facts",
+      "items": [
+        { "title": "Häferlpfand", "text": "Il Punsch e il Glühwein si servono in tazze di ceramica con cauzione di qualche euro: la riavete restituendo la tazza, oppure la tenete come ricordo." },
+        { "title": "Cosa assaggiare", "text": "Glühwein, Punsch (anche analcolico, Kinderpunsch), Maroni, Langos, Kaiserschmarrn, Bratwurst." },
+        { "title": "Date di apertura", "text": "Alcuni mercatini aprono solo a fine novembre: controllate le date 2026 prima di partire." },
+        { "title": "Contanti", "text": "Molte bancarelle accettano carte, ma qualche euro in contanti è comodo." }
+      ]
+    },
+    {
+      "title": "Info pratiche",
+      "type": "facts",
+      "items": [
+        { "title": "Clima", "text": "A fine novembre di solito tra 0 e 6 °C, può nevicare. Scarpe comode e impermeabili: si cammina molto." },
+        { "title": "Prese elettriche", "text": "Tipo F (Schuko). Le spine italiane piatte entrano; per quelle grandi a tre poli serve un adattatore." },
+        { "title": "Salute e documenti", "text": "Portate la tessera sanitaria (vale come TEAM) e la carta d’identità valida per l’espatrio." },
+        { "title": "Ora e valuta", "text": "Stesso fuso orario dell’Italia, si paga in euro. Mancia abituale: arrotondare del 5–10%." },
+        { "title": "Acqua", "text": "L’acqua del rubinetto viene dalle Alpi ed è ottima: portate una borraccia." },
+        { "title": "Roaming", "text": "Nell’UE il roaming è incluso nella tariffa italiana, entro i limiti del vostro piano." }
+      ]
+    },
+    {
+      "title": "Due parole di tedesco",
+      "type": "phrases",
+      "items": [
+        { "de": "Grüß Gott", "it": "Buongiorno (saluto viennese)" },
+        { "de": "Danke / Bitte", "it": "Grazie / Prego, per favore" },
+        { "de": "Die Rechnung, bitte", "it": "Il conto, per favore" },
+        { "de": "Zahlen, bitte", "it": "Vorrei pagare" },
+        { "de": "Ein Punsch, bitte", "it": "Un Punsch, per favore" },
+        { "de": "Wo ist die U-Bahn?", "it": "Dov’è la metro?" },
+        { "de": "Entschuldigung", "it": "Mi scusi" }
+      ]
+    },
+    { "slot": "skins", "title": "Tema dell’app" },
+    { "slot": "settings", "title": "App" },
+    {
+      "title": "Siti utili",
+      "type": "list",
+      "items": [
+        { "label": "Wien.info", "sub": "Ufficio del turismo, in italiano, con l’elenco dei mercatini", "url": "https://www.wien.info/it" },
+        { "label": "Wiener Christkindlmarkt", "sub": "Il mercatino del Rathausplatz", "url": "https://www.christkindlmarkt.at" },
+        { "label": "Figlmüller", "sub": "Prenotazione consigliata per la cena del 25", "url": "https://www.figlmueller.at" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,774 @@
+[
+  {
+    "date": "2026-11-24",
+    "title": "Arrivo, Ring e primi mercatini",
+    "intro": "Dall’aeroporto all’alloggio, poi il giro del Ring fino a Santo Stefano e la sera tre mercatini, chiudendo al Christkindlmarkt del Rathaus.",
+    "items": [
+      {
+        "t": "12:00",
+        "kind": "base",
+        "name": "Arrivo in aeroporto",
+        "games": true,
+        "place": "Flughafen Wien"
+      },
+      {
+        "leg": true,
+        "t": "12:00",
+        "dur": "45 min",
+        "lines": [
+          {
+            "type": "cat",
+            "label": "CAT"
+          },
+          {
+            "type": "U4",
+            "label": "U4"
+          }
+        ],
+        "text": "Bus/CAT fino al terminal di Wien Mitte, a piedi a Landstraße, U4 verde direzione Heiligenstadt, scendere a Schottenring, a piedi all’alloggio."
+      },
+      {
+        "t": "13:00",
+        "end": "14:00",
+        "kind": "base",
+        "name": "Alloggio",
+        "note": "Nestroygasse 7, Leopoldstadt (2° distretto). Sistemazione in camera.",
+        "place": "Nestroygasse 7, 1020 Wien"
+      },
+      {
+        "leg": true,
+        "t": "14:00",
+        "dur": "20 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "650 m"
+          },
+          {
+            "type": "U2",
+            "label": "U2"
+          }
+        ],
+        "text": "A piedi 10 min fino a Schottenring, U2 viola direzione Karlsplatz, scendere a Volkstheater, a piedi 3 min (210 m)."
+      },
+      {
+        "t": "14:20",
+        "end": "15:00",
+        "kind": "visita",
+        "name": "Palazzo di Giustizia",
+        "note": "Aperto fino alle 15.",
+        "tags": [
+          "free",
+          "nobook"
+        ],
+        "place": "Justizpalast Wien"
+      },
+      {
+        "leg": true,
+        "t": "15:00",
+        "dur": "3 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "190 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "15:15",
+        "end": "16:20",
+        "kind": "visita",
+        "name": "Parlamento austriaco",
+        "tags": [
+          "free",
+          "book"
+        ],
+        "place": "Parlament Wien"
+      },
+      {
+        "t": "16:20",
+        "kind": "passeggio",
+        "name": "Passeggiata sul Ring",
+        "dist": "25 min · 1,9 km a piedi",
+        "way": [
+          "Burgtheater",
+          "Volksgarten e fontana Triton und Nymphe",
+          "Heldenplatz (Hofburg)"
+        ],
+        "place": "Heldenplatz Wien"
+      },
+      {
+        "t": "17:30",
+        "end": "18:00",
+        "kind": "visita",
+        "name": "Palazzo Kinsky",
+        "note": "Aperto fino alle 18.",
+        "tags": [
+          "free",
+          "nobook"
+        ],
+        "place": "Palais Kinsky Wien"
+      },
+      {
+        "t": "18:00",
+        "kind": "passeggio",
+        "name": "Dal Palazzo Kinsky al Duomo",
+        "dist": "20 min · 1 km a piedi",
+        "way": [
+          "Ferstel Passage",
+          "Herrengasse",
+          "Kohlmarkt",
+          "Graben",
+          "Stock-im-Eisen-Platz"
+        ],
+        "place": "Graben Wien"
+      },
+      {
+        "t": "19:00",
+        "kind": "visita",
+        "name": "Duomo di Santo Stefano (Stephansdom)",
+        "note": "Aperto fino alle 22.",
+        "tags": [
+          "free",
+          "nobook"
+        ],
+        "place": "Stephansdom Wien"
+      },
+      {
+        "t": "19:10",
+        "kind": "mercatino",
+        "name": "Mercatino di Stephansplatz",
+        "place": "Weihnachtsmarkt Stephansplatz Wien"
+      },
+      {
+        "t": "19:30",
+        "kind": "passeggio",
+        "name": "Verso Am Hof",
+        "dist": "40 min · 2,5 km a piedi",
+        "way": [
+          "Rotenturmstraße",
+          "Schwedenplatz",
+          "Am Hof"
+        ],
+        "place": "Schwedenplatz Wien"
+      },
+      {
+        "t": "20:20",
+        "kind": "mercatino",
+        "name": "Mercatino Am Hof",
+        "note": "Circa 1 ora.",
+        "place": "Weihnachtsmarkt Am Hof Wien"
+      },
+      {
+        "t": "20:50",
+        "kind": "mercatino",
+        "name": "Mercatino della Freyung",
+        "note": "Circa 30 minuti.",
+        "place": "Altwiener Christkindlmarkt Freyung"
+      },
+      {
+        "t": "21:20",
+        "kind": "mercatino",
+        "name": "Wiener Christkindlmarkt",
+        "note": "Piazza del Municipio (Rathausplatz).",
+        "place": "Wiener Christkindlmarkt Rathausplatz"
+      },
+      {
+        "t": "fine",
+        "kind": "base",
+        "name": "Rientro all’alloggio",
+        "place": "Nestroygasse 7, 1020 Wien"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-25",
+    "title": "Schönbrunn e la Vienna imperiale",
+    "intro": "Mattina alla reggia di Schönbrunn, pomeriggio tra Biblioteca, Opera e Tesoro imperiale, poi Sachertorte, Votivkirche e cena da Figlmüller.",
+    "items": [
+      {
+        "t": "07:45",
+        "kind": "base",
+        "name": "Partenza dall’alloggio",
+        "place": "Nestroygasse 7, 1020 Wien"
+      },
+      {
+        "leg": true,
+        "t": "07:45",
+        "dur": "35 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "650 m"
+          },
+          {
+            "type": "U4",
+            "label": "U4"
+          }
+        ],
+        "text": "A piedi 10 min, U4 verde direzione Hütteldorf, scendere a Schönbrunn, a piedi 7 min (450 m)."
+      },
+      {
+        "t": "08:30",
+        "end": "09:30",
+        "kind": "visita",
+        "name": "Reggia di Schönbrunn",
+        "note": "Ingresso tra le 08:30 e le 08:45: l’orario è vincolante.",
+        "ticket": "schb",
+        "place": "Schloss Schönbrunn"
+      },
+      {
+        "t": "09:30",
+        "end": "12:00",
+        "kind": "passeggio",
+        "name": "Giardini di Schönbrunn",
+        "place": "Schlosspark Schönbrunn"
+      },
+      {
+        "t": "12:00",
+        "end": "12:40",
+        "kind": "mercatino",
+        "name": "Mercatino di Schönbrunn",
+        "note": "Cortile d’onore, vicino alle fontane.",
+        "place": "Weihnachtsmarkt Schloss Schönbrunn"
+      },
+      {
+        "leg": true,
+        "t": "13:20",
+        "dur": "40 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "500 m"
+          },
+          {
+            "type": "U4",
+            "label": "U4"
+          }
+        ],
+        "text": "A piedi 10 min alla metro Schönbrunn, U4 verde direzione Heiligenstadt, scendere a Karlsplatz, a piedi 11 min (800 m)."
+      },
+      {
+        "t": "14:30",
+        "kind": "visita",
+        "name": "Biblioteca nazionale",
+        "note": "Sala di Stato, circa 30 minuti.",
+        "ticket": "onb",
+        "place": "Prunksaal Österreichische Nationalbibliothek"
+      },
+      {
+        "leg": true,
+        "t": "15:05",
+        "dur": "8 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "550 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "15:30",
+        "kind": "visita",
+        "name": "Opera di Vienna",
+        "place": "Wiener Staatsoper"
+      },
+      {
+        "leg": true,
+        "t": "15:45",
+        "dur": "15 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "950 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "16:15",
+        "end": "17:15",
+        "kind": "visita",
+        "name": "Tesoro imperiale",
+        "note": "Circa 1 ora.",
+        "warn": "Tra i biglietti caricati non ce n’è uno per il Tesoro imperiale.",
+        "place": "Kaiserliche Schatzkammer Wien"
+      },
+      {
+        "leg": true,
+        "t": "17:15",
+        "dur": "10 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "600 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "17:25",
+        "kind": "passaggio",
+        "name": "Burggarten e statua di Mozart",
+        "place": "Mozart-Denkmal Burggarten"
+      },
+      {
+        "leg": true,
+        "t": "17:45",
+        "dur": "10 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "550 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "18:00",
+        "kind": "cibo",
+        "name": "Hotel Sacher",
+        "note": "Sosta per la Sachertorte.",
+        "place": "Café Sacher Wien"
+      },
+      {
+        "leg": true,
+        "t": "18:45",
+        "dur": "1 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "80 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "18:46",
+        "kind": "passaggio",
+        "name": "Hiiich Teddy Café",
+        "note": "Solo passaggio.",
+        "place": "Teddy Café Wien Kärntner Straße"
+      },
+      {
+        "t": "19:00",
+        "kind": "passeggio",
+        "name": "Kärntner Straße fino a Stock-im-Eisen-Platz",
+        "dist": "10 min · 450 m a piedi",
+        "place": "Stock-im-Eisen-Platz Wien"
+      },
+      {
+        "leg": true,
+        "t": "19:30",
+        "dur": "20 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "200 m"
+          },
+          {
+            "type": "bus",
+            "label": "1A"
+          }
+        ],
+        "text": "A piedi 3 min, bus 1A da Stephansplatz, scendere a Schottentor, a piedi 5 min (350 m)."
+      },
+      {
+        "t": "20:00",
+        "kind": "visita",
+        "name": "Chiesa Votiva (Votivkirche)",
+        "place": "Votivkirche Wien"
+      },
+      {
+        "leg": true,
+        "t": "20:05",
+        "dur": "7 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "550 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "20:10",
+        "kind": "mercatino",
+        "name": "Mercatino del campus universitario",
+        "note": "Campus der Universität Wien.",
+        "place": "Campus der Universität Wien Weihnachtsmarkt"
+      },
+      {
+        "leg": true,
+        "t": "21:20",
+        "dur": "30 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "800 m"
+          },
+          {
+            "type": "bus",
+            "label": "1A"
+          }
+        ],
+        "text": "A piedi 15 min, oppure bus 1A da Schottentor fino a Stephansplatz e a piedi 4 min (300 m)."
+      },
+      {
+        "t": "21:50",
+        "kind": "cibo",
+        "name": "Cena da Figlmüller",
+        "note": "La Wiener Schnitzel.",
+        "place": "Figlmüller Wollzeile Wien"
+      },
+      {
+        "t": "22:30",
+        "kind": "base",
+        "name": "Rientro all’alloggio",
+        "place": "Nestroygasse 7, 1020 Wien"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "title": "Belvedere, Sissi e il Prater",
+    "intro": "Il Belvedere con il suo mercatino, il Museo di Sissi alle 14:15, merenda da Demel, la Karlskirche e Art Advent con le luci accese, poi MuseumsQuartier e la ruota panoramica del Prater.",
+    "items": [
+      {
+        "t": "08:00",
+        "kind": "base",
+        "name": "Partenza dall’alloggio",
+        "place": "Nestroygasse 7, 1020 Wien"
+      },
+      {
+        "leg": true,
+        "t": "08:00",
+        "dur": "20 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "1 km"
+          },
+          {
+            "type": "tram",
+            "label": "D"
+          }
+        ],
+        "text": "A piedi 15 min fino a Börse, tram D direzione Absberggasse, scendere a Schloss Belvedere, a piedi 2 min (170 m)."
+      },
+      {
+        "t": "09:15",
+        "end": "12:15",
+        "kind": "visita",
+        "name": "Castello del Belvedere",
+        "note": "Belvedere superiore e collezione Klimt. Ingresso alle 09:15, arrivare 10 minuti prima.",
+        "ticket": "belv",
+        "place": "Oberes Belvedere Wien"
+      },
+      {
+        "t": "12:15",
+        "kind": "passeggio",
+        "name": "Giardini del Belvedere",
+        "place": "Belvedere Garten Wien"
+      },
+      {
+        "t": "12:30",
+        "end": "12:50",
+        "kind": "mercatino",
+        "name": "Mercatino del Belvedere",
+        "note": "Prinz-Eugen-Straße 27.",
+        "place": "Weihnachtsmarkt Belvedere Prinz-Eugen-Straße 27"
+      },
+      {
+        "leg": true,
+        "t": "12:50",
+        "dur": "15 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "900 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "13:05",
+        "kind": "passaggio",
+        "name": "Fontana Hochstrahlbrunnen",
+        "note": "Schwarzenbergplatz.",
+        "place": "Hochstrahlbrunnen Wien"
+      },
+      {
+        "leg": true,
+        "t": "13:15",
+        "dur": "25 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "1,6 km"
+          },
+          {
+            "type": "U1",
+            "label": "U1"
+          }
+        ],
+        "text": "A piedi lungo il Ring, passando dall’Opera e dall’Albertina, fino a Michaelerplatz. In alternativa: a piedi 5 min fino a Karlsplatz, U1 rossa direzione Leopoldau fino a Stephansplatz, a piedi 7 min (600 m)."
+      },
+      {
+        "t": "13:40",
+        "end": "14:10",
+        "kind": "passaggio",
+        "name": "Michaelerplatz",
+        "note": "Margine prima del museo: c’è tempo per uno spuntino. Entro le 14:15 bisogna essere all’ingresso sotto la cupola, dal Michaeltor.",
+        "place": "Michaelerplatz Wien"
+      },
+      {
+        "t": "14:15",
+        "end": "15:30",
+        "kind": "visita",
+        "name": "Museo di Sissi e Appartamenti imperiali",
+        "note": "Ingresso tra le 14:15 e le 14:30: l’orario è vincolante. Il percorso comprende anche la collezione dell’argenteria.",
+        "ticket": "sisi",
+        "place": "Sisi Museum Hofburg Wien"
+      },
+      {
+        "leg": true,
+        "t": "15:30",
+        "dur": "2 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "150 m"
+          }
+        ],
+        "text": "A piedi su Kohlmarkt."
+      },
+      {
+        "t": "15:35",
+        "end": "16:15",
+        "kind": "cibo",
+        "name": "Café Demel",
+        "note": "Merenda in pasticceria, Kohlmarkt 14.",
+        "place": "Demel Kohlmarkt Wien"
+      },
+      {
+        "leg": true,
+        "t": "16:15",
+        "dur": "20 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "1,4 km"
+          },
+          {
+            "type": "U1",
+            "label": "U1"
+          }
+        ],
+        "text": "A piedi 20 min, oppure a piedi 7 min fino a Stephansplatz, U1 rossa direzione Oberlaa fino a Karlsplatz, a piedi 5 min."
+      },
+      {
+        "t": "16:40",
+        "end": "17:20",
+        "kind": "visita",
+        "name": "Chiesa di San Carlo Borromeo",
+        "note": "Con audioguida e salita alla terrazza. Controllate l’ultimo ingresso alla terrazza sul voucher.",
+        "ticket": "karl",
+        "place": "Karlskirche Wien"
+      },
+      {
+        "leg": true,
+        "t": "17:20",
+        "dur": "2 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "100 m"
+          }
+        ],
+        "text": "Il mercatino è sulla piazza davanti alla chiesa."
+      },
+      {
+        "t": "17:25",
+        "end": "18:30",
+        "kind": "mercatino",
+        "name": "Art Advent Karlsplatz",
+        "note": "Mercatino d’arte e artigianato, ormai al buio con le luci accese.",
+        "place": "Art Advent Karlsplatz Wien"
+      },
+      {
+        "leg": true,
+        "t": "18:30",
+        "dur": "13 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "1 km"
+          }
+        ],
+        "text": "A piedi lungo Getreidemarkt, passando dalla Secessione."
+      },
+      {
+        "t": "18:45",
+        "kind": "mercatino",
+        "name": "Mercatino di Maria-Theresien-Platz",
+        "place": "Weihnachtsdorf Maria-Theresien-Platz"
+      },
+      {
+        "leg": true,
+        "t": "19:00",
+        "dur": "6 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "400 m"
+          }
+        ],
+        "text": "A piedi."
+      },
+      {
+        "t": "19:05",
+        "kind": "mercatino",
+        "name": "Mercatino del MuseumsQuartier",
+        "place": "Wintermarkt MuseumsQuartier Wien"
+      },
+      {
+        "leg": true,
+        "t": "19:30",
+        "dur": "17 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "250 m"
+          },
+          {
+            "type": "U2",
+            "label": "U2"
+          }
+        ],
+        "text": "A piedi 4 min fino alla metro, U2 viola direzione Karlsplatz fino a Volkstheater (2 min), poi U2 direzione Aspernstraße fino a Praterstern, a piedi 6 min (250 m)."
+      },
+      {
+        "t": "20:00",
+        "kind": "mercatino",
+        "name": "Prater: mercatino e luna park",
+        "note": "Wintermarkt e ruota panoramica.",
+        "place": "Wintermarkt am Riesenradplatz Prater"
+      },
+      {
+        "t": "fine",
+        "kind": "base",
+        "name": "Rientro all’alloggio",
+        "place": "Nestroygasse 7, 1020 Wien"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-27",
+    "title": "Lego Store, musei e partenza",
+    "intro": "Ultima mattina tra Lego Store e Kunsthistorisches Museum, con l’Albertina da valutare, poi il trasferimento in aeroporto per il volo delle 17:40.",
+    "items": [
+      {
+        "t": "08:15",
+        "kind": "base",
+        "name": "Partenza dall’alloggio",
+        "note": "Check-out.",
+        "place": "Nestroygasse 7, 1020 Wien"
+      },
+      {
+        "leg": true,
+        "t": "08:15",
+        "dur": "35 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "220 m"
+          },
+          {
+            "type": "bus",
+            "label": "2A"
+          },
+          {
+            "type": "U1",
+            "label": "U1"
+          }
+        ],
+        "text": "A piedi 4 min, bus 2A da Leopoldsgasse fino a Stephansplatz, U1 rossa direzione Leopoldau, scendere a Kagran, a piedi 5 min (350 m)."
+      },
+      {
+        "t": "09:30",
+        "end": "10:10",
+        "kind": "visita",
+        "name": "Lego Store ufficiale",
+        "place": "LEGO Store Donauzentrum Wien"
+      },
+      {
+        "leg": true,
+        "t": "10:10",
+        "dur": "40 min",
+        "lines": [
+          {
+            "type": "walk",
+            "label": "350 m"
+          },
+          {
+            "type": "U1",
+            "label": "U1"
+          },
+          {
+            "type": "U2",
+            "label": "U2"
+          }
+        ],
+        "text": "A piedi 6 min alla metro Kagran, U1 rossa direzione Oberlaa fino a Karlsplatz, U2 viola direzione Aspernstraße fino a Museumsquartier, a piedi 4 min (210 m)."
+      },
+      {
+        "t": "11:00",
+        "end": "13:00",
+        "kind": "visita",
+        "name": "Kunsthistorisches Museum e Café Central",
+        "note": "Ingresso alle 11:00. Antonietta ha il biglietto studenti: serve il tesserino universitario.",
+        "ticket": "khm",
+        "place": "Kunsthistorisches Museum Wien"
+      },
+      {
+        "t": "13:00",
+        "end": "15:00",
+        "kind": "visita",
+        "name": "Museo Albertina",
+        "note": "Da valutare in base al tempo.",
+        "tags": [
+          "opt"
+        ],
+        "place": "Albertina Wien"
+      },
+      {
+        "leg": true,
+        "t": "15:00",
+        "dur": "circa 1 ora",
+        "lines": [
+          {
+            "type": "cat",
+            "label": "CAT"
+          }
+        ],
+        "text": "Trasferimento all’aeroporto."
+      },
+      {
+        "t": "16:00",
+        "kind": "base",
+        "name": "Aeroporto",
+        "place": "Flughafen Wien"
+      },
+      {
+        "t": "17:40",
+        "kind": "base",
+        "name": "Partenza del volo",
+        "games": true,
+        "place": "Flughafen Wien"
+      }
+    ]
+  }
+]

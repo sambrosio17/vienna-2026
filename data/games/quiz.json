@@ -1,0 +1,222 @@
+[
+  {
+    "question": "In che anno è stata costruita la ruota panoramica del Prater?",
+    "options": [
+      "1873",
+      "1897",
+      "1912",
+      "1955"
+    ],
+    "answer": 1,
+    "explain": "Il Riesenrad fu costruito nel 1897 per il giubileo dell’imperatore Francesco Giuseppe."
+  },
+  {
+    "question": "Chi ha dipinto “Il bacio”, esposto al Belvedere?",
+    "options": [
+      "Egon Schiele",
+      "Gustav Klimt",
+      "Oskar Kokoschka",
+      "Hans Makart"
+    ],
+    "answer": 1,
+    "explain": "È di Gustav Klimt: lo vedrete il 26 al Belvedere superiore."
+  },
+  {
+    "question": "Chi inventò la Sachertorte, nel 1832?",
+    "options": [
+      "Franz Sacher",
+      "Anna Demel",
+      "Johann Strauss",
+      "Eduard Sacher"
+    ],
+    "answer": 0,
+    "explain": "Franz Sacher, allora apprendista di sedici anni alla corte del principe Metternich."
+  },
+  {
+    "question": "Dove nacque Mozart?",
+    "options": [
+      "Vienna",
+      "Linz",
+      "Salisburgo",
+      "Praga"
+    ],
+    "answer": 2,
+    "explain": "A Salisburgo nel 1756. A Vienna visse e lavorò per gli ultimi dieci anni."
+  },
+  {
+    "question": "Come si chiama la campana più grande del Duomo di Santo Stefano?",
+    "options": [
+      "Pummerin",
+      "Glockerl",
+      "Stephanie",
+      "Domglocke"
+    ],
+    "answer": 0,
+    "explain": "La Pummerin, rifusa dopo la Seconda guerra mondiale, suona solo nelle grandi occasioni."
+  },
+  {
+    "question": "Chi compose il valzer “Sul bel Danubio blu”?",
+    "options": [
+      "Mozart",
+      "Johann Strauss figlio",
+      "Beethoven",
+      "Haydn"
+    ],
+    "answer": 1,
+    "explain": "Johann Strauss figlio, nel 1866."
+  },
+  {
+    "question": "Con quale carne si prepara la Wiener Schnitzel tradizionale?",
+    "options": [
+      "Maiale",
+      "Pollo",
+      "Vitello",
+      "Manzo"
+    ],
+    "answer": 2,
+    "explain": "Vitello, impanato e fritto. Con il maiale si chiama “Schnitzel alla viennese”."
+  },
+  {
+    "question": "Quante stanze ha la reggia di Schönbrunn?",
+    "options": [
+      "Circa 300",
+      "Circa 700",
+      "1.441",
+      "2.900"
+    ],
+    "answer": 2,
+    "explain": "1.441 stanze: nella visita ne vedrete una quarantina."
+  },
+  {
+    "question": "Qual era il nome di Sissi prima del matrimonio?",
+    "options": [
+      "Elisabetta di Baviera",
+      "Maria Teresa d’Austria",
+      "Sofia di Sassonia",
+      "Elena di Baviera"
+    ],
+    "answer": 0,
+    "explain": "Elisabetta, duchessa in Baviera, sposò Francesco Giuseppe nel 1854."
+  },
+  {
+    "question": "Per chi fu costruito il Belvedere?",
+    "options": [
+      "Maria Teresa",
+      "Il principe Eugenio di Savoia",
+      "Francesco Giuseppe",
+      "Carlo VI"
+    ],
+    "answer": 1,
+    "explain": "Era la residenza estiva del principe Eugenio di Savoia, all’inizio del Settecento."
+  },
+  {
+    "question": "Qual è lo zoo più antico del mondo ancora aperto?",
+    "options": [
+      "Londra",
+      "Berlino",
+      "Schönbrunn",
+      "Parigi"
+    ],
+    "answer": 2,
+    "explain": "Il Tiergarten di Schönbrunn, aperto nel 1752."
+  },
+  {
+    "question": "Che cos’è una Wiener Melange?",
+    "options": [
+      "Una torta",
+      "Un caffè con latte schiumato",
+      "Una birra scura",
+      "Un valzer"
+    ],
+    "answer": 1,
+    "explain": "Il caffè viennese per eccellenza, simile a un cappuccino."
+  },
+  {
+    "question": "Quale palazzo era la residenza invernale degli Asburgo?",
+    "options": [
+      "Schönbrunn",
+      "Belvedere",
+      "Hofburg",
+      "Palazzo Kinsky"
+    ],
+    "answer": 2,
+    "explain": "L’Hofburg, dove si trovano il Museo di Sissi e il Tesoro imperiale. Schönbrunn era la residenza estiva."
+  },
+  {
+    "question": "Quali cavalli si esibiscono alla Scuola di equitazione spagnola?",
+    "options": [
+      "Lipizzani",
+      "Haflinger",
+      "Frisoni",
+      "Andalusi"
+    ],
+    "answer": 0,
+    "explain": "I lipizzani, che nascono scuri e diventano bianchi crescendo."
+  },
+  {
+    "question": "Il Kunsthistorisches Museum ha la collezione più grande al mondo di quale pittore?",
+    "options": [
+      "Rembrandt",
+      "Pieter Bruegel il Vecchio",
+      "Caravaggio",
+      "Dürer"
+    ],
+    "answer": 1,
+    "explain": "Una dozzina di opere di Bruegel il Vecchio, tra cui “La torre di Babele”."
+  },
+  {
+    "question": "In che città fu uccisa l’imperatrice Sissi, nel 1898?",
+    "options": [
+      "Vienna",
+      "Trieste",
+      "Ginevra",
+      "Budapest"
+    ],
+    "answer": 2,
+    "explain": "A Ginevra, sul lungolago, da un anarchico italiano."
+  },
+  {
+    "question": "Che cos’è il Kaiserschmarrn?",
+    "options": [
+      "Uno stufato",
+      "Una frittata dolce a pezzetti",
+      "Un panino con wurstel",
+      "Un liquore"
+    ],
+    "answer": 1,
+    "explain": "Una frittata dolce sminuzzata, servita con zucchero a velo e composta di prugne."
+  },
+  {
+    "question": "Quale fiume attraversa Vienna?",
+    "options": [
+      "Reno",
+      "Elba",
+      "Danubio",
+      "Inn"
+    ],
+    "answer": 2,
+    "explain": "Il Danubio, che passa poco lontano dal vostro alloggio a Leopoldstadt."
+  },
+  {
+    "question": "In che anno fu inaugurata l’Opera di Vienna?",
+    "options": [
+      "1748",
+      "1869",
+      "1910",
+      "1955"
+    ],
+    "answer": 1,
+    "explain": "Nel 1869, con il “Don Giovanni” di Mozart."
+  },
+  {
+    "question": "Che cos’è il Glühwein che troverete ai mercatini?",
+    "options": [
+      "Birra calda",
+      "Vino caldo speziato",
+      "Tè con rum",
+      "Sidro di mele"
+    ],
+    "answer": 1,
+    "explain": "Vino rosso scaldato con cannella, chiodi di garofano e agrumi."
+  }
+]

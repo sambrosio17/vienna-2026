@@ -1,0 +1,182 @@
+{
+  "tickets": [
+    {
+      "id": "schb",
+      "date": "2026-11-25",
+      "time": "Ingresso 08:30–08:45",
+      "name": "Reggia di Schönbrunn",
+      "who": "4 adulti · un solo codice per tutti",
+      "ref": "Ordine 261106000810",
+      "note": "L’orario è vincolante: in ritardo il biglietto non vale. Ingresso dall’edificio principale, audioguida gratuita.",
+      "status": "ok",
+      "pages": [
+        {
+          "file": "schoenbrunn-1.jpg",
+          "label": "Biglietto"
+        }
+      ],
+      "pdfs": [
+        {
+          "file": "schoenbrunn.pdf",
+          "label": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "onb",
+      "date": "2026-11-25",
+      "time": "Valido in qualsiasi orario di apertura",
+      "name": "Biblioteca nazionale · Prunksaal",
+      "who": "4 adulti · un solo codice",
+      "ref": "Biglietto 266040833305",
+      "note": "Josefsplatz 1. Si va direttamente all’ingresso, senza passare dalla cassa.",
+      "status": "ok",
+      "pages": [
+        {
+          "file": "biblioteca-1.jpg",
+          "label": "Biglietto"
+        }
+      ],
+      "pdfs": [
+        {
+          "file": "biblioteca.pdf",
+          "label": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "belv",
+      "date": "2026-11-26",
+      "time": "Ore 09:15 · arrivare 10 minuti prima",
+      "name": "Belvedere superiore e collezione Klimt",
+      "who": "4 adulti · un QR per persona",
+      "ref": "Tiqets 138667923",
+      "note": "Biglietto digitale: basta lo smartphone. Non si possono portare valigie.",
+      "status": "ok",
+      "pages": [
+        {
+          "file": "belvedere-1.jpg",
+          "label": "Biglietto 1 di 4"
+        },
+        {
+          "file": "belvedere-2.jpg",
+          "label": "Biglietto 2 di 4"
+        },
+        {
+          "file": "belvedere-3.jpg",
+          "label": "Biglietto 3 di 4"
+        },
+        {
+          "file": "belvedere-4.jpg",
+          "label": "Biglietto 4 di 4"
+        }
+      ],
+      "pdfs": [
+        {
+          "file": "belvedere.pdf",
+          "label": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "sisi",
+      "date": "2026-11-26",
+      "time": "Ingresso 14:15–14:30",
+      "name": "Museo di Sissi e Appartamenti imperiali",
+      "who": "4 adulti · un solo codice per tutti",
+      "ref": "Ordine 261106000872",
+      "note": "Ingresso sotto la cupola Michaelerkuppel, passando dal Michaeltor. In ritardo il biglietto non vale.",
+      "status": "ok",
+      "pages": [
+        {
+          "file": "sisi-1.jpg",
+          "label": "Biglietto"
+        }
+      ],
+      "pdfs": [
+        {
+          "file": "sisi.pdf",
+          "label": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "karl",
+      "date": "2026-11-26",
+      "time": "Ore 16:40 secondo il programma",
+      "name": "Karlskirche · audioguida e terrazza",
+      "who": "3 adulti + 1 studente",
+      "ref": "Tiqets 1062805195",
+      "note": "Lo studente deve mostrare il tesserino.",
+      "warn": "Questo PDF è solo la ricevuta di pagamento e non vale per entrare. Il voucher con il QR è nell’email di conferma di Tiqets o nell’app Tiqets.",
+      "status": "receipt",
+      "pages": [],
+      "pdfs": [
+        {
+          "file": "karlskirche-ricevuta.pdf",
+          "label": "Ricevuta PDF"
+        }
+      ]
+    },
+    {
+      "id": "khm",
+      "date": "2026-11-27",
+      "time": "Ore 11:00",
+      "name": "Kunsthistorisches Museum",
+      "who": "4 biglietti nominativi",
+      "ref": "Transazione 2164448",
+      "note": "Mostrare la pagina intera. Antonietta ha il biglietto studenti: serve il tesserino universitario.",
+      "status": "ok",
+      "pages": [
+        {
+          "file": "khm-luisa-1.jpg",
+          "label": "Luisa · intero"
+        },
+        {
+          "file": "khm-giuseppe-1.jpg",
+          "label": "Giuseppe · intero"
+        },
+        {
+          "file": "khm-salvatore-1.jpg",
+          "label": "Salvatore · intero"
+        },
+        {
+          "file": "khm-antonietta-1.jpg",
+          "label": "Antonietta · studenti"
+        }
+      ],
+      "pdfs": [
+        {
+          "file": "khm-luisa.pdf",
+          "label": "Luisa"
+        },
+        {
+          "file": "khm-giuseppe.pdf",
+          "label": "Giuseppe"
+        },
+        {
+          "file": "khm-salvatore.pdf",
+          "label": "Salvatore"
+        },
+        {
+          "file": "khm-antonietta.pdf",
+          "label": "Antonietta"
+        }
+      ]
+    }
+  ],
+  "missing": [
+    {
+      "name": "Parlamento austriaco",
+      "note": "24 nov · visita gratuita su prenotazione: nessuna conferma caricata"
+    },
+    {
+      "name": "Tesoro imperiale",
+      "note": "25 nov · nessun biglietto caricato"
+    },
+    {
+      "name": "Karlskirche",
+      "note": "26 nov · manca il voucher con il QR, c’è solo la ricevuta"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "parl",
+    "name": "Parlamento austriaco",
+    "note": "24 nov · gratis, prenotazione obbligatoria",
+    "url": "https://www.parlament.gv.at"
+  },
+  {
+    "id": "schb",
+    "name": "Reggia di Schönbrunn",
+    "note": "25 nov · ingresso a orario, 09:30",
+    "url": "https://www.schoenbrunn.at"
+  },
+  {
+    "id": "onb",
+    "name": "Biblioteca nazionale (Prunksaal)",
+    "note": "25 nov · 14:30",
+    "url": "https://www.onb.ac.at"
+  },
+  {
+    "id": "oper",
+    "name": "Opera di Vienna, visita guidata",
+    "note": "25 nov · visite a orari fissi",
+    "url": "https://www.wiener-staatsoper.at"
+  },
+  {
+    "id": "schatz",
+    "name": "Tesoro imperiale",
+    "note": "25 nov · 16:15",
+    "url": "https://www.khm.at"
+  },
+  {
+    "id": "figl",
+    "name": "Cena da Figlmüller",
+    "note": "25 nov · 21:50",
+    "url": "https://www.figlmueller.at"
+  },
+  {
+    "id": "belv",
+    "name": "Belvedere superiore",
+    "note": "26 nov · 09:15",
+    "url": "https://www.belvedere.at"
+  },
+  {
+    "id": "karl",
+    "name": "Karlskirche e terrazza",
+    "note": "26 nov · 16:00",
+    "url": "https://www.karlskirche.at"
+  },
+  {
+    "id": "sisi",
+    "name": "Museo di Sissi e Appartamenti imperiali",
+    "note": "26 nov · 17:00",
+    "url": "https://www.sisimuseum-hofburg.at"
+  },
+  {
+    "id": "khm",
+    "name": "Kunsthistorisches Museum",
+    "note": "27 nov · opzionale",
+    "url": "https://www.khm.at"
+  },
+  {
+    "id": "alb",
+    "name": "Albertina",
+    "note": "27 nov · da valutare",
+    "url": "https://www.albertina.at"
+  }
+]
